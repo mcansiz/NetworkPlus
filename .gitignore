@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Test ve calisma dosyalari (Windows TEMP kullanilmaz; ai_rules/10)
+.tmp/
+
+# PyInstaller paketleme ciktilari
+build/
+dist/
+.venv-build-win/
+.venv-build-linux/
+
+# Isletim sistemi artiklari
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude yerel dosyalari. Depo HERKESE ACIK (2026-10-01): konusma dokumleri (IP, MAC, SSID,
+# parola icerebilir) ve yerel baglanti bilgileri (VM parolasi, yollar) ASLA depoya girmez.
+# Oturum dokumleri yine proje icinde kalici durur (silinmeye karsi), yalniz git'e girmez.
+.claude/settings.local.json
+.claude/sessions/
+.claude/local/
+
+# Uygulamanin calisma zamani gunlukleri (belge dokumleri .md olarak kalir)
+.claude/logs/*.log
+.claude/logs/runtime/

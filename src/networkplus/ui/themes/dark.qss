@@ -1,0 +1,253 @@
+/* networkPlus — Koyu tema (ADR 0011)
+
+   Bu dosya serbestçe düzenlenebilir; açıklama ve @palette rolleri için light.qss'e bakın.
+   Diyagram (kartlar, çizgiler, zemin) @palette renkleriyle çizilir.
+
+   @name: Koyu tema
+   @palette window: #1e1f22
+   @palette window-text: #e6e6e6
+   @palette base: #26282c
+   @palette alternate-base: #2b2d31
+   @palette text: #e6e6e6
+   @palette button: #2f3136
+   @palette button-text: #e6e6e6
+   @palette bright-text: #ffffff
+   @palette highlight: #3b82f6
+   @palette highlighted-text: #ffffff
+   @palette tooltip-base: #2f3136
+   @palette tooltip-text: #e6e6e6
+   @palette link: #6ea8fe
+   @palette placeholder-text: #7d8590
+   @palette light: #3a3d42
+   @palette midlight: #33363b
+   @palette mid: #43464c
+   @palette dark: #16171a
+   @palette shadow: #000000
+   @palette disabled text: #6e7681
+   @palette disabled window-text: #6e7681
+   @palette disabled button-text: #6e7681
+*/
+
+QMainWindow, QDialog {
+    background: #1e1f22;
+}
+QMainWindow::separator {
+    background: #2b2d31;
+    width: 4px;
+    height: 4px;
+}
+QMainWindow::separator:hover {
+    background: #3b82f6;
+}
+
+/* ---- Menü ve araç çubuğu ---- */
+QMenuBar {
+    background: #1e1f22;
+    border-bottom: 1px solid #33363b;
+}
+QMenuBar::item {
+    padding: 4px 10px;
+    background: transparent;
+    border-radius: 4px;
+}
+QMenuBar::item:selected {
+    background: #33363b;
+}
+QMenu {
+    background: #2b2d31;
+    border: 1px solid #43464c;
+    padding: 4px;
+}
+QMenu::item {
+    padding: 5px 24px 5px 26px;
+    border-radius: 4px;
+}
+QMenu::item:selected {
+    background: #3b82f6;
+    color: #ffffff;
+}
+QMenu::item:disabled {
+    color: #6e7681;
+}
+QMenu::separator {
+    height: 1px;
+    background: #43464c;
+    margin: 4px 8px;
+}
+QToolBar {
+    background: #1e1f22;
+    border: none;
+    border-bottom: 1px solid #33363b;
+    spacing: 2px;
+    padding: 2px;
+}
+QToolButton {
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+QToolButton:hover {
+    background: #33363b;
+}
+QToolButton:checked {
+    background: #23395d;
+    border-color: #3b82f6;
+}
+
+/* ---- Paneller ---- */
+QDockWidget::title {
+    background: #2b2d31;
+    padding: 4px 6px;
+    border-bottom: 1px solid #1e1f22;
+}
+QStatusBar {
+    background: #2b2d31;
+    border-top: 1px solid #33363b;
+}
+QStatusBar::item {
+    border: none;
+}
+QGraphicsView {
+    border: none;
+}
+
+/* ---- Düğmeler ve giriş alanları ---- */
+QPushButton {
+    background: #2f3136;
+    border: 1px solid #4a4d54;
+    border-radius: 4px;
+    padding: 4px 12px;
+    min-height: 18px;
+}
+QPushButton:hover {
+    border-color: #3b82f6;
+}
+QPushButton:pressed {
+    background: #3a3d42;
+}
+QPushButton:default {
+    border-color: #3b82f6;
+}
+QPushButton:disabled {
+    color: #6e7681;
+    background: #26282c;
+    border-color: #33363b;
+}
+/* QSpinBox / QComboBox bilerek yok: kenarlik verilince ok dugmeleri cizilmiyor;
+   Fusion bunlari paletle zaten uyumlu cizer. */
+QLineEdit, QPlainTextEdit, QTextEdit {
+    background: #26282c;
+    border: 1px solid #4a4d54;
+    border-radius: 4px;
+    padding: 3px 5px;
+    selection-background-color: #3b82f6;
+    selection-color: #ffffff;
+}
+QLineEdit:focus, QPlainTextEdit:focus, QTextEdit:focus {
+    border-color: #3b82f6;
+}
+QLineEdit:disabled, QPlainTextEdit:disabled, QTextEdit:disabled {
+    background: #222326;
+    color: #6e7681;
+}
+QLineEdit:read-only {
+    background: #222326;
+}
+QComboBox QAbstractItemView {
+    background: #2b2d31;
+    border: 1px solid #43464c;
+    selection-background-color: #3b82f6;
+}
+
+/* ---- Liste, tablo, sekme ---- */
+QTreeView, QTableView, QListView {
+    background: #26282c;
+    alternate-background-color: #2b2d31;
+    border: 1px solid #33363b;
+    border-radius: 4px;
+    selection-background-color: #23395d;
+    selection-color: #ffffff;
+}
+QHeaderView::section {
+    background: #2b2d31;
+    color: #e6e6e6;
+    border: none;
+    border-right: 1px solid #1e1f22;
+    border-bottom: 1px solid #1e1f22;
+    padding: 4px 6px;
+}
+QTableCornerButton::section {
+    background: #2b2d31;
+    border: none;
+}
+QTabWidget::pane {
+    border: 1px solid #33363b;
+    border-radius: 4px;
+    top: -1px;
+}
+QTabBar::tab {
+    background: #2b2d31;
+    border: 1px solid #33363b;
+    padding: 4px 10px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+QTabBar::tab:selected {
+    background: #26282c;
+    border-bottom-color: #26282c;
+}
+QTabBar::tab:hover:!selected {
+    background: #33363b;
+}
+QGroupBox {
+    border: 1px solid #33363b;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding-top: 6px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 8px;
+    padding: 0 4px;
+}
+
+/* ---- Kaydırma çubukları ---- */
+QScrollBar:vertical {
+    background: transparent;
+    width: 11px;
+    margin: 0;
+}
+QScrollBar:horizontal {
+    background: transparent;
+    height: 11px;
+    margin: 0;
+}
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: #4a4d54;
+    border-radius: 4px;
+    margin: 2px;
+}
+QScrollBar::handle:vertical {
+    min-height: 24px;
+}
+QScrollBar::handle:horizontal {
+    min-width: 24px;
+}
+QScrollBar::handle:hover {
+    background: #6e7681;
+}
+QScrollBar::add-line, QScrollBar::sub-line {
+    width: 0;
+    height: 0;
+}
+QScrollBar::add-page, QScrollBar::sub-page {
+    background: none;
+}
+
+QToolTip {
+    background: #2f3136;
+    color: #e6e6e6;
+    border: 1px solid #43464c;
+    padding: 4px;
+}

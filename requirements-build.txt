@@ -1,0 +1,2 @@
+# Yalniz paketleme (build_win.sh / build_linux.sh) icin; calisma zamani bagimliligi degil.
+pyinstaller>=6.16

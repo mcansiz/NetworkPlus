@@ -1,0 +1,314 @@
+{
+ "platform": "linux",
+ "schema": 1,
+ "hostname": "DEVPC",
+ "taken_at": "2026-09-30T15:33:43.237136+03:00",
+ "os": "Linux Mint 22.3",
+ "is_admin": false,
+ "ip_addr": [
+  {
+   "ifindex": 1,
+   "ifname": "lo",
+   "flags": [
+    "LOOPBACK",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 65536,
+   "qdisc": "noqueue",
+   "operstate": "UNKNOWN",
+   "group": "default",
+   "txqlen": 1000,
+   "link_type": "loopback",
+   "address": "02:00:00:00:00:01",
+   "broadcast": "02:00:00:00:00:01",
+   "promiscuity": 0,
+   "allmulti": 0,
+   "min_mtu": 0,
+   "max_mtu": 0,
+   "num_tx_queues": 1,
+   "num_rx_queues": 1,
+   "gso_max_size": 65536,
+   "gso_max_segs": 65535,
+   "tso_max_size": 524280,
+   "tso_max_segs": 65535,
+   "gro_max_size": 65536,
+   "addr_info": [
+    {
+     "family": "inet",
+     "local": "127.0.0.1",
+     "prefixlen": 8,
+     "scope": "host",
+     "label": "lo",
+     "valid_life_time": 4294967295,
+     "preferred_life_time": 4294967295
+    },
+    {
+     "family": "inet6",
+     "local": "::1",
+     "prefixlen": 128,
+     "scope": "host",
+     "noprefixroute": true,
+     "valid_life_time": 4294967295,
+     "preferred_life_time": 4294967295
+    }
+   ]
+  },
+  {
+   "ifindex": 2,
+   "ifname": "ens33",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "qdisc": "fq_codel",
+   "operstate": "UNKNOWN",
+   "group": "default",
+   "txqlen": 1000,
+   "link_type": "ether",
+   "address": "02:00:00:00:00:02",
+   "broadcast": "02:00:00:00:00:03",
+   "promiscuity": 0,
+   "allmulti": 0,
+   "min_mtu": 68,
+   "max_mtu": 1500,
+   "num_tx_queues": 1,
+   "num_rx_queues": 1,
+   "gso_max_size": 65536,
+   "gso_max_segs": 65535,
+   "tso_max_size": 65536,
+   "tso_max_segs": 65535,
+   "gro_max_size": 65536,
+   "parentbus": "pci",
+   "parentdev": "0000:02:01.0",
+   "altnames": [
+    "enp2s1"
+   ],
+   "addr_info": [
+    {
+     "family": "inet",
+     "local": "192.168.42.131",
+     "prefixlen": 24,
+     "broadcast": "192.168.42.255",
+     "scope": "global",
+     "dynamic": true,
+     "noprefixroute": true,
+     "label": "ens33",
+     "valid_life_time": 1687,
+     "preferred_life_time": 1687
+    },
+    {
+     "family": "inet6",
+     "local": "fe80::9d8e:6969:4127:ae60",
+     "prefixlen": 64,
+     "scope": "link",
+     "noprefixroute": true,
+     "valid_life_time": 4294967295,
+     "preferred_life_time": 4294967295
+    }
+   ]
+  },
+  {
+   "ifindex": 3,
+   "ifname": "ens37",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "qdisc": "fq_codel",
+   "operstate": "UNKNOWN",
+   "group": "default",
+   "txqlen": 1000,
+   "link_type": "ether",
+   "address": "02:00:00:00:00:04",
+   "broadcast": "02:00:00:00:00:03",
+   "promiscuity": 0,
+   "allmulti": 0,
+   "min_mtu": 68,
+   "max_mtu": 1500,
+   "num_tx_queues": 1,
+   "num_rx_queues": 1,
+   "gso_max_size": 65536,
+   "gso_max_segs": 65535,
+   "tso_max_size": 65536,
+   "tso_max_segs": 65535,
+   "gro_max_size": 65536,
+   "parentbus": "pci",
+   "parentdev": "0000:02:05.0",
+   "altnames": [
+    "enp2s5"
+   ],
+   "addr_info": [
+    {
+     "family": "inet6",
+     "local": "fe80::1eb:dacf:e465:2a45",
+     "prefixlen": 64,
+     "scope": "link",
+     "noprefixroute": true,
+     "valid_life_time": 4294967295,
+     "preferred_life_time": 4294967295
+    }
+   ]
+  },
+  {
+   "ifindex": 4,
+   "ifname": "ens38",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "qdisc": "fq_codel",
+   "operstate": "UNKNOWN",
+   "group": "default",
+   "txqlen": 1000,
+   "link_type": "ether",
+   "address": "02:00:00:00:00:05",
+   "broadcast": "02:00:00:00:00:03",
+   "promiscuity": 0,
+   "allmulti": 0,
+   "min_mtu": 68,
+   "max_mtu": 1500,
+   "num_tx_queues": 1,
+   "num_rx_queues": 1,
+   "gso_max_size": 65536,
+   "gso_max_segs": 65535,
+   "tso_max_size": 65536,
+   "tso_max_segs": 65535,
+   "gro_max_size": 65536,
+   "parentbus": "pci",
+   "parentdev": "0000:02:06.0",
+   "altnames": [
+    "enp2s6"
+   ],
+   "addr_info": [
+    {
+     "family": "inet6",
+     "local": "fe80::3550:3d9:1b99:d90f",
+     "prefixlen": 64,
+     "scope": "link",
+     "noprefixroute": true,
+     "valid_life_time": 4294967295,
+     "preferred_life_time": 4294967295
+    }
+   ]
+  },
+  {
+   "ifindex": 5,
+   "ifname": "ens39",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "qdisc": "fq_codel",
+   "operstate": "UNKNOWN",
+   "group": "default",
+   "txqlen": 1000,
+   "link_type": "ether",
+   "address": "02:00:00:00:00:06",
+   "broadcast": "02:00:00:00:00:03",
+   "promiscuity": 0,
+   "allmulti": 0,
+   "min_mtu": 68,
+   "max_mtu": 1500,
+   "num_tx_queues": 1,
+   "num_rx_queues": 1,
+   "gso_max_size": 65536,
+   "gso_max_segs": 65535,
+   "tso_max_size": 65536,
+   "tso_max_segs": 65535,
+   "gro_max_size": 65536,
+   "parentbus": "pci",
+   "parentdev": "0000:02:07.0",
+   "altnames": [
+    "enp2s7"
+   ],
+   "addr_info": [
+    {
+     "family": "inet6",
+     "local": "fe80::3712:e17e:67c7:61d7",
+     "prefixlen": 64,
+     "scope": "link",
+     "noprefixroute": true,
+     "valid_life_time": 4294967295,
+     "preferred_life_time": 4294967295
+    }
+   ]
+  }
+ ],
+ "routes": [
+  {
+   "dst": "default",
+   "gateway": "192.168.42.2",
+   "dev": "ens33",
+   "protocol": "dhcp",
+   "prefsrc": "192.168.42.131",
+   "metric": 100,
+   "flags": []
+  },
+  {
+   "dst": "192.168.42.0/24",
+   "dev": "ens33",
+   "protocol": "kernel",
+   "scope": "link",
+   "prefsrc": "192.168.42.131",
+   "metric": 100,
+   "flags": []
+  }
+ ],
+ "routes6": [],
+ "route_get": [
+  {
+   "dst": "8.8.8.8",
+   "gateway": "192.168.42.2",
+   "dev": "ens33",
+   "prefsrc": "192.168.42.131",
+   "flags": [],
+   "uid": 1000,
+   "cache": []
+  }
+ ],
+ "neigh": [
+  {
+   "dst": "192.168.42.2",
+   "dev": "ens33",
+   "lladdr": "02:00:00:00:00:07",
+   "state": [
+    "REACHABLE"
+   ]
+  },
+  {
+   "dst": "192.168.42.1",
+   "dev": "ens33",
+   "lladdr": "02:00:00:00:00:08",
+   "state": [
+    "DELAY"
+   ]
+  }
+ ],
+ "nm_devices": "ens33:ethernet:connected:Wired connection 1\nens37:ethernet:connecting (getting IP configuration):Wired connection 2\nens38:ethernet:connecting (getting IP configuration):Wired connection 3\nens39:ethernet:connecting (getting IP configuration):Wired connection 4\nlo:loopback:connected (externally):lo\n",
+ "nm_active": "Wired connection 1:dbe63152-c4c4-3e30-a018-d07b1ac5167e:802-3-ethernet:ens33\nWired connection 2:472edcec-9c47-3517-be54-48227bb7c506:802-3-ethernet:ens37\nWired connection 3:9942b65d-e477-39a0-b047-2c29382de9e1:802-3-ethernet:ens38\nWired connection 4:d4c7ec3d-372d-31a6-9a66-fa940c94ae82:802-3-ethernet:ens39\nlo:08470ad4-208e-45a0-9022-7c44dd92af4a:loopback:lo\n",
+ "nm_profiles": "Wired connection 1:dbe63152-c4c4-3e30-a018-d07b1ac5167e:802-3-ethernet:ens33:yes\nWired connection 2:472edcec-9c47-3517-be54-48227bb7c506:802-3-ethernet:ens37:yes\nWired connection 3:9942b65d-e477-39a0-b047-2c29382de9e1:802-3-ethernet:ens38:yes\nWired connection 4:d4c7ec3d-372d-31a6-9a66-fa940c94ae82:802-3-ethernet:ens39:yes\nlo:08470ad4-208e-45a0-9022-7c44dd92af4a:loopback:lo:yes\n",
+ "nm_conn": {
+  "dbe63152-c4c4-3e30-a018-d07b1ac5167e": "connection.id:Wired connection 1\nconnection.uuid:dbe63152-c4c4-3e30-a018-d07b1ac5167e\nconnection.stable-id:\nconnection.type:802-3-ethernet\nconnection.interface-name:ens33\nconnection.autoconnect:yes\nconnection.autoconnect-priority:-999\nconnection.autoconnect-retries:-1\nconnection.multi-connect:0\nconnection.auth-retries:-1\nconnection.timestamp:1790771511\nconnection.permissions:\nconnection.zone:\nconnection.controller:\nconnection.master:\nconnection.slave-type:\nconnection.port-type:\nconnection.autoconnect-slaves:-1\nconnection.autoconnect-ports:-1\nconnection.secondaries:\nconnection.gateway-ping-timeout:0\nconnection.metered:unknown\nconnection.lldp:default\nconnection.mdns:-1\nconnection.llmnr:-1\nconnection.dns-over-tls:-1\nconnection.mptcp-flags:0x0\nconnection.wait-device-timeout:-1\nconnection.wait-activation-delay:-1\n802-3-ethernet.port:\n802-3-ethernet.speed:0\n802-3-ethernet.duplex:\n802-3-ethernet.auto-negotiate:no\n802-3-ethernet.mac-address:\n802-3-ethernet.cloned-mac-address:\n802-3-ethernet.generate-mac-address-mask:\n802-3-ethernet.mac-address-blacklist:\n802-3-ethernet.mtu:auto\n802-3-ethernet.s390-subchannels:\n802-3-ethernet.s390-nettype:\n802-3-ethernet.s390-options:\n802-3-ethernet.wake-on-lan:default\n802-3-ethernet.wake-on-lan-password:\n802-3-ethernet.accept-all-mac-addresses:-1\nipv4.method:auto\nipv4.dns:\nipv4.dns-search:\nipv4.dns-options:\nipv4.dns-priority:0\nipv4.addresses:\nipv4.gateway:\nipv4.routes:\nipv4.route-metric:-1\nipv4.route-table:0\nipv4.routing-rules:\nipv4.replace-local-rule:-1\nipv4.ignore-auto-routes:no\nipv4.ignore-auto-dns:no\nipv4.dhcp-client-id:\nipv4.dhcp-iaid:\nipv4.dhcp-dscp:\nipv4.dhcp-timeout:0\nipv4.dhcp-send-hostname:yes\nipv4.dhcp-hostname:\nipv4.dhcp-fqdn:\nipv4.dhcp-hostname-flags:0x0\nipv4.never-default:no\nipv4.may-fail:yes\nipv4.required-timeout:-1\nipv4.dad-timeout:-1\nipv4.dhcp-vendor-class-identifier:\nipv4.link-local:0\nipv4.dhcp-reject-servers:\nipv4.auto-route-ext-gw:-1\nipv6.method:auto\nipv6.dns:\nipv6.dns-search:\nipv6.dns-options:\nipv6.dns-priority:0\nipv6.addresses:\nipv6.gateway:\nipv6.routes:\nipv6.route-metric:-1\nipv6.route-table:0\nipv6.routing-rules:\nipv6.replace-local-rule:-1\nipv6.ignore-auto-routes:no\nipv6.ignore-auto-dns:no\nipv6.never-default:no\nipv6.may-fail:yes\nipv6.required-timeout:-1\nipv6.ip6-privacy:-1\nipv6.addr-gen-mode:default\nipv6.ra-timeout:0\nipv6.mtu:auto\nipv6.dhcp-pd-hint:\nipv6.dhcp-duid:\nipv6.dhcp-iaid:\nipv6.dhcp-timeout:0\nipv6.dhcp-send-hostname:yes\nipv6.dhcp-hostname:\nipv6.dhcp-hostname-flags:0x0\nipv6.auto-route-ext-gw:-1\nipv6.token:\nproxy.method:none\nproxy.browser-only:no\nproxy.pac-url:\nproxy.pac-script:\nGENERAL.NAME:Wired connection 1\nGENERAL.UUID:dbe63152-c4c4-3e30-a018-d07b1ac5167e\nGENERAL.DEVICES:ens33\nGENERAL.IP-IFACE:ens33\nGENERAL.STATE:activated\nGENERAL.DEFAULT:yes\nGENERAL.DEFAULT6:no\nGENERAL.SPEC-OBJECT:\nGENERAL.VPN:no\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/ActiveConnection/2\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/Settings/2\nGENERAL.ZONE:\nGENERAL.MASTER-PATH:\nIP4.ADDRESS[1]:192.168.42.131/24\nIP4.GATEWAY:192.168.42.2\nIP4.ROUTE[1]:dst = 192.168.42.0/24, nh = 0.0.0.0, mt = 100\nIP4.ROUTE[2]:dst = 0.0.0.0/0, nh = 192.168.42.2, mt = 100\nIP4.DNS[1]:192.168.42.2\nIP4.DOMAIN[1]:localdomain\nDHCP4.OPTION[1]:broadcast_address = 192.168.42.255\nDHCP4.OPTION[2]:dhcp_client_identifier = 01:00:0c:29:cb:3e:aa\nDHCP4.OPTION[3]:dhcp_lease_time = 1800\nDHCP4.OPTION[4]:dhcp_server_identifier = 192.168.42.254\nDHCP4.OPTION[5]:domain_name = localdomain\nDHCP4.OPTION[6]:domain_name_servers = 192.168.42.2\nDHCP4.OPTION[7]:expiry = 1790773309\nDHCP4.OPTION[8]:ip_address = 192.168.42.131\nDHCP4.OPTION[9]:next_server = 192.168.42.254\nDHCP4.OPTION[10]:requested_broadcast_address = 1\nDHCP4.OPTION[11]:requested_domain_name = 1\nDHCP4.OPTION[12]:requested_domain_name_servers = 1\nDHCP4.OPTION[13]:requested_domain_search = 1\nDHCP4.OPTION[14]:requested_host_name = 1\nDHCP4.OPTION[15]:requested_interface_mtu = 1\nDHCP4.OPTION[16]:requested_ms_classless_static_routes = 1\nDHCP4.OPTION[17]:requested_nis_domain = 1\nDHCP4.OPTION[18]:requested_nis_servers = 1\nDHCP4.OPTION[19]:requested_ntp_servers = 1\nDHCP4.OPTION[20]:requested_rfc3442_classless_static_routes = 1\nDHCP4.OPTION[21]:requested_root_path = 1\nDHCP4.OPTION[22]:requested_routers = 1\nDHCP4.OPTION[23]:requested_static_routes = 1\nDHCP4.OPTION[24]:requested_subnet_mask = 1\nDHCP4.OPTION[25]:requested_time_offset = 1\nDHCP4.OPTION[26]:requested_wpad = 1\nDHCP4.OPTION[27]:routers = 192.168.42.2\nDHCP4.OPTION[28]:subnet_mask = 255.255.255.0\nIP6.ADDRESS[1]:fe80::9d8e:6969:4127:ae60/64\nIP6.GATEWAY:\nIP6.ROUTE[1]:dst = fe80::/64, nh = ::, mt = 1024\n",
+  "472edcec-9c47-3517-be54-48227bb7c506": "connection.id:Wired connection 2\nconnection.uuid:472edcec-9c47-3517-be54-48227bb7c506\nconnection.stable-id:\nconnection.type:802-3-ethernet\nconnection.interface-name:ens37\nconnection.autoconnect:yes\nconnection.autoconnect-priority:-999\nconnection.autoconnect-retries:-1\nconnection.multi-connect:0\nconnection.auth-retries:-1\nconnection.timestamp:0\nconnection.permissions:\nconnection.zone:\nconnection.controller:\nconnection.master:\nconnection.slave-type:\nconnection.port-type:\nconnection.autoconnect-slaves:-1\nconnection.autoconnect-ports:-1\nconnection.secondaries:\nconnection.gateway-ping-timeout:0\nconnection.metered:unknown\nconnection.lldp:default\nconnection.mdns:-1\nconnection.llmnr:-1\nconnection.dns-over-tls:-1\nconnection.mptcp-flags:0x0\nconnection.wait-device-timeout:-1\nconnection.wait-activation-delay:-1\n802-3-ethernet.port:\n802-3-ethernet.speed:0\n802-3-ethernet.duplex:\n802-3-ethernet.auto-negotiate:no\n802-3-ethernet.mac-address:\n802-3-ethernet.cloned-mac-address:\n802-3-ethernet.generate-mac-address-mask:\n802-3-ethernet.mac-address-blacklist:\n802-3-ethernet.mtu:auto\n802-3-ethernet.s390-subchannels:\n802-3-ethernet.s390-nettype:\n802-3-ethernet.s390-options:\n802-3-ethernet.wake-on-lan:default\n802-3-ethernet.wake-on-lan-password:\n802-3-ethernet.accept-all-mac-addresses:-1\nipv4.method:auto\nipv4.dns:\nipv4.dns-search:\nipv4.dns-options:\nipv4.dns-priority:0\nipv4.addresses:\nipv4.gateway:\nipv4.routes:\nipv4.route-metric:-1\nipv4.route-table:0\nipv4.routing-rules:\nipv4.replace-local-rule:-1\nipv4.ignore-auto-routes:no\nipv4.ignore-auto-dns:no\nipv4.dhcp-client-id:\nipv4.dhcp-iaid:\nipv4.dhcp-dscp:\nipv4.dhcp-timeout:0\nipv4.dhcp-send-hostname:yes\nipv4.dhcp-hostname:\nipv4.dhcp-fqdn:\nipv4.dhcp-hostname-flags:0x0\nipv4.never-default:no\nipv4.may-fail:yes\nipv4.required-timeout:-1\nipv4.dad-timeout:-1\nipv4.dhcp-vendor-class-identifier:\nipv4.link-local:0\nipv4.dhcp-reject-servers:\nipv4.auto-route-ext-gw:-1\nipv6.method:auto\nipv6.dns:\nipv6.dns-search:\nipv6.dns-options:\nipv6.dns-priority:0\nipv6.addresses:\nipv6.gateway:\nipv6.routes:\nipv6.route-metric:-1\nipv6.route-table:0\nipv6.routing-rules:\nipv6.replace-local-rule:-1\nipv6.ignore-auto-routes:no\nipv6.ignore-auto-dns:no\nipv6.never-default:no\nipv6.may-fail:yes\nipv6.required-timeout:-1\nipv6.ip6-privacy:-1\nipv6.addr-gen-mode:default\nipv6.ra-timeout:0\nipv6.mtu:auto\nipv6.dhcp-pd-hint:\nipv6.dhcp-duid:\nipv6.dhcp-iaid:\nipv6.dhcp-timeout:0\nipv6.dhcp-send-hostname:yes\nipv6.dhcp-hostname:\nipv6.dhcp-hostname-flags:0x0\nipv6.auto-route-ext-gw:-1\nipv6.token:\nproxy.method:none\nproxy.browser-only:no\nproxy.pac-url:\nproxy.pac-script:\nGENERAL.NAME:Wired connection 2\nGENERAL.UUID:472edcec-9c47-3517-be54-48227bb7c506\nGENERAL.DEVICES:ens37\nGENERAL.IP-IFACE:\nGENERAL.STATE:activating\nGENERAL.DEFAULT:no\nGENERAL.DEFAULT6:no\nGENERAL.SPEC-OBJECT:\nGENERAL.VPN:no\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/ActiveConnection/9\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/Settings/3\nGENERAL.ZONE:\nGENERAL.MASTER-PATH:\n",
+  "9942b65d-e477-39a0-b047-2c29382de9e1": "connection.id:Wired connection 3\nconnection.uuid:9942b65d-e477-39a0-b047-2c29382de9e1\nconnection.stable-id:\nconnection.type:802-3-ethernet\nconnection.interface-name:ens38\nconnection.autoconnect:yes\nconnection.autoconnect-priority:-999\nconnection.autoconnect-retries:-1\nconnection.multi-connect:0\nconnection.auth-retries:-1\nconnection.timestamp:0\nconnection.permissions:\nconnection.zone:\nconnection.controller:\nconnection.master:\nconnection.slave-type:\nconnection.port-type:\nconnection.autoconnect-slaves:-1\nconnection.autoconnect-ports:-1\nconnection.secondaries:\nconnection.gateway-ping-timeout:0\nconnection.metered:unknown\nconnection.lldp:default\nconnection.mdns:-1\nconnection.llmnr:-1\nconnection.dns-over-tls:-1\nconnection.mptcp-flags:0x0\nconnection.wait-device-timeout:-1\nconnection.wait-activation-delay:-1\n802-3-ethernet.port:\n802-3-ethernet.speed:0\n802-3-ethernet.duplex:\n802-3-ethernet.auto-negotiate:no\n802-3-ethernet.mac-address:\n802-3-ethernet.cloned-mac-address:\n802-3-ethernet.generate-mac-address-mask:\n802-3-ethernet.mac-address-blacklist:\n802-3-ethernet.mtu:auto\n802-3-ethernet.s390-subchannels:\n802-3-ethernet.s390-nettype:\n802-3-ethernet.s390-options:\n802-3-ethernet.wake-on-lan:default\n802-3-ethernet.wake-on-lan-password:\n802-3-ethernet.accept-all-mac-addresses:-1\nipv4.method:auto\nipv4.dns:\nipv4.dns-search:\nipv4.dns-options:\nipv4.dns-priority:0\nipv4.addresses:\nipv4.gateway:\nipv4.routes:\nipv4.route-metric:-1\nipv4.route-table:0\nipv4.routing-rules:\nipv4.replace-local-rule:-1\nipv4.ignore-auto-routes:no\nipv4.ignore-auto-dns:no\nipv4.dhcp-client-id:\nipv4.dhcp-iaid:\nipv4.dhcp-dscp:\nipv4.dhcp-timeout:0\nipv4.dhcp-send-hostname:yes\nipv4.dhcp-hostname:\nipv4.dhcp-fqdn:\nipv4.dhcp-hostname-flags:0x0\nipv4.never-default:no\nipv4.may-fail:yes\nipv4.required-timeout:-1\nipv4.dad-timeout:-1\nipv4.dhcp-vendor-class-identifier:\nipv4.link-local:0\nipv4.dhcp-reject-servers:\nipv4.auto-route-ext-gw:-1\nipv6.method:auto\nipv6.dns:\nipv6.dns-search:\nipv6.dns-options:\nipv6.dns-priority:0\nipv6.addresses:\nipv6.gateway:\nipv6.routes:\nipv6.route-metric:-1\nipv6.route-table:0\nipv6.routing-rules:\nipv6.replace-local-rule:-1\nipv6.ignore-auto-routes:no\nipv6.ignore-auto-dns:no\nipv6.never-default:no\nipv6.may-fail:yes\nipv6.required-timeout:-1\nipv6.ip6-privacy:-1\nipv6.addr-gen-mode:default\nipv6.ra-timeout:0\nipv6.mtu:auto\nipv6.dhcp-pd-hint:\nipv6.dhcp-duid:\nipv6.dhcp-iaid:\nipv6.dhcp-timeout:0\nipv6.dhcp-send-hostname:yes\nipv6.dhcp-hostname:\nipv6.dhcp-hostname-flags:0x0\nipv6.auto-route-ext-gw:-1\nipv6.token:\nproxy.method:none\nproxy.browser-only:no\nproxy.pac-url:\nproxy.pac-script:\nGENERAL.NAME:Wired connection 3\nGENERAL.UUID:9942b65d-e477-39a0-b047-2c29382de9e1\nGENERAL.DEVICES:ens38\nGENERAL.IP-IFACE:\nGENERAL.STATE:activating\nGENERAL.DEFAULT:no\nGENERAL.DEFAULT6:no\nGENERAL.SPEC-OBJECT:\nGENERAL.VPN:no\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/ActiveConnection/10\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/Settings/4\nGENERAL.ZONE:\nGENERAL.MASTER-PATH:\n",
+  "d4c7ec3d-372d-31a6-9a66-fa940c94ae82": "connection.id:Wired connection 4\nconnection.uuid:d4c7ec3d-372d-31a6-9a66-fa940c94ae82\nconnection.stable-id:\nconnection.type:802-3-ethernet\nconnection.interface-name:ens39\nconnection.autoconnect:yes\nconnection.autoconnect-priority:-999\nconnection.autoconnect-retries:-1\nconnection.multi-connect:0\nconnection.auth-retries:-1\nconnection.timestamp:0\nconnection.permissions:\nconnection.zone:\nconnection.controller:\nconnection.master:\nconnection.slave-type:\nconnection.port-type:\nconnection.autoconnect-slaves:-1\nconnection.autoconnect-ports:-1\nconnection.secondaries:\nconnection.gateway-ping-timeout:0\nconnection.metered:unknown\nconnection.lldp:default\nconnection.mdns:-1\nconnection.llmnr:-1\nconnection.dns-over-tls:-1\nconnection.mptcp-flags:0x0\nconnection.wait-device-timeout:-1\nconnection.wait-activation-delay:-1\n802-3-ethernet.port:\n802-3-ethernet.speed:0\n802-3-ethernet.duplex:\n802-3-ethernet.auto-negotiate:no\n802-3-ethernet.mac-address:\n802-3-ethernet.cloned-mac-address:\n802-3-ethernet.generate-mac-address-mask:\n802-3-ethernet.mac-address-blacklist:\n802-3-ethernet.mtu:auto\n802-3-ethernet.s390-subchannels:\n802-3-ethernet.s390-nettype:\n802-3-ethernet.s390-options:\n802-3-ethernet.wake-on-lan:default\n802-3-ethernet.wake-on-lan-password:\n802-3-ethernet.accept-all-mac-addresses:-1\nipv4.method:auto\nipv4.dns:\nipv4.dns-search:\nipv4.dns-options:\nipv4.dns-priority:0\nipv4.addresses:\nipv4.gateway:\nipv4.routes:\nipv4.route-metric:-1\nipv4.route-table:0\nipv4.routing-rules:\nipv4.replace-local-rule:-1\nipv4.ignore-auto-routes:no\nipv4.ignore-auto-dns:no\nipv4.dhcp-client-id:\nipv4.dhcp-iaid:\nipv4.dhcp-dscp:\nipv4.dhcp-timeout:0\nipv4.dhcp-send-hostname:yes\nipv4.dhcp-hostname:\nipv4.dhcp-fqdn:\nipv4.dhcp-hostname-flags:0x0\nipv4.never-default:no\nipv4.may-fail:yes\nipv4.required-timeout:-1\nipv4.dad-timeout:-1\nipv4.dhcp-vendor-class-identifier:\nipv4.link-local:0\nipv4.dhcp-reject-servers:\nipv4.auto-route-ext-gw:-1\nipv6.method:auto\nipv6.dns:\nipv6.dns-search:\nipv6.dns-options:\nipv6.dns-priority:0\nipv6.addresses:\nipv6.gateway:\nipv6.routes:\nipv6.route-metric:-1\nipv6.route-table:0\nipv6.routing-rules:\nipv6.replace-local-rule:-1\nipv6.ignore-auto-routes:no\nipv6.ignore-auto-dns:no\nipv6.never-default:no\nipv6.may-fail:yes\nipv6.required-timeout:-1\nipv6.ip6-privacy:-1\nipv6.addr-gen-mode:default\nipv6.ra-timeout:0\nipv6.mtu:auto\nipv6.dhcp-pd-hint:\nipv6.dhcp-duid:\nipv6.dhcp-iaid:\nipv6.dhcp-timeout:0\nipv6.dhcp-send-hostname:yes\nipv6.dhcp-hostname:\nipv6.dhcp-hostname-flags:0x0\nipv6.auto-route-ext-gw:-1\nipv6.token:\nproxy.method:none\nproxy.browser-only:no\nproxy.pac-url:\nproxy.pac-script:\nGENERAL.NAME:Wired connection 4\nGENERAL.UUID:d4c7ec3d-372d-31a6-9a66-fa940c94ae82\nGENERAL.DEVICES:ens39\nGENERAL.IP-IFACE:\nGENERAL.STATE:activating\nGENERAL.DEFAULT:no\nGENERAL.DEFAULT6:no\nGENERAL.SPEC-OBJECT:\nGENERAL.VPN:no\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/ActiveConnection/11\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/Settings/5\nGENERAL.ZONE:\nGENERAL.MASTER-PATH:\n",
+  "08470ad4-208e-45a0-9022-7c44dd92af4a": "connection.id:lo\nconnection.uuid:08470ad4-208e-45a0-9022-7c44dd92af4a\nconnection.stable-id:\nconnection.type:loopback\nconnection.interface-name:lo\nconnection.autoconnect:no\nconnection.autoconnect-priority:0\nconnection.autoconnect-retries:-1\nconnection.multi-connect:0\nconnection.auth-retries:-1\nconnection.timestamp:1790771506\nconnection.permissions:\nconnection.zone:\nconnection.controller:\nconnection.master:\nconnection.slave-type:\nconnection.port-type:\nconnection.autoconnect-slaves:-1\nconnection.autoconnect-ports:-1\nconnection.secondaries:\nconnection.gateway-ping-timeout:0\nconnection.metered:unknown\nconnection.lldp:default\nconnection.mdns:-1\nconnection.llmnr:-1\nconnection.dns-over-tls:-1\nconnection.mptcp-flags:0x0\nconnection.wait-device-timeout:-1\nconnection.wait-activation-delay:-1\nipv4.method:manual\nipv4.dns:\nipv4.dns-search:\nipv4.dns-options:\nipv4.dns-priority:0\nipv4.addresses:127.0.0.1/8\nipv4.gateway:\nipv4.routes:\nipv4.route-metric:-1\nipv4.route-table:0\nipv4.routing-rules:\nipv4.replace-local-rule:-1\nipv4.ignore-auto-routes:no\nipv4.ignore-auto-dns:no\nipv4.dhcp-client-id:\nipv4.dhcp-iaid:\nipv4.dhcp-dscp:\nipv4.dhcp-timeout:0\nipv4.dhcp-send-hostname:yes\nipv4.dhcp-hostname:\nipv4.dhcp-fqdn:\nipv4.dhcp-hostname-flags:0x0\nipv4.never-default:no\nipv4.may-fail:yes\nipv4.required-timeout:-1\nipv4.dad-timeout:-1\nipv4.dhcp-vendor-class-identifier:\nipv4.link-local:0\nipv4.dhcp-reject-servers:\nipv4.auto-route-ext-gw:-1\nipv6.method:manual\nipv6.dns:\nipv6.dns-search:\nipv6.dns-options:\nipv6.dns-priority:0\nipv6.addresses:::1/128\nipv6.gateway:\nipv6.routes:\nipv6.route-metric:-1\nipv6.route-table:0\nipv6.routing-rules:\nipv6.replace-local-rule:-1\nipv6.ignore-auto-routes:no\nipv6.ignore-auto-dns:no\nipv6.never-default:no\nipv6.may-fail:yes\nipv6.required-timeout:-1\nipv6.ip6-privacy:-1\nipv6.addr-gen-mode:default\nipv6.ra-timeout:0\nipv6.mtu:auto\nipv6.dhcp-pd-hint:\nipv6.dhcp-duid:\nipv6.dhcp-iaid:\nipv6.dhcp-timeout:0\nipv6.dhcp-send-hostname:yes\nipv6.dhcp-hostname:\nipv6.dhcp-hostname-flags:0x0\nipv6.auto-route-ext-gw:-1\nipv6.token:\nproxy.method:none\nproxy.browser-only:no\nproxy.pac-url:\nproxy.pac-script:\nGENERAL.NAME:lo\nGENERAL.UUID:08470ad4-208e-45a0-9022-7c44dd92af4a\nGENERAL.DEVICES:lo\nGENERAL.IP-IFACE:lo\nGENERAL.STATE:activated\nGENERAL.DEFAULT:no\nGENERAL.DEFAULT6:no\nGENERAL.SPEC-OBJECT:\nGENERAL.VPN:no\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/ActiveConnection/1\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/Settings/1\nGENERAL.ZONE:\nGENERAL.MASTER-PATH:\nIP4.ADDRESS[1]:127.0.0.1/8\nIP4.GATEWAY:\nIP6.ADDRESS[1]:::1/128\nIP6.GATEWAY:\n"
+ },
+ "nm_devshow": "GENERAL.DEVICE:ens33\nGENERAL.TYPE:ethernet\nGENERAL.NM-TYPE:NMDeviceEthernet\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/Devices/2\nGENERAL.VENDOR:Advanced Micro Devices, Inc. [AMD]\nGENERAL.PRODUCT:79c970 [PCnet32 LANCE] (PCnet - Fast 79C971)\nGENERAL.DRIVER:pcnet32\nGENERAL.DRIVER-VERSION:6.14.0-37-generic\nGENERAL.FIRMWARE-VERSION:\nGENERAL.HWADDR:00:0C:29:CB:3E:AA\nGENERAL.MTU:1500\nGENERAL.STATE:100 (connected)\nGENERAL.REASON:0 (No reason given)\nGENERAL.IP4-CONNECTIVITY:4 (full)\nGENERAL.IP6-CONNECTIVITY:3 (limited)\nGENERAL.UDI:/sys/devices/pci0000:00/0000:00:11.0/0000:02:01.0/net/ens33\nGENERAL.PATH:pci-0000:02:01.0\nGENERAL.IP-IFACE:ens33\nGENERAL.IS-SOFTWARE:no\nGENERAL.NM-MANAGED:yes\nGENERAL.AUTOCONNECT:yes\nGENERAL.FIRMWARE-MISSING:no\nGENERAL.NM-PLUGIN-MISSING:no\nGENERAL.PHYS-PORT-ID:\nGENERAL.CONNECTION:Wired connection 1\nGENERAL.CON-UUID:dbe63152-c4c4-3e30-a018-d07b1ac5167e\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/ActiveConnection/2\nGENERAL.METERED:no (guessed)\nIP4.ADDRESS[1]:192.168.42.131/24\nIP4.GATEWAY:192.168.42.2\nIP4.ROUTE[1]:dst = 192.168.42.0/24, nh = 0.0.0.0, mt = 100\nIP4.ROUTE[2]:dst = 0.0.0.0/0, nh = 192.168.42.2, mt = 100\nIP4.DNS[1]:192.168.42.2\nIP4.DOMAIN[1]:localdomain\nIP6.ADDRESS[1]:fe80::9d8e:6969:4127:ae60/64\nIP6.GATEWAY:\nIP6.ROUTE[1]:dst = fe80::/64, nh = ::, mt = 1024\n\nGENERAL.DEVICE:ens37\nGENERAL.TYPE:ethernet\nGENERAL.NM-TYPE:NMDeviceEthernet\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/Devices/3\nGENERAL.VENDOR:Advanced Micro Devices, Inc. [AMD]\nGENERAL.PRODUCT:79c970 [PCnet32 LANCE] (PCnet - Fast 79C971)\nGENERAL.DRIVER:pcnet32\nGENERAL.DRIVER-VERSION:6.14.0-37-generic\nGENERAL.FIRMWARE-VERSION:\nGENERAL.HWADDR:00:0C:29:CB:3E:B4\nGENERAL.MTU:1500\nGENERAL.STATE:70 (connecting (getting IP configuration))\nGENERAL.REASON:0 (No reason given)\nGENERAL.IP4-CONNECTIVITY:1 (none)\nGENERAL.IP6-CONNECTIVITY:3 (limited)\nGENERAL.UDI:/sys/devices/pci0000:00/0000:00:11.0/0000:02:05.0/net/ens37\nGENERAL.PATH:pci-0000:02:05.0\nGENERAL.IP-IFACE:\nGENERAL.IS-SOFTWARE:no\nGENERAL.NM-MANAGED:yes\nGENERAL.AUTOCONNECT:yes\nGENERAL.FIRMWARE-MISSING:no\nGENERAL.NM-PLUGIN-MISSING:no\nGENERAL.PHYS-PORT-ID:\nGENERAL.CONNECTION:Wired connection 2\nGENERAL.CON-UUID:472edcec-9c47-3517-be54-48227bb7c506\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/ActiveConnection/9\nGENERAL.METERED:unknown\nIP4.GATEWAY:\nIP6.ADDRESS[1]:fe80::1eb:dacf:e465:2a45/64\nIP6.GATEWAY:\nIP6.ROUTE[1]:dst = fe80::/64, nh = ::, mt = 1024\n\nGENERAL.DEVICE:ens38\nGENERAL.TYPE:ethernet\nGENERAL.NM-TYPE:NMDeviceEthernet\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/Devices/4\nGENERAL.VENDOR:Advanced Micro Devices, Inc. [AMD]\nGENERAL.PRODUCT:79c970 [PCnet32 LANCE] (PCnet - Fast 79C971)\nGENERAL.DRIVER:pcnet32\nGENERAL.DRIVER-VERSION:6.14.0-37-generic\nGENERAL.FIRMWARE-VERSION:\nGENERAL.HWADDR:00:0C:29:CB:3E:BE\nGENERAL.MTU:1500\nGENERAL.STATE:70 (connecting (getting IP configuration))\nGENERAL.REASON:0 (No reason given)\nGENERAL.IP4-CONNECTIVITY:1 (none)\nGENERAL.IP6-CONNECTIVITY:3 (limited)\nGENERAL.UDI:/sys/devices/pci0000:00/0000:00:11.0/0000:02:06.0/net/ens38\nGENERAL.PATH:pci-0000:02:06.0\nGENERAL.IP-IFACE:\nGENERAL.IS-SOFTWARE:no\nGENERAL.NM-MANAGED:yes\nGENERAL.AUTOCONNECT:yes\nGENERAL.FIRMWARE-MISSING:no\nGENERAL.NM-PLUGIN-MISSING:no\nGENERAL.PHYS-PORT-ID:\nGENERAL.CONNECTION:Wired connection 3\nGENERAL.CON-UUID:9942b65d-e477-39a0-b047-2c29382de9e1\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/ActiveConnection/10\nGENERAL.METERED:unknown\nIP4.GATEWAY:\nIP6.ADDRESS[1]:fe80::3550:3d9:1b99:d90f/64\nIP6.GATEWAY:\nIP6.ROUTE[1]:dst = fe80::/64, nh = ::, mt = 1024\n\nGENERAL.DEVICE:ens39\nGENERAL.TYPE:ethernet\nGENERAL.NM-TYPE:NMDeviceEthernet\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/Devices/5\nGENERAL.VENDOR:Advanced Micro Devices, Inc. [AMD]\nGENERAL.PRODUCT:79c970 [PCnet32 LANCE] (PCnet - Fast 79C971)\nGENERAL.DRIVER:pcnet32\nGENERAL.DRIVER-VERSION:6.14.0-37-generic\nGENERAL.FIRMWARE-VERSION:\nGENERAL.HWADDR:00:0C:29:CB:3E:C8\nGENERAL.MTU:1500\nGENERAL.STATE:70 (connecting (getting IP configuration))\nGENERAL.REASON:0 (No reason given)\nGENERAL.IP4-CONNECTIVITY:1 (none)\nGENERAL.IP6-CONNECTIVITY:3 (limited)\nGENERAL.UDI:/sys/devices/pci0000:00/0000:00:11.0/0000:02:07.0/net/ens39\nGENERAL.PATH:pci-0000:02:07.0\nGENERAL.IP-IFACE:\nGENERAL.IS-SOFTWARE:no\nGENERAL.NM-MANAGED:yes\nGENERAL.AUTOCONNECT:yes\nGENERAL.FIRMWARE-MISSING:no\nGENERAL.NM-PLUGIN-MISSING:no\nGENERAL.PHYS-PORT-ID:\nGENERAL.CONNECTION:Wired connection 4\nGENERAL.CON-UUID:d4c7ec3d-372d-31a6-9a66-fa940c94ae82\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/ActiveConnection/11\nGENERAL.METERED:unknown\nIP4.GATEWAY:\nIP6.ADDRESS[1]:fe80::3712:e17e:67c7:61d7/64\nIP6.GATEWAY:\nIP6.ROUTE[1]:dst = fe80::/64, nh = ::, mt = 1024\n\nGENERAL.DEVICE:lo\nGENERAL.TYPE:loopback\nGENERAL.NM-TYPE:NMDeviceLoopback\nGENERAL.DBUS-PATH:/org/freedesktop/NetworkManager/Devices/1\nGENERAL.VENDOR:\nGENERAL.PRODUCT:\nGENERAL.DRIVER:unknown\nGENERAL.DRIVER-VERSION:\nGENERAL.FIRMWARE-VERSION:\nGENERAL.HWADDR:00:00:00:00:00:00\nGENERAL.MTU:65536\nGENERAL.STATE:100 (connected (externally))\nGENERAL.REASON:0 (No reason given)\nGENERAL.IP4-CONNECTIVITY:0 (unknown)\nGENERAL.IP6-CONNECTIVITY:0 (unknown)\nGENERAL.UDI:/sys/devices/virtual/net/lo\nGENERAL.PATH:\nGENERAL.IP-IFACE:lo\nGENERAL.IS-SOFTWARE:yes\nGENERAL.NM-MANAGED:yes\nGENERAL.AUTOCONNECT:yes\nGENERAL.FIRMWARE-MISSING:no\nGENERAL.NM-PLUGIN-MISSING:no\nGENERAL.PHYS-PORT-ID:\nGENERAL.CONNECTION:lo\nGENERAL.CON-UUID:08470ad4-208e-45a0-9022-7c44dd92af4a\nGENERAL.CON-PATH:/org/freedesktop/NetworkManager/ActiveConnection/1\nGENERAL.METERED:no (guessed)\nIP4.ADDRESS[1]:127.0.0.1/8\nIP4.GATEWAY:\nIP6.ADDRESS[1]:::1/128\nIP6.GATEWAY:\n",
+ "nm_connectivity": "full",
+ "nm_wifi": "",
+ "errors": []
+}

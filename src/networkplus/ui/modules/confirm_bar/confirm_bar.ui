@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConfirmBar</class>
+ <widget class="QFrame" name="ConfirmBar">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>900</width><height>40</height></rect>
+  </property>
+  <property name="frameShape">
+   <enum>QFrame::StyledPanel</enum>
+  </property>
+  <layout class="QHBoxLayout" name="layoutMain">
+   <property name="leftMargin"><number>8</number></property>
+   <property name="topMargin"><number>4</number></property>
+   <property name="rightMargin"><number>4</number></property>
+   <property name="bottomMargin"><number>4</number></property>
+   <item>
+    <widget class="QLabel" name="lblIcon">
+     <property name="text"><string notr="true">ℹ</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblMessage">
+     <property name="text"><string/></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>1</horstretch><verstretch>0</verstretch></sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblCountdown">
+     <property name="text"><string/></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnKeep">
+     <property name="text"><string>Koru</string></property>
+     <property name="toolTip"><string>Değişiklikler kalıcı olsun</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnRevert">
+     <property name="text"><string>Geri al</string></property>
+     <property name="toolTip"><string>Ayarları uygulama öncesi hâline döndür</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="btnClose">
+     <property name="text"><string notr="true">✕</string></property>
+     <property name="toolTip"><string>Kapat</string></property>
+     <property name="autoRaise"><bool>true</bool></property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

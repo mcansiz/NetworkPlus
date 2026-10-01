@@ -1,0 +1,1443 @@
+{
+ "schema": 1,
+ "platform": "windows",
+ "hostname": "DEVPC",
+ "taken_at": "2026-09-30T14:16:12.6862100+03:00",
+ "os": "10.0.19045.0",
+ "is_admin": true,
+ "adapters": [
+  {
+   "name": "Ethernet (Çekirdek Hata Ayıklayıcısı)",
+   "description": "Microsoft Kernel Debug Network Adapter",
+   "guid": "{FA85086A-3038-43DC-8A1C-BA4DD54619AF}",
+   "index": 26,
+   "status": "Not Present",
+   "admin_status": "Down",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "root\\kdnic",
+   "driver": "Microsoft Kernel Debug Network Adapter"
+  },
+  {
+   "name": "ETH",
+   "description": "Realtek PCIe GbE Family Controller",
+   "guid": "{F27CA97C-562F-48DD-A8CA-FF8E5591FCB4}",
+   "index": 25,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Disconnected",
+   "mac": "02-00-00-00-00-01",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": false,
+   "hidden": false,
+   "hardware": true,
+   "component_id": "PCI\\VEN_10EC&DEV_8168&SUBSYS_0A7C1028&REV_15",
+   "driver": "Realtek PCIe GbE Family Controller"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 6",
+   "description": "Microsoft Wi-Fi Direct Virtual Adapter",
+   "guid": "{E53797B8-C977-44CB-9571-B16CAABA8225}",
+   "index": 24,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Disconnected",
+   "mac": "02-00-00-00-00-02",
+   "speed": 0,
+   "media_type": "Native 802.11",
+   "physical_media_type": "Native 802.11",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "{5d624f94-8850-40c3-a3fa-a4fd2080baf3}\\vwifimp_wfd",
+   "driver": "Microsoft Wi-Fi Direct Virtual Adapter"
+  },
+  {
+   "name": "Bluetooth Ağ Bağlantısı",
+   "description": "Bluetooth Device (Personal Area Network)",
+   "guid": "{E3DC7C59-E34C-4047-8112-2AF64F9C3E38}",
+   "index": 23,
+   "status": "Not Present",
+   "admin_status": "Down",
+   "media_state": "Unknown",
+   "mac": "02-00-00-00-00-03",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "BlueTooth",
+   "virtual": true,
+   "hidden": false,
+   "hardware": false,
+   "component_id": "BTH\\MS_BTHPAN",
+   "driver": "Bluetooth Device (Personal Area Network)"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 1",
+   "description": "WAN Miniport (SSTP)",
+   "guid": "{E0A532F6-BEB3-40F1-97B9-0D9E4F06611F}",
+   "index": 22,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "Connection Oriented WAN",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_sstpminiport",
+   "driver": "WAN Miniport (SSTP)"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 4",
+   "description": "WAN Miniport (PPTP)",
+   "guid": "{D0123591-0937-4256-92F6-818CBA7C6A80}",
+   "index": 21,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "Connection Oriented WAN",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_pptpminiport",
+   "driver": "WAN Miniport (PPTP)"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 3",
+   "description": "WAN Miniport (L2TP)",
+   "guid": "{B83A0C74-D6B0-4003-B76D-59DED52CB8E2}",
+   "index": 19,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "Connection Oriented WAN",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_l2tpminiport",
+   "driver": "WAN Miniport (L2TP)"
+  },
+  {
+   "name": "Wi-Fi",
+   "description": "Intel(R) Wi-Fi 6 AX201 160MHz",
+   "guid": "{A6F762EE-247E-4D72-9610-6DA32FA8D159}",
+   "index": 18,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "02-00-00-00-00-04",
+   "speed": 576000000,
+   "media_type": "Native 802.11",
+   "physical_media_type": "Native 802.11",
+   "virtual": false,
+   "hidden": false,
+   "hardware": true,
+   "component_id": "PCI\\VEN_8086&DEV_A0F0&SUBSYS_40708086",
+   "driver": "Intel(R) Wi-Fi 6 AX201 160MHz"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 10",
+   "description": "Microsoft Wi-Fi Direct Virtual Adapter #2",
+   "guid": "{9BB17057-16DC-4FD5-BEA2-C01F4E4F127C}",
+   "index": 17,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Disconnected",
+   "mac": "02-00-00-00-00-05",
+   "speed": 0,
+   "media_type": "Native 802.11",
+   "physical_media_type": "Native 802.11",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "{5d624f94-8850-40c3-a3fa-a4fd2080baf3}\\vwifimp_wfd",
+   "driver": "Microsoft Wi-Fi Direct Virtual Adapter"
+  },
+  {
+   "name": "Teredo Tunneling Pseudo-Interface",
+   "description": "",
+   "guid": "{93123211-9629-4E04-82F0-EA2E4F221468}",
+   "index": 16,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "00-00-00-00-00-00-00-E0-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00",
+   "speed": 100000,
+   "media_type": "Tunnel",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": null,
+   "driver": null
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 5",
+   "description": "WAN Miniport (PPPOE)",
+   "guid": "{8CB26075-8F86-42F0-8BE6-0DA14D17D720}",
+   "index": 15,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "Connection Oriented WAN",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_pppoeminiport",
+   "driver": "WAN Miniport (PPPOE)"
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "description": "VMware Virtual Ethernet Adapter for VMnet8",
+   "guid": "{79DA9D21-1D54-4F25-9298-C01C92CA0D19}",
+   "index": 14,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "02-00-00-00-00-06",
+   "speed": 100000000,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": true,
+   "hidden": false,
+   "hardware": false,
+   "component_id": "*vmnetadapter8",
+   "driver": "VMware Virtual Ethernet Adapter for VMnet8"
+  },
+  {
+   "name": "Ethernet 2",
+   "description": "Fortinet SSL VPN Virtual Ethernet Adapter",
+   "guid": "{6EB6E4DB-04DB-4868-9C3B-F8636EC5CCDF}",
+   "index": 13,
+   "status": "Not Present",
+   "admin_status": "Down",
+   "media_state": "Unknown",
+   "mac": "02-00-00-00-00-07",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": true,
+   "hidden": false,
+   "hardware": false,
+   "component_id": "root\\ftsvnic",
+   "driver": "Fortinet SSL VPN Virtual Ethernet Adapter"
+  },
+  {
+   "name": "Ethernet",
+   "description": "Fortinet Virtual Ethernet Adapter (NDIS 6.30)",
+   "guid": "{6D0FB50B-9BBC-44E0-BD9C-F07B1AEB1D67}",
+   "index": 12,
+   "status": "Not Present",
+   "admin_status": "Down",
+   "media_state": "Unknown",
+   "mac": "02-00-00-00-00-08",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": true,
+   "hidden": false,
+   "hardware": false,
+   "component_id": "root\\ftvnic_a",
+   "driver": "Fortinet Virtual Ethernet Adapter (NDIS 6.30)"
+  },
+  {
+   "name": "Radmin VPN",
+   "description": "Famatech Radmin VPN Ethernet Adapter",
+   "guid": "{559E7677-A79D-4945-A23D-2D36101AAEA2}",
+   "index": 11,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "02-00-00-00-00-09",
+   "speed": 100000000,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": true,
+   "hidden": false,
+   "hardware": false,
+   "component_id": "{B06D84D1-AF78-41EC-A5B9-3CCE676528B2}\\RvNetMP60",
+   "driver": "Famatech Radmin VPN Ethernet Adapter"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 7",
+   "description": "WAN Miniport (IP)",
+   "guid": "{522729A8-2DF5-4485-931E-D439D810F368}",
+   "index": 10,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_ndiswanip",
+   "driver": "WAN Miniport (IP)"
+  },
+  {
+   "name": "Microsoft IP-HTTPS Platform Interface",
+   "description": "",
+   "guid": "{2EE2C70C-A092-4D88-A654-98C8D7645CD5}",
+   "index": 8,
+   "status": "Not Present",
+   "admin_status": "Down",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "Tunnel",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": null,
+   "driver": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "description": "VMware Virtual Ethernet Adapter for VMnet1",
+   "guid": "{29D4D44B-C0B5-446D-9BB6-CC13FC387E92}",
+   "index": 7,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "02-00-00-00-00-0A",
+   "speed": 100000000,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": true,
+   "hidden": false,
+   "hardware": false,
+   "component_id": "*vmnetadapter1",
+   "driver": "VMware Virtual Ethernet Adapter for VMnet1"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 2",
+   "description": "WAN Miniport (IKEv2)",
+   "guid": "{190742E0-86FD-45ED-9007-9A18103E5705}",
+   "index": 6,
+   "status": "Disconnected",
+   "admin_status": "Up",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "Connection Oriented WAN",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_agilevpnminiport",
+   "driver": "WAN Miniport (IKEv2)"
+  },
+  {
+   "name": "Ethernet 3",
+   "description": "VirtualBox Host-Only Ethernet Adapter",
+   "guid": "{0A82B08F-3673-4631-B116-17070D06918D}",
+   "index": 5,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "02-00-00-00-00-0B",
+   "speed": 1000000000,
+   "media_type": "802.3",
+   "physical_media_type": "802.3",
+   "virtual": true,
+   "hidden": false,
+   "hardware": false,
+   "component_id": "sun_vboxnetadp",
+   "driver": "VirtualBox Host-Only Ethernet Adapter"
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 8",
+   "description": "WAN Miniport (IPv6)",
+   "guid": "{0A1649B8-5350-460A-A8E7-CE7FFA0B38B0}",
+   "index": 4,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_ndiswanipv6",
+   "driver": "WAN Miniport (IPv6)"
+  },
+  {
+   "name": "6to4 Adapter",
+   "description": "",
+   "guid": "{07374750-E68B-490E-9330-9FD785CD71B6}",
+   "index": 3,
+   "status": "Not Present",
+   "admin_status": "Down",
+   "media_state": "Unknown",
+   "mac": "",
+   "speed": 0,
+   "media_type": "Tunnel",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": null,
+   "driver": null
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 9",
+   "description": "WAN Miniport (Network Monitor)",
+   "guid": "{02C814E4-2026-41E2-B2DC-AD96AE5EE794}",
+   "index": 2,
+   "status": "Up",
+   "admin_status": "Up",
+   "media_state": "Connected",
+   "mac": "",
+   "speed": 0,
+   "media_type": "802.3",
+   "physical_media_type": "Unspecified",
+   "virtual": true,
+   "hidden": true,
+   "hardware": false,
+   "component_id": "ms_ndiswanbh",
+   "driver": "WAN Miniport (Network Monitor)"
+  }
+ ],
+ "ip_interfaces": [
+  {
+   "index": 11,
+   "alias": "Radmin VPN",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 35,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 5,
+   "alias": "Ethernet 3",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 25,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 14,
+   "alias": "VMware Network Adapter VMnet8",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 35,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 7,
+   "alias": "VMware Network Adapter VMnet1",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 35,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 17,
+   "alias": "Yerel Ağ Bağlantısı* 10",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 25,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Disconnected"
+  },
+  {
+   "index": 24,
+   "alias": "Yerel Ağ Bağlantısı* 6",
+   "family": "IPv6",
+   "dhcp": "Disabled",
+   "metric": 25,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Disconnected"
+  },
+  {
+   "index": 25,
+   "alias": "ETH",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 5,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Disconnected"
+  },
+  {
+   "index": 18,
+   "alias": "Wi-Fi",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 35,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 16,
+   "alias": "Teredo Tunneling Pseudo-Interface",
+   "family": "IPv6",
+   "dhcp": "Enabled",
+   "metric": 75,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1280,
+   "state": "Connected"
+  },
+  {
+   "index": 1,
+   "alias": "Loopback Pseudo-Interface 1",
+   "family": "IPv6",
+   "dhcp": "Disabled",
+   "metric": 75,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 4294967295,
+   "state": "Connected"
+  },
+  {
+   "index": 11,
+   "alias": "Radmin VPN",
+   "family": "IPv4",
+   "dhcp": "Disabled",
+   "metric": 1,
+   "auto_metric": "Disabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 5,
+   "alias": "Ethernet 3",
+   "family": "IPv4",
+   "dhcp": "Disabled",
+   "metric": 25,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 14,
+   "alias": "VMware Network Adapter VMnet8",
+   "family": "IPv4",
+   "dhcp": "Disabled",
+   "metric": 35,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 7,
+   "alias": "VMware Network Adapter VMnet1",
+   "family": "IPv4",
+   "dhcp": "Disabled",
+   "metric": 35,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 17,
+   "alias": "Yerel Ağ Bağlantısı* 10",
+   "family": "IPv4",
+   "dhcp": "Disabled",
+   "metric": 25,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Disconnected"
+  },
+  {
+   "index": 24,
+   "alias": "Yerel Ağ Bağlantısı* 6",
+   "family": "IPv4",
+   "dhcp": "Enabled",
+   "metric": 25,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Disconnected"
+  },
+  {
+   "index": 25,
+   "alias": "ETH",
+   "family": "IPv4",
+   "dhcp": "Disabled",
+   "metric": 5,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Disconnected"
+  },
+  {
+   "index": 18,
+   "alias": "Wi-Fi",
+   "family": "IPv4",
+   "dhcp": "Enabled",
+   "metric": 35,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 1500,
+   "state": "Connected"
+  },
+  {
+   "index": 1,
+   "alias": "Loopback Pseudo-Interface 1",
+   "family": "IPv4",
+   "dhcp": "Disabled",
+   "metric": 75,
+   "auto_metric": "Enabled",
+   "forwarding": "Disabled",
+   "mtu": 4294967295,
+   "state": "Connected"
+  }
+ ],
+ "ip_addresses": [
+  {
+   "index": 11,
+   "address": "fe80::f6b4:231d:b8d8:9d40%11",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 11,
+   "address": "fdfd::1a6c:8a5c",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "Manual",
+   "suffix_origin": "Manual",
+   "state": "Preferred"
+  },
+  {
+   "index": 5,
+   "address": "fe80::ac5:d55b:6280:2bd0%5",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 14,
+   "address": "fe80::2969:df31:5188:c36f%14",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 7,
+   "address": "fe80::151b:3ae:57cb:a359%7",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 17,
+   "address": "fe80::2590:7106:4d0e:dcac%17",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Deprecated"
+  },
+  {
+   "index": 24,
+   "address": "fe80::7079:39:f388:38b0%24",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Deprecated"
+  },
+  {
+   "index": 25,
+   "address": "fe80::5186:d2db:e41c:e09%25",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Deprecated"
+  },
+  {
+   "index": 18,
+   "address": "fe80::2790:7133:bdd6:c27e%18",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 18,
+   "address": "fdd0:d540:a6a0:4b78:f33b:4a09:e2a7:f60c",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "RouterAdvertisement",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 18,
+   "address": "fdd0:d540:a6a0:4b78:792b:dffc:eaa8:1805",
+   "prefix": 128,
+   "family": "IPv6",
+   "origin": "RouterAdvertisement",
+   "suffix_origin": "Random",
+   "state": "Preferred"
+  },
+  {
+   "index": 16,
+   "address": "fe80::843:4667:a0fc:cad5%16",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 16,
+   "address": "2001:0:4625:9800:843:4667:a0fc:cad5",
+   "prefix": 64,
+   "family": "IPv6",
+   "origin": "RouterAdvertisement",
+   "suffix_origin": "Link",
+   "state": "Preferred"
+  },
+  {
+   "index": 1,
+   "address": "::1",
+   "prefix": 128,
+   "family": "IPv6",
+   "origin": "WellKnown",
+   "suffix_origin": "WellKnown",
+   "state": "Preferred"
+  },
+  {
+   "index": 11,
+   "address": "26.11.22.33",
+   "prefix": 8,
+   "family": "IPv4",
+   "origin": "Manual",
+   "suffix_origin": "Manual",
+   "state": "Preferred"
+  },
+  {
+   "index": 5,
+   "address": "192.168.56.1",
+   "prefix": 24,
+   "family": "IPv4",
+   "origin": "Manual",
+   "suffix_origin": "Manual",
+   "state": "Preferred"
+  },
+  {
+   "index": 14,
+   "address": "192.168.42.1",
+   "prefix": 16,
+   "family": "IPv4",
+   "origin": "Manual",
+   "suffix_origin": "Manual",
+   "state": "Preferred"
+  },
+  {
+   "index": 7,
+   "address": "192.168.92.1",
+   "prefix": 24,
+   "family": "IPv4",
+   "origin": "Manual",
+   "suffix_origin": "Manual",
+   "state": "Preferred"
+  },
+  {
+   "index": 17,
+   "address": "169.254.191.163",
+   "prefix": 16,
+   "family": "IPv4",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Tentative"
+  },
+  {
+   "index": 24,
+   "address": "169.254.200.207",
+   "prefix": 16,
+   "family": "IPv4",
+   "origin": "WellKnown",
+   "suffix_origin": "Link",
+   "state": "Tentative"
+  },
+  {
+   "index": 25,
+   "address": "192.168.1.2",
+   "prefix": 24,
+   "family": "IPv4",
+   "origin": "Manual",
+   "suffix_origin": "Manual",
+   "state": "Deprecated"
+  },
+  {
+   "index": 18,
+   "address": "10.20.30.57",
+   "prefix": 24,
+   "family": "IPv4",
+   "origin": "Dhcp",
+   "suffix_origin": "Dhcp",
+   "state": "Preferred"
+  },
+  {
+   "index": 1,
+   "address": "127.0.0.1",
+   "prefix": 8,
+   "family": "IPv4",
+   "origin": "WellKnown",
+   "suffix_origin": "WellKnown",
+   "state": "Preferred"
+  }
+ ],
+ "dns": [
+  {
+   "index": 11,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  },
+  {
+   "index": 25,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  },
+  {
+   "index": 5,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  },
+  {
+   "index": 24,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  },
+  {
+   "index": 17,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  },
+  {
+   "index": 7,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  },
+  {
+   "index": 14,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  },
+  {
+   "index": 18,
+   "family": 2,
+   "servers": [
+    "10.20.30.100",
+    "10.20.29.100"
+   ]
+  },
+  {
+   "index": 1,
+   "family": 23,
+   "servers": [
+    "fec0:0:0:ffff::1",
+    "fec0:0:0:ffff::2",
+    "fec0:0:0:ffff::3"
+   ]
+  }
+ ],
+ "routes": [
+  {
+   "index": 18,
+   "dest": "0.0.0.0/0",
+   "next_hop": "10.20.30.253",
+   "metric": 0,
+   "store": "ActiveStore"
+  },
+  {
+   "index": 11,
+   "dest": "0.0.0.0/0",
+   "next_hop": "26.0.0.1",
+   "metric": 9256,
+   "store": "ActiveStore"
+  }
+ ],
+ "internet_route": [
+  {
+   "index": 18,
+   "dest": "0.0.0.0/0",
+   "next_hop": "10.20.30.253"
+  }
+ ],
+ "profiles": [
+  {
+   "index": 11,
+   "name": "Ag_1",
+   "category": "Public",
+   "ipv4": "NoTraffic",
+   "ipv6": "NoTraffic"
+  },
+  {
+   "index": 18,
+   "name": "Ag_2",
+   "category": "DomainAuthenticated",
+   "ipv4": "Internet",
+   "ipv6": "NoTraffic"
+  }
+ ],
+ "neighbors": [
+  {
+   "index": 18,
+   "ip": "10.20.30.253",
+   "mac": "02-00-00-00-00-0C",
+   "state": "Reachable"
+  },
+  {
+   "index": 11,
+   "ip": "26.0.0.1",
+   "mac": "02-00-00-00-00-0D",
+   "state": "Reachable"
+  }
+ ],
+ "bindings": [
+  {
+   "name": "Ethernet (Çekirdek Hata Ayıklayıcısı)",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet (Çekirdek Hata Ayıklayıcısı)",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet (Çekirdek Hata Ayıklayıcısı)",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet (Çekirdek Hata Ayıklayıcısı)",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet (Çekirdek Hata Ayıklayıcısı)",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "ETH",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "ETH",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "ETH",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "ETH",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "ETH",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 6",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 6",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 6",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 6",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 6",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Bluetooth Ağ Bağlantısı",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Bluetooth Ağ Bağlantısı",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Bluetooth Ağ Bağlantısı",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Bluetooth Ağ Bağlantısı",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Bluetooth Ağ Bağlantısı",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Wi-Fi",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Wi-Fi",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Wi-Fi",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Wi-Fi",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Wi-Fi",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 10",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 10",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 10",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 10",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Yerel Ağ Bağlantısı* 10",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Teredo Tunneling Pseudo-Interface",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Teredo Tunneling Pseudo-Interface",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Teredo Tunneling Pseudo-Interface",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 2",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 2",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 2",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 2",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 2",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Ethernet",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Radmin VPN",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Radmin VPN",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Radmin VPN",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Radmin VPN",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Radmin VPN",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Microsoft IP-HTTPS Platform Interface",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Microsoft IP-HTTPS Platform Interface",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Microsoft IP-HTTPS Platform Interface",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 3",
+   "component": "vms_pp",
+   "enabled": false
+  },
+  {
+   "name": "Ethernet 3",
+   "component": "ms_server",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 3",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 3",
+   "component": "ms_tcpip",
+   "enabled": true
+  },
+  {
+   "name": "Ethernet 3",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "6to4 Adapter",
+   "component": "ms_msclient",
+   "enabled": true
+  },
+  {
+   "name": "6to4 Adapter",
+   "component": "ms_tcpip6",
+   "enabled": true
+  },
+  {
+   "name": "6to4 Adapter",
+   "component": "ms_server",
+   "enabled": true
+  }
+ ],
+ "ics": [
+  {
+   "name": "Bluetooth Ağ Bağlantısı",
+   "guid": "{E3DC7C59-E34C-4047-8112-2AF64F9C3E38}",
+   "device": "Bluetooth Device (Personal Area Network)",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "Ethernet",
+   "guid": "{6D0FB50B-9BBC-44E0-BD9C-F07B1AEB1D67}",
+   "device": "Fortinet Virtual Ethernet Adapter (NDIS 6.30)",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "Ethernet 2",
+   "guid": "{6EB6E4DB-04DB-4868-9C3B-F8636EC5CCDF}",
+   "device": "Fortinet SSL VPN Virtual Ethernet Adapter",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "Ethernet 3",
+   "guid": "{0A82B08F-3673-4631-B116-17070D06918D}",
+   "device": "VirtualBox Host-Only Ethernet Adapter",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "Radmin VPN",
+   "guid": "{559E7677-A79D-4945-A23D-2D36101AAEA2}",
+   "device": "Famatech Radmin VPN Ethernet Adapter",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "guid": "{29D4D44B-C0B5-446D-9BB6-CC13FC387E92}",
+   "device": "VMware Virtual Ethernet Adapter for VMnet1",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "guid": "{79DA9D21-1D54-4F25-9298-C01C92CA0D19}",
+   "device": "VMware Virtual Ethernet Adapter for VMnet8",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "Wi-Fi",
+   "guid": "{A6F762EE-247E-4D72-9610-6DA32FA8D159}",
+   "device": "Intel(R) Wi-Fi 6 AX201 160MHz",
+   "enabled": false,
+   "type": 0
+  },
+  {
+   "name": "ETH",
+   "guid": "{F27CA97C-562F-48DD-A8CA-FF8E5591FCB4}",
+   "device": "Realtek PCIe GbE Family Controller",
+   "enabled": false,
+   "type": 0
+  }
+ ],
+ "services": [
+  {
+   "name": "icssvc",
+   "status": "Stopped",
+   "start": "Manual"
+  },
+  {
+   "name": "SharedAccess",
+   "status": "Running",
+   "start": "Manual"
+  }
+ ],
+ "ics_scope": [
+  {
+   "scope_address": "192.168.1.1"
+  }
+ ],
+ "wlan": [
+  {
+   "name": "Wi-Fi",
+   "ssid": "WiFi_1",
+   "bssid": "02:00:00:00:00:0E",
+   "signal": 65
+  }
+ ],
+ "vpn": [],
+ "nat": [],
+ "vm_switches": [],
+ "errors": [
+  {
+   "section": "nat",
+   "message": "Provider load failure"
+  }
+ ],
+ "timings_ms": {
+  "adapters": 751,
+  "ip_interfaces": 605,
+  "ip_addresses": 49,
+  "dns": 417,
+  "routes": 31,
+  "internet_route": 59,
+  "profiles": 274,
+  "neighbors": 169,
+  "bindings": 396,
+  "ics": 323,
+  "services": 43,
+  "ics_scope": 14,
+  "wlan": 126,
+  "vpn": 948,
+  "nat": 300,
+  "vm_switches": 21
+ }
+}

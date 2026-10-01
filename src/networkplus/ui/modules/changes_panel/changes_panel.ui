@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChangesPanel</class>
+ <widget class="QWidget" name="ChangesPanel">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>900</width><height>170</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bekleyen değişiklikler</string>
+  </property>
+  <layout class="QVBoxLayout" name="layoutMain">
+   <property name="spacing"><number>4</number></property>
+   <property name="leftMargin"><number>6</number></property>
+   <property name="topMargin"><number>6</number></property>
+   <property name="rightMargin"><number>6</number></property>
+   <property name="bottomMargin"><number>6</number></property>
+   <item>
+    <layout class="QHBoxLayout" name="layoutTop">
+     <item>
+      <widget class="QListWidget" name="listChanges">
+       <property name="minimumSize"><size><width>0</width><height>60</height></size></property>
+       <property name="alternatingRowColors"><bool>true</bool></property>
+       <property name="selectionMode"><enum>QAbstractItemView::ExtendedSelection</enum></property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="layoutButtons">
+       <item>
+        <widget class="QPushButton" name="btnApply">
+         <property name="text"><string>Uygula…</string></property>
+         <property name="toolTip"><string>Planı gözden geçir ve tek yönetici onayıyla uygula</string></property>
+         <property name="default"><bool>true</bool></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnRemove">
+         <property name="text"><string>Seçileni çıkar</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnClear">
+         <property name="text"><string>Tümünü at</string></property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="spacerButtons">
+         <property name="orientation"><enum>Qt::Vertical</enum></property>
+         <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblInfo">
+     <property name="text"><string/></property>
+     <property name="wordWrap"><bool>true</bool></property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

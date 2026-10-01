@@ -1,0 +1,210 @@
+{
+ "platform": "linux",
+ "schema": 1,
+ "hostname": "mint-vm",
+ "taken_at": "2026-09-30T14:00:00+03:00",
+ "os": "Linux Mint 22.3 (SENTETIK)",
+ "is_admin": false,
+ "ip_addr": [
+  {
+   "ifindex": 1,
+   "ifname": "lo",
+   "flags": [
+    "LOOPBACK",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 65536,
+   "operstate": "UNKNOWN",
+   "link_type": "loopback",
+   "address": "00:00:00:00:00:00",
+   "addr_info": [
+    {
+     "family": "inet",
+     "local": "127.0.0.1",
+     "prefixlen": 8,
+     "scope": "host"
+    }
+   ]
+  },
+  {
+   "ifindex": 2,
+   "ifname": "enp0s3",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "operstate": "UP",
+   "link_type": "ether",
+   "address": "02:00:00:00:01:01",
+   "addr_info": [
+    {
+     "family": "inet",
+     "local": "192.168.42.131",
+     "prefixlen": 24,
+     "scope": "global",
+     "dynamic": true,
+     "valid_life_time": 1500
+    }
+   ]
+  },
+  {
+   "ifindex": 3,
+   "ifname": "enp0s8",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "operstate": "UP",
+   "link_type": "ether",
+   "address": "02:00:00:00:01:02",
+   "addr_info": [
+    {
+     "family": "inet",
+     "local": "10.42.0.1",
+     "prefixlen": 24,
+     "scope": "global"
+    }
+   ]
+  },
+  {
+   "ifindex": 4,
+   "ifname": "enp0s9",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "operstate": "UP",
+   "link_type": "ether",
+   "address": "02:00:00:00:01:03",
+   "addr_info": [],
+   "master": "br0"
+  },
+  {
+   "ifindex": 5,
+   "ifname": "br0",
+   "flags": [
+    "BROADCAST",
+    "MULTICAST",
+    "UP",
+    "LOWER_UP"
+   ],
+   "mtu": 1500,
+   "operstate": "UP",
+   "link_type": "ether",
+   "address": "02:00:00:00:01:04",
+   "addr_info": [
+    {
+     "family": "inet",
+     "local": "172.20.0.1",
+     "prefixlen": 24,
+     "scope": "global"
+    }
+   ],
+   "linkinfo": {
+    "info_kind": "bridge"
+   }
+  },
+  {
+   "ifindex": 6,
+   "ifname": "virbr0",
+   "flags": [
+    "NO-CARRIER",
+    "BROADCAST",
+    "MULTICAST",
+    "UP"
+   ],
+   "mtu": 1500,
+   "operstate": "DOWN",
+   "link_type": "ether",
+   "address": "02:00:00:00:01:05",
+   "addr_info": [
+    {
+     "family": "inet",
+     "local": "192.168.122.1",
+     "prefixlen": 24,
+     "scope": "global"
+    }
+   ],
+   "linkinfo": {
+    "info_kind": "bridge"
+   }
+  },
+  {
+   "ifindex": 7,
+   "ifname": "enp0s10",
+   "flags": [
+    "NO-CARRIER",
+    "BROADCAST",
+    "MULTICAST",
+    "UP"
+   ],
+   "mtu": 1500,
+   "operstate": "DOWN",
+   "link_type": "ether",
+   "address": "02:00:00:00:01:06",
+   "addr_info": []
+  }
+ ],
+ "routes": [
+  {
+   "dst": "default",
+   "gateway": "192.168.42.2",
+   "dev": "enp0s3",
+   "protocol": "dhcp",
+   "metric": 100,
+   "flags": []
+  },
+  {
+   "dst": "10.42.0.0/24",
+   "dev": "enp0s8",
+   "protocol": "kernel",
+   "scope": "link",
+   "prefsrc": "10.42.0.1",
+   "metric": 101,
+   "flags": []
+  }
+ ],
+ "routes6": [],
+ "route_get": [
+  {
+   "dst": "8.8.8.8",
+   "gateway": "192.168.42.2",
+   "dev": "enp0s3",
+   "prefsrc": "192.168.42.131",
+   "flags": [],
+   "uid": 1000,
+   "cache": []
+  }
+ ],
+ "neigh": [
+  {
+   "dst": "192.168.42.2",
+   "dev": "enp0s3",
+   "lladdr": "02:00:00:00:02:01",
+   "state": [
+    "REACHABLE"
+   ]
+  }
+ ],
+ "nm_devices": "enp0s3:ethernet:connected:Wired connection 1\nenp0s8:ethernet:connected:Paylasim\nbr0:bridge:connected:br0\nenp0s9:ethernet:connected:bridge-slave-enp0s9\nvirbr0:bridge:connected (externally):virbr0\nenp0s10:ethernet:unavailable:\nlo:loopback:connected (externally):lo\n",
+ "nm_active": "Wired connection 1:11111111-1111-1111-1111-111111111111:802-3-ethernet:enp0s3\nPaylasim:22222222-2222-2222-2222-222222222222:802-3-ethernet:enp0s8\nbr0:33333333-3333-3333-3333-333333333333:bridge:br0\n",
+ "nm_conn": {
+  "11111111-1111-1111-1111-111111111111": "ipv4.method:auto\nipv4.route-metric:-1\nipv4.dns:\nipv4.addresses:\nipv4.never-default:no\nconnection.id:Wired connection 1\n",
+  "22222222-2222-2222-2222-222222222222": "ipv4.method:shared\nipv4.route-metric:-1\nipv4.dns:\nipv4.addresses:\nipv4.never-default:no\nconnection.id:Paylasim\n",
+  "33333333-3333-3333-3333-333333333333": "ipv4.method:manual\nipv4.route-metric:-1\nipv4.dns:\nipv4.addresses:172.20.0.1/24\nipv4.never-default:no\nconnection.id:br0\n"
+ },
+ "nm_devshow": "GENERAL.DEVICE:enp0s3\nGENERAL.TYPE:ethernet\nGENERAL.IP4-CONNECTIVITY:4 (full)\nIP4.DNS[1]:192.168.42.2\nGENERAL.DEVICE:enp0s8\nGENERAL.TYPE:ethernet\nGENERAL.IP4-CONNECTIVITY:3 (limited)\n",
+ "nm_connectivity": "full",
+ "nm_wifi": "",
+ "errors": []
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TrayPopup</class>
+ <widget class="QFrame" name="TrayPopup">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>360</width><height>480</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">networkPlus</string>
+  </property>
+  <property name="frameShape">
+   <enum>QFrame::Box</enum>
+  </property>
+  <layout class="QVBoxLayout" name="layoutMain">
+   <property name="spacing"><number>0</number></property>
+   <property name="leftMargin"><number>1</number></property>
+   <property name="topMargin"><number>1</number></property>
+   <property name="rightMargin"><number>1</number></property>
+   <property name="bottomMargin"><number>1</number></property>
+   <item>
+    <widget class="QFrame" name="frameHeader">
+     <layout class="QHBoxLayout" name="layoutHeader">
+      <property name="spacing"><number>8</number></property>
+      <property name="leftMargin"><number>10</number></property>
+      <property name="topMargin"><number>8</number></property>
+      <property name="rightMargin"><number>10</number></property>
+      <property name="bottomMargin"><number>8</number></property>
+      <item>
+       <widget class="QLabel" name="lblAppIcon">
+        <property name="minimumSize"><size><width>32</width><height>32</height></size></property>
+        <property name="maximumSize"><size><width>32</width><height>32</height></size></property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="layoutTitle">
+        <property name="spacing"><number>0</number></property>
+        <item>
+         <widget class="QLabel" name="lblTitle">
+          <property name="text"><string notr="true">networkPlus</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblSummary">
+          <property name="text"><string>Ağ durumu okunuyor…</string></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scroll">
+     <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+     <property name="horizontalScrollBarPolicy"><enum>Qt::ScrollBarAlwaysOff</enum></property>
+     <property name="widgetResizable"><bool>true</bool></property>
+     <widget class="QWidget" name="rowsContainer">
+      <layout class="QVBoxLayout" name="layoutRows">
+       <property name="spacing"><number>0</number></property>
+       <property name="leftMargin"><number>0</number></property>
+       <property name="topMargin"><number>0</number></property>
+       <property name="rightMargin"><number>0</number></property>
+       <property name="bottomMargin"><number>0</number></property>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblHint">
+     <property name="text"><string>Ayrıntı için bir bağdaştırıcıya tıklayın</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

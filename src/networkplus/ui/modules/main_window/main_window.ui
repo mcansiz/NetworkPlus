@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1440</width><height>860</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>networkPlus</string>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <!-- Merkez bos ve gizli: diyagram da diger paneller gibi tasinabilir bir dock (dockDiagram). -->
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect><x>0</x><y>0</y><width>1440</width><height>21</height></rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title"><string>&amp;Dosya</string></property>
+    <addaction name="actOpenSnapshot"/>
+    <addaction name="actSaveSnapshot"/>
+    <addaction name="actExportPng"/>
+    <addaction name="separator"/>
+    <addaction name="actLive"/>
+    <addaction name="actRelaunchAdmin"/>
+    <addaction name="separator"/>
+    <addaction name="actQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title"><string>&amp;Görünüm</string></property>
+    <addaction name="actRefresh"/>
+    <addaction name="actAutoRefresh"/>
+    <addaction name="separator"/>
+    <addaction name="actShowHidden"/>
+    <addaction name="actRelayout"/>
+    <addaction name="actFit"/>
+    <addaction name="actResetLayout"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title"><string>&amp;Yardım</string></property>
+    <addaction name="actAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuChanges">
+    <property name="title"><string>&amp;Değişiklikler</string></property>
+    <addaction name="actUndo"/>
+    <addaction name="actRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actApply"/>
+    <addaction name="actReviewPlan"/>
+    <addaction name="actClearChanges"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title"><string>&amp;Ayarlar</string></property>
+    <widget class="QMenu" name="menuAutostart">
+     <property name="title"><string>Sistemle başlat</string></property>
+     <addaction name="actAutostartOff"/>
+     <addaction name="actAutostartUser"/>
+     <addaction name="actAutostartAdmin"/>
+    </widget>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title"><string>Dil</string></property>
+     <addaction name="actLanguageAuto"/>
+     <addaction name="separator"/>
+    </widget>
+    <widget class="QMenu" name="menuTheme">
+     <property name="title"><string>Tema</string></property>
+     <addaction name="actThemeAuto"/>
+     <addaction name="actThemeSystem"/>
+     <addaction name="separator"/>
+     <addaction name="separator"/>
+     <addaction name="actOpenThemesFolder"/>
+    </widget>
+    <addaction name="menuLanguage"/>
+    <addaction name="menuTheme"/>
+    <addaction name="menuAutostart"/>
+    <addaction name="actElevateOnStart"/>
+    <addaction name="separator"/>
+    <addaction name="actConfirmRisky"/>
+    <addaction name="actQueueMode"/>
+    <addaction name="separator"/>
+    <addaction name="actCloseToTray"/>
+    <addaction name="actNotifications"/>
+   </widget>
+   <!-- Tepsi menusu: menu cubuguna EKLENMEZ (addaction yok); sistem tepsisi simgesinde acilir.
+        Bagdastiricilar alt menusu kodda en uste eklenir. -->
+   <widget class="QMenu" name="menuTray">
+    <property name="title"><string>Tepsi</string></property>
+    <addaction name="actTrayShow"/>
+    <addaction name="separator"/>
+    <addaction name="actRefresh"/>
+    <addaction name="actApply"/>
+    <addaction name="separator"/>
+    <addaction name="actCloseToTray"/>
+    <addaction name="actNotifications"/>
+    <addaction name="separator"/>
+    <addaction name="actQuitApp"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuChanges"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle"><string>Araç çubuğu</string></property>
+   <property name="movable"><bool>false</bool></property>
+   <property name="toolButtonStyle"><enum>Qt::ToolButtonTextOnly</enum></property>
+   <attribute name="toolBarArea"><enum>TopToolBarArea</enum></attribute>
+   <attribute name="toolBarBreak"><bool>false</bool></attribute>
+   <addaction name="actRefresh"/>
+   <addaction name="actAutoRefresh"/>
+   <addaction name="separator"/>
+   <addaction name="actShowHidden"/>
+   <addaction name="separator"/>
+   <addaction name="actUndo"/>
+   <addaction name="actRedo"/>
+   <addaction name="actApply"/>
+   <addaction name="separator"/>
+   <addaction name="actOpenSnapshot"/>
+   <addaction name="actSaveSnapshot"/>
+   <addaction name="actExportPng"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockDiagram">
+   <property name="windowTitle"><string>Diyagram</string></property>
+   <attribute name="dockWidgetArea"><number>4</number></attribute>
+   <widget class="QWidget" name="diagramContainer">
+    <layout class="QVBoxLayout" name="layoutDiagram">
+     <property name="spacing"><number>2</number></property>
+     <property name="leftMargin"><number>0</number></property>
+     <property name="topMargin"><number>0</number></property>
+     <property name="rightMargin"><number>0</number></property>
+     <property name="bottomMargin"><number>0</number></property>
+     <item>
+      <widget class="ConfirmBar" name="confirmBar"/>
+     </item>
+     <item>
+      <widget class="DiagramPanel" name="diagram" native="true"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockAdapters">
+   <property name="windowTitle"><string>Bağdaştırıcılar</string></property>
+   <property name="minimumSize"><size><width>340</width><height>100</height></size></property>
+   <attribute name="dockWidgetArea"><number>1</number></attribute>
+   <widget class="AdapterListPanel" name="adapterList"/>
+  </widget>
+  <widget class="QDockWidget" name="dockInspector">
+   <property name="windowTitle"><string>Özellikler</string></property>
+   <property name="minimumSize"><size><width>340</width><height>100</height></size></property>
+   <attribute name="dockWidgetArea"><number>1</number></attribute>
+   <widget class="InspectorPanel" name="inspector"/>
+  </widget>
+  <widget class="QDockWidget" name="dockChanges">
+   <property name="windowTitle"><string>Bekleyen değişiklikler</string></property>
+   <attribute name="dockWidgetArea"><number>8</number></attribute>
+   <widget class="ChangesPanel" name="changesPanel"/>
+  </widget>
+  <widget class="QDockWidget" name="dockDhcp">
+   <property name="windowTitle"><string>DHCP sunucusu</string></property>
+   <property name="minimumSize"><size><width>400</width><height>100</height></size></property>
+   <attribute name="dockWidgetArea"><number>2</number></attribute>
+   <widget class="DhcpServerPanel" name="dhcpPanel"/>
+  </widget>
+  <action name="actRefresh">
+   <property name="text"><string>Yenile</string></property>
+   <property name="toolTip"><string>Ağ durumunu yeniden oku</string></property>
+   <property name="shortcut"><string>F5</string></property>
+  </action>
+  <action name="actAutoRefresh">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Otomatik yenile</string></property>
+   <property name="toolTip"><string>Ağ durumunu 30 saniyede bir yeniden oku</string></property>
+  </action>
+  <action name="actShowHidden">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Gizlileri göster</string></property>
+   <property name="toolTip"><string>Gizli ve sistem arayüzlerini diyagramda göster</string></property>
+   <property name="shortcut"><string>Ctrl+H</string></property>
+  </action>
+  <action name="actRelayout">
+   <property name="text"><string>Diyagramı otomatik yerleştir</string></property>
+  </action>
+  <action name="actFit">
+   <property name="text"><string>Diyagramı pencereye sığdır</string></property>
+   <property name="shortcut"><string>Ctrl+0</string></property>
+  </action>
+  <action name="actThemeAuto">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Otomatik (sistemin açık/koyu ayarı)</string></property>
+  </action>
+  <action name="actThemeSystem">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Sistem görünümü (tema yok)</string></property>
+   <property name="toolTip"><string>İşletim sisteminin yerel görünümü; stil sayfası uygulanmaz</string></property>
+  </action>
+  <action name="actOpenThemesFolder">
+   <property name="text"><string>Tema klasörünü aç…</string></property>
+   <property name="toolTip"><string>Buraya konan .qss dosyaları Tema menüsünde görünür (yeniden açınca)</string></property>
+  </action>
+  <action name="actResetLayout">
+   <property name="text"><string>Panelleri varsayılan yerleşime döndür</string></property>
+   <property name="toolTip"><string>Panelleri varsayılan yerlerine ve boyutlarına getir</string></property>
+  </action>
+  <action name="actOpenSnapshot">
+   <property name="text"><string>Anlık görüntü aç…</string></property>
+   <property name="toolTip"><string>Kayıtlı bir anlık görüntü (JSON) dosyasını görüntüle</string></property>
+   <property name="shortcut"><string>Ctrl+O</string></property>
+  </action>
+  <action name="actSaveSnapshot">
+   <property name="text"><string>Anlık görüntü kaydet…</string></property>
+   <property name="shortcut"><string>Ctrl+S</string></property>
+  </action>
+  <action name="actExportPng">
+   <property name="text"><string>PNG olarak dışa aktar…</string></property>
+   <property name="shortcut"><string>Ctrl+E</string></property>
+  </action>
+  <action name="actLive">
+   <property name="text"><string>Canlı sisteme dön</string></property>
+  </action>
+  <action name="actRelaunchAdmin">
+   <property name="text"><string>Yönetici olarak yeniden başlat</string></property>
+   <property name="toolTip"><string>Uygulamayı yönetici olarak aç: Uygula her seferinde UAC sormaz</string></property>
+  </action>
+  <action name="actQuit">
+   <property name="text"><string>Çıkış</string></property>
+   <property name="shortcut"><string>Ctrl+Q</string></property>
+  </action>
+  <action name="actElevateOnStart">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="checked"><bool>true</bool></property>
+   <property name="text"><string>Açılışta yönetici yetkisi iste</string></property>
+   <property name="toolTip"><string>Uygulama açılırken UAC ile yönetici olarak başlar; böylece ayarlar her seferinde izin sormadan uygulanır. Reddedilirse normal yetkiyle açılır. Sistemle başlarken (tepside) sorulmaz.</string></property>
+  </action>
+  <action name="actConfirmRisky">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="checked"><bool>true</bool></property>
+   <property name="text"><string>Riskli değişiklikte 30 sn geri alma süresi</string></property>
+   <property name="toolTip"><string>İnternet bağlantınızı taşıyan karta dokunan değişikliklerden sonra ince bir şerit çıkar; 30 sn içinde “Koru” denmezse (ör. bağlantı koptuysa) otomatik geri alınır. Diğer değişiklikler hiç sormadan uygulanır.</string></property>
+  </action>
+  <action name="actQueueMode">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Toplu düzenleme (önce kuyruğa al)</string></property>
+   <property name="toolTip"><string>Açıkken değişiklikler hemen uygulanmaz, “Bekleyen değişiklikler” paneline girer ve birlikte uygulanır.</string></property>
+  </action>
+  <action name="actLanguageAuto">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Otomatik (sistem dili; yoksa İngilizce)</string></property>
+  </action>
+  <action name="actQuitApp">
+   <property name="text"><string>networkPlus'tan çık</string></property>
+  </action>
+  <action name="actTrayShow">
+   <property name="text"><string>Pencereyi göster</string></property>
+  </action>
+  <action name="actAutostartOff">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Kapalı</string></property>
+  </action>
+  <action name="actAutostartUser">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Açık (tepside, normal yetki)</string></property>
+  </action>
+  <action name="actAutostartAdmin">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="text"><string>Açık — yönetici olarak (UAC sormadan)</string></property>
+   <property name="toolTip"><string>Görev Zamanlayıcı ile en yüksek yetkide başlar; kurarken bir kez yönetici izni istenir. Elle açtığınızda da UAC sormadan yönetici olur.</string></property>
+  </action>
+  <action name="actCloseToTray">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="checked"><bool>true</bool></property>
+   <property name="text"><string>Kapatınca tepsiye gönder</string></property>
+  </action>
+  <action name="actNotifications">
+   <property name="checkable"><bool>true</bool></property>
+   <property name="checked"><bool>true</bool></property>
+   <property name="text"><string>Bağlantı değişikliklerini bildir</string></property>
+   <property name="toolTip"><string>Tepsiden bildirim: internet çıkışı değişince, bağlantı kopunca ya da gelince (arka planda 60 sn'de bir okunur) ve DHCP sunucusuna yeni cihaz bağlanınca</string></property>
+  </action>
+  <action name="actApply">
+   <property name="text"><string>Kuyruğu uygula</string></property>
+   <property name="toolTip"><string>Bekleyen değişiklikleri şimdi uygula</string></property>
+   <property name="shortcut"><string>Ctrl+Return</string></property>
+  </action>
+  <action name="actUndo">
+   <property name="text"><string>Geri al</string></property>
+   <property name="toolTip"><string>Kuyruktaki son düzenlemeyi geri al (uygulanmış değişiklikleri değil)</string></property>
+   <property name="shortcut"><string>Ctrl+Z</string></property>
+  </action>
+  <action name="actRedo">
+   <property name="text"><string>Yinele</string></property>
+   <property name="shortcut"><string>Ctrl+Y</string></property>
+  </action>
+  <action name="actReviewPlan">
+   <property name="text"><string>Planı ve betiği göster…</string></property>
+   <property name="toolTip"><string>Bekleyen değişikliklerin planını, uyarılarını ve çalıştırılacak betiği göster</string></property>
+  </action>
+  <action name="actClearChanges">
+   <property name="text"><string>Tüm bekleyen değişiklikleri at</string></property>
+  </action>
+  <action name="actAbout">
+   <property name="text"><string>networkPlus hakkında</string></property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ConfirmBar</class>
+   <extends>QFrame</extends>
+   <header>networkplus.ui.modules.confirm_bar.confirm_bar</header>
+  </customwidget>
+  <customwidget>
+   <class>DiagramPanel</class>
+   <extends>QWidget</extends>
+   <header>networkplus.ui.modules.diagram.diagram_panel</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AdapterListPanel</class>
+   <extends>QWidget</extends>
+   <header>networkplus.ui.modules.adapter_list.adapter_list</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InspectorPanel</class>
+   <extends>QWidget</extends>
+   <header>networkplus.ui.modules.inspector.inspector</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ChangesPanel</class>
+   <extends>QWidget</extends>
+   <header>networkplus.ui.modules.changes_panel.changes_panel</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DhcpServerPanel</class>
+   <extends>QWidget</extends>
+   <header>networkplus.ui.modules.dhcp_server.dhcp_server</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

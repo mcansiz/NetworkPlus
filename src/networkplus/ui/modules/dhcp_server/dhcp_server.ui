@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DhcpServerPanel</class>
+ <widget class="QWidget" name="DhcpServerPanel">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>430</width><height>720</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>DHCP sunucusu</string>
+  </property>
+  <layout class="QVBoxLayout" name="layoutMain">
+   <property name="leftMargin"><number>6</number></property>
+   <property name="topMargin"><number>6</number></property>
+   <property name="rightMargin"><number>6</number></property>
+   <property name="bottomMargin"><number>6</number></property>
+   <item>
+    <layout class="QHBoxLayout" name="layoutAdapter">
+     <item>
+      <widget class="QLabel" name="lblAdapter">
+       <property name="text"><string>Bağdaştırıcı:</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cmbAdapter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>1</horstretch><verstretch>0</verstretch></sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layoutControl">
+     <item>
+      <widget class="QLabel" name="lblStatus">
+       <property name="text"><string>Durdu</string></property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred"><horstretch>1</horstretch><verstretch>0</verstretch></sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnStart">
+       <property name="text"><string>Başlat</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnStop">
+       <property name="text"><string>Durdur</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblWarning">
+     <property name="text"><string/></property>
+     <property name="wordWrap"><bool>true</bool></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="grpSettings">
+     <property name="title"><string>Ayarlar</string></property>
+     <layout class="QFormLayout" name="formSettings">
+      <property name="fieldGrowthPolicy"><enum>QFormLayout::AllNonFixedFieldsGrow</enum></property>
+      <item row="0" column="0"><widget class="QLabel" name="lblServerIp"><property name="text"><string>Sunucu IP'si</string></property></widget></item>
+      <item row="0" column="1"><widget class="QLineEdit" name="edServerIp"><property name="toolTip"><string>Kartın statik adresi; istemciler sunucuyu bu adresle görür</string></property></widget></item>
+      <item row="1" column="0"><widget class="QLabel" name="lblMask"><property name="text"><string>Alt ağ maskesi</string></property></widget></item>
+      <item row="1" column="1"><widget class="QLineEdit" name="edMask"><property name="placeholderText"><string>ör. 255.255.255.0 veya 24</string></property></widget></item>
+      <item row="2" column="0"><widget class="QLabel" name="lblPoolStart"><property name="text"><string>Havuz başlangıcı</string></property></widget></item>
+      <item row="2" column="1"><widget class="QLineEdit" name="edPoolStart"/></item>
+      <item row="3" column="0"><widget class="QLabel" name="lblPoolEnd"><property name="text"><string>Havuz bitişi</string></property></widget></item>
+      <item row="3" column="1"><widget class="QLineEdit" name="edPoolEnd"/></item>
+      <item row="4" column="0"><widget class="QLabel" name="lblGateway"><property name="text"><string>Ağ geçidi</string></property></widget></item>
+      <item row="4" column="1"><widget class="QLineEdit" name="edGateway"><property name="placeholderText"><string>boş: istemcilere ağ geçidi verilmez</string></property></widget></item>
+      <item row="5" column="0"><widget class="QLabel" name="lblDns1"><property name="text"><string>DNS 1</string></property></widget></item>
+      <item row="5" column="1"><widget class="QLineEdit" name="edDns1"><property name="placeholderText"><string>isteğe bağlı</string></property></widget></item>
+      <item row="6" column="0"><widget class="QLabel" name="lblDns2"><property name="text"><string>DNS 2</string></property></widget></item>
+      <item row="6" column="1"><widget class="QLineEdit" name="edDns2"><property name="placeholderText"><string>isteğe bağlı</string></property></widget></item>
+      <item row="7" column="0"><widget class="QLabel" name="lblLease"><property name="text"><string>Kira süresi</string></property></widget></item>
+      <item row="7" column="1">
+       <widget class="QSpinBox" name="spnLease">
+        <property name="suffix"><string> dk</string></property>
+        <property name="minimum"><number>1</number></property>
+        <property name="maximum"><number>43200</number></property>
+        <property name="value"><number>1440</number></property>
+       </widget>
+      </item>
+      <item row="8" column="0"><widget class="QLabel" name="lblDomain"><property name="text"><string>Alan adı</string></property></widget></item>
+      <item row="8" column="1"><widget class="QLineEdit" name="edDomain"><property name="placeholderText"><string>isteğe bağlı</string></property></widget></item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabs">
+     <property name="currentIndex"><number>0</number></property>
+     <widget class="QWidget" name="tabLeases">
+      <attribute name="title"><string>Kiralar</string></attribute>
+      <layout class="QVBoxLayout" name="layoutLeases">
+       <item>
+        <widget class="QTableWidget" name="tblLeases">
+         <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+         <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+         <property name="alternatingRowColors"><bool>true</bool></property>
+         <column><property name="text"><string>MAC adresi</string></property></column>
+         <column><property name="text"><string>IP adresi</string></property></column>
+         <column><property name="text"><string>Cihaz adı</string></property></column>
+         <column><property name="text"><string>Kira bitişi</string></property></column>
+         <column><property name="text"><string>Durum</string></property></column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="layoutLeaseButtons">
+         <item><widget class="QPushButton" name="btnReserve"><property name="text"><string>Bu IP'yi cihaza rezerve et</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnDeleteLease"><property name="text"><string>Kirayı sil</string></property></widget></item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabReservations">
+      <attribute name="title"><string>Rezervasyonlar</string></attribute>
+      <layout class="QVBoxLayout" name="layoutReservations">
+       <item>
+        <widget class="QTableWidget" name="tblReservations">
+         <property name="alternatingRowColors"><bool>true</bool></property>
+         <column><property name="text"><string>MAC adresi</string></property></column>
+         <column><property name="text"><string>IP adresi</string></property></column>
+         <column><property name="text"><string>Ad</string></property></column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="layoutResButtons">
+         <item><widget class="QPushButton" name="btnAddReservation"><property name="text"><string>Ekle</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnRemoveReservation"><property name="text"><string>Sil</string></property></widget></item>
+         <item><widget class="QPushButton" name="btnSaveReservations"><property name="text"><string>Kaydet</string></property></widget></item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabLog">
+      <attribute name="title"><string>Günlük</string></attribute>
+      <layout class="QVBoxLayout" name="layoutLog">
+       <item>
+        <widget class="QPlainTextEdit" name="txtLog">
+         <property name="readOnly"><bool>true</bool></property>
+         <property name="maximumBlockCount"><number>2000</number></property>
+        </widget>
+       </item>
+       <item><widget class="QPushButton" name="btnClearLog"><property name="text"><string>Temizle</string></property></widget></item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ApplyDialog</class>
+ <widget class="QDialog" name="ApplyDialog">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>760</width><height>560</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Değişiklikleri uygula</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="layoutMain">
+   <item>
+    <widget class="QLabel" name="lblHeadline">
+     <property name="text"><string/></property>
+     <property name="wordWrap"><bool>true</bool></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="treePlan">
+     <property name="alternatingRowColors"><bool>true</bool></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <column><property name="text"><string>Adım</string></property></column>
+     <column><property name="text"><string>Sonuç</string></property></column>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layoutScript">
+     <item>
+      <widget class="QToolButton" name="btnShowScript">
+       <property name="text"><string>Çalıştırılacak betiği göster</string></property>
+       <property name="checkable"><bool>true</bool></property>
+       <property name="autoRaise"><bool>true</bool></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSaveScript">
+       <property name="text"><string>Betiği kaydet…</string></property>
+       <property name="toolTip"><string>PowerShell betiğini dosyaya kaydet (elle incelemek ya da çalıştırmak için)</string></property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="spacerScript">
+       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="txtScript">
+     <property name="readOnly"><bool>true</bool></property>
+     <property name="lineWrapMode"><enum>QPlainTextEdit::NoWrap</enum></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="chkConfirm">
+     <property name="text"><string>Uyguladıktan sonra 30 sn onay iste (onaylamazsam geri al)</string></property>
+     <property name="toolTip"><string>Bağlantınız koparsa değişiklikler kendiliğinden geri alınır. Etkin bağlantıya dokunmayan değişikliklerde kapalı gelir.</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblConfirmReason">
+     <property name="text"><string/></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="enabled"><bool>false</bool></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblStatus">
+     <property name="text"><string/></property>
+     <property name="wordWrap"><bool>true</bool></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QProgressBar" name="barCountdown">
+     <property name="textVisible"><bool>true</bool></property>
+     <property name="format"><string>%v sn</string></property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layoutButtons">
+     <item>
+      <spacer name="spacerButtons">
+       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       <property name="sizeHint" stdset="0"><size><width>10</width><height>10</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnRevert">
+       <property name="text"><string>Geri al</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnKeep">
+       <property name="text"><string>Değişiklikleri koru</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnApply">
+       <property name="text"><string>Uygula (yönetici izni istenir)</string></property>
+       <property name="default"><bool>true</bool></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text"><string>Kapat</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

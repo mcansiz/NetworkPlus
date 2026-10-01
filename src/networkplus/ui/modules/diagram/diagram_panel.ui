@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DiagramPanel</class>
+ <widget class="QWidget" name="DiagramPanel">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>900</width><height>600</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Diyagram</string>
+  </property>
+  <layout class="QVBoxLayout" name="layoutMain">
+   <property name="spacing"><number>0</number></property>
+   <property name="leftMargin"><number>0</number></property>
+   <property name="topMargin"><number>0</number></property>
+   <property name="rightMargin"><number>0</number></property>
+   <property name="bottomMargin"><number>0</number></property>
+   <item>
+    <widget class="QWidget" name="toolRow" native="true">
+     <layout class="QHBoxLayout" name="layoutTools">
+      <property name="spacing"><number>4</number></property>
+      <property name="leftMargin"><number>6</number></property>
+      <property name="topMargin"><number>4</number></property>
+      <property name="rightMargin"><number>6</number></property>
+      <property name="bottomMargin"><number>4</number></property>
+      <item>
+       <widget class="QToolButton" name="btnFit">
+        <property name="toolTip"><string>Tüm diyagramı pencereye sığdır</string></property>
+        <property name="text"><string>Sığdır</string></property>
+        <property name="autoRaise"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="btnRelayout">
+        <property name="toolTip"><string>Elle taşınan düğümleri unut, yerleşimi yeniden hesapla</string></property>
+        <property name="text"><string>Otomatik yerleşim</string></property>
+        <property name="autoRaise"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="sep1">
+        <property name="orientation"><enum>Qt::Vertical</enum></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="btnZoomOut">
+        <property name="toolTip"><string>Uzaklaştır</string></property>
+        <property name="text"><string>−</string></property>
+        <property name="autoRaise"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblZoom">
+        <property name="minimumSize"><size><width>44</width><height>0</height></size></property>
+        <property name="text"><string>100%</string></property>
+        <property name="alignment"><set>Qt::AlignCenter</set></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="btnZoomIn">
+        <property name="toolTip"><string>Yakınlaştır</string></property>
+        <property name="text"><string>+</string></property>
+        <property name="autoRaise"><bool>true</bool></property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="spacerTools">
+        <property name="orientation"><enum>Qt::Horizontal</enum></property>
+        <property name="sizeHint" stdset="0"><size><width>40</width><height>10</height></size></property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblHint">
+        <property name="text"><string>Tekerlek: yakınlaştır · Boş alanda sürükle: kaydır · Kartın sağındaki noktadan başka karta sürükle: ilişki kur · Sağ tık: işlemler</string></property>
+        <property name="enabled"><bool>false</bool></property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="DiagramView" name="view">
+     <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblLegend">
+     <property name="text"><string/></property>
+     <property name="textFormat"><enum>Qt::RichText</enum></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="margin"><number>6</number></property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DiagramView</class>
+   <extends>QGraphicsView</extends>
+   <header>networkplus.ui.modules.diagram.view</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
