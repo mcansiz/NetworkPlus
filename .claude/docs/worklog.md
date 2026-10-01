@@ -247,6 +247,21 @@ Kullanıcı: "build_win build_linux sh dosyaları, ortak spec, pyinstaller ile t
 - Heredoc tuzağı tekrar: `
 ` gerçek satır sonuna dönüştü (test dosyası bozuldu) → Edit ile düzeltildi.
 
+### Aynı gün — herkese açık GitHub deposu ve v0.1.0 ön sürüm
+Kullanıcı: "github public reposunu oluşturdum, commitle, pushla, görsel resimleri README'ye koy,
+win exe olarak release yayımla". Depo: https://github.com/mcansiz/NetworkPlus (public).
+- Yayından önce hassas veri taraması (kullanıcıya sunuldu, "temizleyip yayımla" seçildi):
+  VM parolası/yolları → `.claude/local/vm.md` (yerel, git'e girmez); şirket içi proje yolu ve
+  adı kaldırıldı; ofis LAN 10.1.2.x → 10.20.30.x, Radmin adresi → 26.11.22.33 (fixture, testler,
+  günlük, spec); `.claude/sessions/` ve `.claude/local/` tamamen `.gitignore`'da. Kurallar 10/20/60
+  "depo herkese açık" olarak güncellendi.
+- Commit e-postası (kullanıcı seçimi): kişisel adres, yalnız bu depoda (`git config` yerel).
+- `README.md` (İngilizce) + `README.tr.md`; ekran görüntüleri `docs/screenshots/{en,tr}/`,
+  `tools/make_screenshots.py` ile anonim fixture'dan (Segoe UI 9 pt; offscreen varsayılan
+  yazı tipi Türkçe harfleri bozuyordu).
+- İlk commit `846709c`, `main` push. Sürüm `v0.1.0` (pre-release): exe (42 MB) + `SHA256SUMS.txt`;
+  yüklenen boyut yerel dosyayla aynı, exe derlemeden sonra kaynak değişmedi (commit ile birebir).
+
 **Doğrulanmamış (kullanıcı denemesi bekliyor)**
 - Paketli exe'nin gerçek kullanımı: UAC ile yükseltme, DHCP sunucusu, otomatik başlatma.
 - Linux paketi (betik hazır, derlenmedi).
