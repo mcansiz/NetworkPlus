@@ -31,6 +31,7 @@ from ...core.i18n import tr
 CONFIRM_SECONDS = 30
 _GUID_RE = re.compile(r"^\{?[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}?$")
 _IPV4_RE = re.compile(r"^\d{1,3}(\.\d{1,3}){3}$")
+_KEYWORD_RE = re.compile(r"^\*?[A-Za-z0-9_.\-]{1,64}$")     # surucu kayit anahtari (*JumboPacket)
 
 
 class ScriptError(ValueError):
@@ -72,6 +73,21 @@ def step_body(c: Change) -> str:
     if c.kind == ChangeKind.DHCP_RENEW:
         return head + ('$out = ipconfig /renew "$($a.Name)" 2>&1\n'
                        'if ($LASTEXITCODE -ne 0) { throw "ipconfig /renew: $($out -join \' \')" }')
+    if c.kind == ChangeKind.ADVANCED:
+        # Ozellik kayit anahtariyla bulunur (gorunen ad surucu dilinde); hepsi -NoRestart ile yazilir,
+        # bagdastirici en sonda BIR KEZ yeniden baslatilir (devre disiysa baslatilmaz: Restart acar).
+        lines = []
+        for keyword, value in (p.get("values") or {}).items():
+            if not _KEYWORD_RE.match(str(keyword)):
+                raise ScriptError(f"gecersiz ozellik anahtari: {keyword!r}")
+            if value is None:
+                lines.append(f"Get-NetAdapterAdvancedProperty -Name $a.Name -IncludeHidden -RegistryKeyword {ps(keyword)} | "
+                             "Reset-NetAdapterAdvancedProperty -NoRestart")
+            else:
+                lines.append(f"Set-NetAdapterAdvancedProperty -Name $a.Name -IncludeHidden -RegistryKeyword {ps(keyword)} "
+                             f"-RegistryValue {ps(value)} -NoRestart")
+        lines.append("if (\"$($a.AdminStatus)\" -eq 'Up') { Restart-NetAdapter -Name $a.Name -IncludeHidden -Confirm:$false }")
+        return head + "\n".join(lines)
     if c.kind == ChangeKind.MTU:
         return head + f"Set-NetIPInterface -InterfaceIndex $i -AddressFamily IPv4 -NlMtuBytes {int(p['mtu'])}"
     if c.kind == ChangeKind.METRIC:

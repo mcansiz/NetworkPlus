@@ -205,6 +205,8 @@ def _advanced_property(x: dict) -> dict:
         "value": x.get("value") or "",
         "registry": [str(r) for r in _list(x.get("registry")) if r is not None],
         "options": [str(o) for o in _list(x.get("options")) if o is not None],
+        # options ile ayni sirada kayit degerleri (karar ve yazma bunlarla; gorunen metin surucu dilinde)
+        "options_registry": [str(o) for o in _list(x.get("options_registry")) if o is not None],
         "default": x.get("default"),
         "range": {"min": lo, "max": hi, "step": step} if lo is not None and hi is not None else None,
     }

@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 
 from .i18n import N_, tr
-from .model import Connectivity, NodeKind, Severity, Status, Topology
+from .model import Connectivity, Node, NodeKind, Severity, Status, Topology
 
 HOST_TARGET = "host"
 MTU_RANGE = (576, 9216)
@@ -30,12 +30,14 @@ class ChangeKind(str, Enum):
     DHCP_RENEW = "dhcp_renew"         # eylem; geri almasi yok
     BRIDGE_CREATE = "bridge_create"   # target=kopru adi; params: members[ids], ipv4{...}
     BRIDGE_DELETE = "bridge_delete"   # target=kopru adi; params: members, restore{uye: onceki profil}
+    ADVANCED = "advanced"  # surucu Gelismis ozellikleri; params: values{keyword: kayit degeri | None=varsayilana don}
 
 
 # Platform destegi. Burada olmayan bir tur o platformda dogrulamada HATA verir.
 SUPPORTED = {
     "windows": {ChangeKind.ENABLED, ChangeKind.IPV4, ChangeKind.DNS4, ChangeKind.METRIC,
-                ChangeKind.MTU, ChangeKind.ICS, ChangeKind.RENAME, ChangeKind.DHCP_RENEW},
+                ChangeKind.MTU, ChangeKind.ICS, ChangeKind.RENAME, ChangeKind.DHCP_RENEW,
+                ChangeKind.ADVANCED},
     "linux": {ChangeKind.ENABLED, ChangeKind.IPV4, ChangeKind.DNS4, ChangeKind.METRIC,
               ChangeKind.MTU, ChangeKind.ICS, ChangeKind.DHCP_RENEW,
               ChangeKind.BRIDGE_CREATE, ChangeKind.BRIDGE_DELETE},
@@ -45,6 +47,7 @@ UNSUPPORTED_REASON = {
                                               "Win11 22H2+ için netsh bridge eklenecek)."),
     ("windows", ChangeKind.BRIDGE_DELETE): N_("Windows'ta köprü kaldırma henüz yok."),
     ("linux", ChangeKind.RENAME): N_("Linux'ta arayüz adı değiştirilmez (udev/sistem adı); desteklenmiyor."),
+    ("linux", ChangeKind.ADVANCED): N_("Sürücü gelişmiş özellikleri yalnız Windows'ta değiştirilebilir."),
 }
 BRIDGE_PREFIX = "br-np"
 
@@ -96,7 +99,7 @@ def _order(c: Change) -> int:
     if c.kind == ChangeKind.ENABLED:
         return 0 if c.params.get("enabled") else 20
     return {ChangeKind.BRIDGE_DELETE: 1, ChangeKind.IPV4: 2, ChangeKind.DNS4: 3,
-            ChangeKind.METRIC: 4, ChangeKind.MTU: 5, ChangeKind.ICS: 6,
+            ChangeKind.METRIC: 4, ChangeKind.MTU: 5, ChangeKind.ADVANCED: 5.5, ChangeKind.ICS: 6,
             ChangeKind.BRIDGE_CREATE: 7, ChangeKind.RENAME: 8, ChangeKind.DHCP_RENEW: 9}[c.kind]
 
 
@@ -207,6 +210,15 @@ def describe(c: Change, topo: Topology) -> str:
         if not p.get("mtu"):
             return tr("{name}: MTU otomatik").format(name=name)
         return tr("{name}: MTU {mtu}").format(name=name, mtu=p.get("mtu"))
+    if c.kind == ChangeKind.ADVANCED:
+        node = topo.nodes.get(c.target)
+        props = advanced_props(node)
+        parts = []
+        for keyword, value in (p.get("values") or {}).items():
+            prop = props.get(keyword) or {}
+            shown = advanced_display(prop, value) if value is not None else tr("varsayılan")
+            parts.append(f"{prop.get('display') or keyword} = {shown}")
+        return tr("{name}: sürücü ayarı {changes}").format(name=name, changes="; ".join(parts))
     if c.kind == ChangeKind.RENAME:
         return tr("{name}: adı “{new}” yap").format(name=name, new=p.get("name"))
     if c.kind == ChangeKind.ICS:
@@ -246,6 +258,62 @@ def next_bridge_name(topo: Topology, changes: "ChangeSet | None" = None) -> str:
 
 def bridge_members(topo: Topology, bridge: str) -> list[str]:
     return [n.id for n in topo.nodes.values() if n.is_adapter and n.props.get("bridge_master") == bridge]
+
+
+def advanced_props(node: Node | None) -> dict[str, dict]:
+    """keyword -> surucu ozelligi (snapshot 'advanced')."""
+    if node is None:
+        return {}
+    return {x["keyword"]: x for x in node.props.get("advanced") or [] if x.get("keyword")}
+
+
+def advanced_registry(prop: dict) -> str | None:
+    """Ozelligin su anki kayit degeri (tek deger; yoksa None = tanimsiz/varsayilan)."""
+    values = [v for v in prop.get("registry") or [] if v not in (None, "")]
+    return str(values[0]) if values else None
+
+
+def advanced_display(prop: dict, registry: str | None) -> str:
+    """Kayit degerinin surucu dilindeki gorunen karsiligi (secenekliyse), yoksa degerin kendisi."""
+    options, regs = prop.get("options") or [], prop.get("options_registry") or []
+    if registry is not None and len(options) == len(regs) and str(registry) in regs:
+        return options[regs.index(str(registry))]
+    return "" if registry is None else str(registry)
+
+
+_HEX = set("0123456789abcdefABCDEF")
+
+
+def validate_advanced_value(prop: dict, value: str | None) -> str | None:
+    """Gecersizse hata metni, gecerliyse None. None deger = surucu varsayilanina don."""
+    if value is None:
+        return None
+    value = str(value).strip()
+    regs = prop.get("options_registry") or []
+    if regs:
+        if value not in regs:
+            return tr("{prop}: geçersiz seçenek {value}").format(prop=prop.get("display"), value=repr(value))
+        return None
+    rng = prop.get("range")
+    if rng:
+        try:
+            n = int(value)
+        except ValueError:
+            return tr("{prop}: tam sayı olmalı").format(prop=prop.get("display"))
+        low, high, step = rng.get("min"), rng.get("max"), rng.get("step") or 1
+        if not low <= n <= high or (n - low) % step:
+            return tr("{prop}: {low}–{high} arasında, {step} adımlarla olmalı").format(
+                prop=prop.get("display"), low=low, high=high, step=step)
+        return None
+    if prop.get("keyword") == "NetworkAddress":
+        if len(value) != 12 or set(value) - _HEX:
+            return tr("Ağ adresi 12 onaltılık haneli olmalı (ör. 02AABBCCDDEE).")
+        if int(value[1], 16) & 1:
+            return tr("Ağ adresi çok noktaya yayın (multicast) olamaz: ikinci hane çift olmalı.")
+        return None
+    if not value or len(value) > 255:
+        return tr("{prop}: değer boş ya da çok uzun").format(prop=prop.get("display"))
+    return None
 
 
 # --------------------------------------------------------------------------- dogrulama
@@ -342,6 +410,30 @@ def validate(c: Change, topo: Topology) -> list[Issue]:
         elif m > 1500:
             issues.append(warn(tr("1500 üzeri MTU için sürücüde 'Jumbo Packet' da açık olmalı; "
                                   "aksi hâlde paketler parçalanır ya da düşer.")))
+
+    if c.kind == ChangeKind.ADVANCED:
+        props = advanced_props(node)
+        values = p.get("values") or {}
+        if not values:
+            issues.append(err(tr("Değişen sürücü ayarı yok.")))
+        for keyword, value in values.items():
+            prop = props.get(keyword)
+            if prop is None:
+                issues.append(err(tr("Sürücüde {keyword} özelliği yok (yenileyip tekrar deneyin).").format(keyword=keyword)))
+                continue
+            problem = validate_advanced_value(prop, value)
+            if problem:
+                issues.append(err(problem))
+            if keyword == "NetworkAddress" and value and int(str(value)[1], 16) & 2 == 0:
+                issues.append(warn(tr("Yerel yönetilen bir adres önerilir (ikinci hane 2, 6, A veya E); "
+                                      "ağda başka bir aygıtla çakışabilir.")))
+        if node.status == Status.UP:
+            issues.append(warn(tr("Bağdaştırıcı ayarı uygulamak için birkaç saniye yeniden başlatılır; "
+                                  "bağlantı kısa süre kesilir.")))
+        if any(k in values for k in ("*SpeedDuplex", "*JumboPacket", "NetworkAddress", "*PriorityVLANTag",
+                                      "VlanId", "RegVlanid", "*FlowControl")):
+            issues.append(warn(tr("Hız/çift yönlü, Jumbo, VLAN ve MAC ayarı karşı uçla uyumsuzsa bağlantı "
+                                  "kurulamaz (30 sn içinde onaylamazsanız geri alınır).")))
 
     if c.kind == ChangeKind.RENAME:
         new = str(p.get("name") or "").strip()
@@ -534,6 +626,10 @@ def rollback_for(c: Change, topo: Topology) -> list[Change]:
         return [Change(ChangeKind.MTU, c.target, {"mtu": p["mtu"]})]
     if c.kind == ChangeKind.RENAME:
         return [Change(ChangeKind.RENAME, c.target, {"name": node.label})]
+    if c.kind == ChangeKind.ADVANCED:
+        props = advanced_props(node)
+        old = {k: advanced_registry(props[k]) for k in c.params.get("values") or {} if k in props}
+        return [Change(ChangeKind.ADVANCED, c.target, {"values": old})] if old else []
     return []
 
 
@@ -587,6 +683,8 @@ def needs_confirmation(plan: Plan, topo: Topology) -> tuple[bool, str]:
         # ör. DHCP sunucusu kurulacak yalitilmis kart (ADR 0010) onaysiz statik IP alir.
         has_address = node is not None and any(
             a.get("address") and not str(a["address"]).startswith("169.254.") for a in node.props.get("ipv4") or [])
+        if c.kind == ChangeKind.ADVANCED and up:
+            return True, tr("Bağlı {name} yeniden başlatılıyor (sürücü ayarı).").format(name=node.label)
         if (c.kind == ChangeKind.IPV4 and up and has_address) or (c.kind == ChangeKind.MTU and up):
             return True, tr("Bağlı {name} bağdaştırıcısının adres/MTU ayarı değişiyor (uzak bağlantı kopabilir).").format(name=node.label)
     return False, tr("Etkin bağlantıya dokunmuyor; onay beklenmeden tamamlanır.")

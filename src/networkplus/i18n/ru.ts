@@ -491,6 +491,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Değer:</source>
+        <translation>Значение:</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Değişiklikler önce kuyruğa girer; alttaki “Bekleyen değişiklikler” panelinden Uygula ile tek yönetici onayıyla uygulanır.</source>
         <translation>Изменения сначала попадают в очередь; они применяются кнопкой «Применить» на панели «Ожидающие изменения» ниже с одним подтверждением администратора.</translation>
     </message>
@@ -671,6 +676,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün varsayılan değerine döndür</source>
+        <translation>Вернуть значение драйвера по умолчанию</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>Сбросить</translation>
     </message>
@@ -683,6 +693,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Tür</source>
         <translation>Тип</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Varsayılan</source>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1151,6 +1166,11 @@ paylaşan</source>
         <translation>(нет общего доступа)</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>(varsayılan)</source>
+        <translation>(по умолчанию)</translation>
+    </message>
+    <message>
         <location filename="core\changes.py"/>
         <source>1500 üzeri MTU için sürücüde 'Jumbo Packet' da açık olmalı; aksi hâlde paketler parçalanır ya da düşer.</source>
         <translation>Для MTU больше 1500 в драйвере также должен быть включён параметр «Jumbo Packet»; иначе пакеты фрагментируются или отбрасываются.</translation>
@@ -1276,6 +1296,16 @@ paylaşan</source>
         <translation>Светлая тема</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi 12 onaltılık haneli olmalı (ör. 02AABBCCDDEE).</source>
+        <translation>Сетевой адрес должен состоять из 12 шестнадцатеричных цифр (например, 02AABBCCDDEE).</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi çok noktaya yayın (multicast) olamaz: ikinci hane çift olmalı.</source>
+        <translation>Сетевой адрес не может быть групповым (multicast): вторая цифра должна быть чётной.</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Ağ bağdaştırıcılarını ve aralarındaki ilişkileri diyagram üzerinde gösterir.</source>
         <translation>Показывает сетевые адаптеры и связи между ними на диаграмме.</translation>
@@ -1342,6 +1372,11 @@ paylaşan</source>
     </message>
     <message>
         <location filename="core\changes.py"/>
+        <source>Bağdaştırıcı ayarı uygulamak için birkaç saniye yeniden başlatılır; bağlantı kısa süre kesilir.</source>
+        <translation>Для применения адаптер перезапускается на несколько секунд; соединение ненадолго прервётся.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
         <source>Bağdaştırıcı bağlı değil; DHCP yenilenemez.</source>
         <translation>Адаптер не подключён; обновить адрес DHCP невозможно.</translation>
     </message>
@@ -1389,6 +1424,11 @@ paylaşan</source>
         <location filename="core\changes.py"/>
         <source>Bağlı {name} kapatılıyor.</source>
         <translation>Подключённый адаптер {name} отключается.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Bağlı {name} yeniden başlatılıyor (sürücü ayarı).</source>
+        <translation>Подключённый адаптер {name} перезапускается (настройка драйвера).</translation>
     </message>
     <message>
         <location filename="ui\modules\tray_popup\tray_popup.py"/>
@@ -1629,6 +1669,11 @@ paylaşan</source>
         <location filename="ui\tray.py"/>
         <source>Devre dışı bırak…</source>
         <translation>Отключить…</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Değişen sürücü ayarı yok.</source>
+        <translation>Настройки драйвера не изменены.</translation>
     </message>
     <message>
         <location filename="ui\modules\changes_panel\changes_panel.py"/>
@@ -1884,6 +1929,11 @@ paylaşan</source>
         <location filename="core\discovery.py"/>
         <source>Hücresel</source>
         <translation>Сотовая связь</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Hız/çift yönlü, Jumbo, VLAN ve MAC ayarı karşı uçla uyumsuzsa bağlantı kurulamaz (30 sn içinde onaylamazsanız geri alınır).</source>
+        <translation>Если скорость/дуплекс, Jumbo, VLAN или MAC не совпадают с другой стороной, связь не установится (без подтверждения в течение 30 с будет откат).</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -2351,6 +2401,16 @@ paylaşan</source>
         <translation>Истекла</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücü gelişmiş özellikleri yalnız Windows'ta değiştirilebilir.</source>
+        <translation>Дополнительные свойства драйвера можно изменить только в Windows.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücüde {keyword} özelliği yok (yenileyip tekrar deneyin).</source>
+        <translation>У драйвера нет свойства {keyword} (обновите и повторите).</translation>
+    </message>
+    <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>
         <source>Tamamlanıyor…</source>
         <translation>Завершение…</translation>
@@ -2541,6 +2601,11 @@ paylaşan</source>
         <translation>Новое устройство: {who} → {ip}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Yerel yönetilen bir adres önerilir (ikinci hane 2, 6, A veya E); ağda başka bir aygıtla çakışabilir.</source>
+        <translation>Рекомендуется локально администрируемый адрес (вторая цифра 2, 6, A или E); иначе возможен конфликт с другим устройством.</translation>
+    </message>
+    <message>
         <location filename="platform\linux\apply.py"/>
         <source>Yetki aracı bulunamadı: {tool} (policykit-1 kurulu mu?)</source>
         <translation>Средство повышения прав не найдено: {tool} (установлен ли policykit-1?)</translation>
@@ -2599,6 +2664,11 @@ paylaşan</source>
         <location filename="ui\modules\inspector\inspector.py"/>
         <source>bit/sn</source>
         <translation>бит/с</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>boş = sürücü varsayılanı</source>
+        <translation>пусто = значение драйвера по умолчанию</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.py"/>
@@ -2692,6 +2762,11 @@ Devam edilsin mi?</source>
         <location filename="core\discovery.py"/>
         <source>tünel</source>
         <translation>туннель</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>varsayılan</source>
+        <translation>по умолчанию</translation>
     </message>
     <message>
         <location filename="core\discovery.py"/>
@@ -2939,6 +3014,11 @@ Devam edilsin mi?</source>
         <translation>{name}: статический IPv4 {address}/{prefix}, шлюз {gateway}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>{name}: sürücü ayarı {changes}</source>
+        <translation>{name}: настройка драйвера {changes}</translation>
+    </message>
+    <message>
         <location filename="core\discovery.py"/>
         <source>{net} alt ağı hem {a} hem {b} üzerinde.</source>
         <translation>Подсеть {net} есть и на {a}, и на {b}.</translation>
@@ -2947,6 +3027,26 @@ Devam edilsin mi?</source>
         <location filename="core\changes.py"/>
         <source>{net} alt ağı {name} ({other}) ile çakışıyor; yönlendirme belirsizleşebilir.</source>
         <translation>Подсеть {net} пересекается с {name} ({other}); маршрутизация может стать неоднозначной.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: değer boş ya da çok uzun</source>
+        <translation>{prop}: значение пустое или слишком длинное</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: geçersiz seçenek {value}</source>
+        <translation>{prop}: недопустимый вариант {value}</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: tam sayı olmalı</source>
+        <translation>{prop}: должно быть целым числом</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: {low}–{high} arasında, {step} adımlarla olmalı</source>
+        <translation>{prop}: должно быть от {low} до {high} с шагом {step}</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>

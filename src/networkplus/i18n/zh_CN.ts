@@ -491,6 +491,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Değer:</source>
+        <translation>值：</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Değişiklikler önce kuyruğa girer; alttaki “Bekleyen değişiklikler” panelinden Uygula ile tek yönetici onayıyla uygulanır.</source>
         <translation>更改会先加入队列；之后在下方“待定更改”面板中点击“应用”，通过一次管理员批准统一应用。</translation>
     </message>
@@ -671,6 +676,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün varsayılan değerine döndür</source>
+        <translation>恢复驱动程序默认值</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>重置</translation>
     </message>
@@ -683,6 +693,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Tür</source>
         <translation>类型</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Varsayılan</source>
+        <translation>默认</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1151,6 +1166,11 @@ paylaşan</source>
         <translation>（无共享）</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>(varsayılan)</source>
+        <translation>（默认）</translation>
+    </message>
+    <message>
         <location filename="core\changes.py"/>
         <source>1500 üzeri MTU için sürücüde 'Jumbo Packet' da açık olmalı; aksi hâlde paketler parçalanır ya da düşer.</source>
         <translation>MTU 超过 1500 时，还必须在驱动程序中启用“Jumbo Packet”；否则数据包会被分片或丢弃。</translation>
@@ -1276,6 +1296,16 @@ paylaşan</source>
         <translation>浅色主题</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi 12 onaltılık haneli olmalı (ör. 02AABBCCDDEE).</source>
+        <translation>网络地址必须为 12 位十六进制数字（例如 02AABBCCDDEE）。</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi çok noktaya yayın (multicast) olamaz: ikinci hane çift olmalı.</source>
+        <translation>网络地址不能是多播地址：第二位必须为偶数。</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Ağ bağdaştırıcılarını ve aralarındaki ilişkileri diyagram üzerinde gösterir.</source>
         <translation>在图表上显示网络适配器及其相互关系。</translation>
@@ -1342,6 +1372,11 @@ paylaşan</source>
     </message>
     <message>
         <location filename="core\changes.py"/>
+        <source>Bağdaştırıcı ayarı uygulamak için birkaç saniye yeniden başlatılır; bağlantı kısa süre kesilir.</source>
+        <translation>为应用设置，适配器将重启几秒钟；连接会短暂中断。</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
         <source>Bağdaştırıcı bağlı değil; DHCP yenilenemez.</source>
         <translation>适配器未连接；无法续订 DHCP。</translation>
     </message>
@@ -1389,6 +1424,11 @@ paylaşan</source>
         <location filename="core\changes.py"/>
         <source>Bağlı {name} kapatılıyor.</source>
         <translation>正在禁用已连接的适配器 {name}。</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Bağlı {name} yeniden başlatılıyor (sürücü ayarı).</source>
+        <translation>已连接的 {name} 正在重启（驱动程序设置）。</translation>
     </message>
     <message>
         <location filename="ui\modules\tray_popup\tray_popup.py"/>
@@ -1629,6 +1669,11 @@ paylaşan</source>
         <location filename="ui\tray.py"/>
         <source>Devre dışı bırak…</source>
         <translation>禁用…</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Değişen sürücü ayarı yok.</source>
+        <translation>没有更改驱动程序设置。</translation>
     </message>
     <message>
         <location filename="ui\modules\changes_panel\changes_panel.py"/>
@@ -1884,6 +1929,11 @@ paylaşan</source>
         <location filename="core\discovery.py"/>
         <source>Hücresel</source>
         <translation>蜂窝</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Hız/çift yönlü, Jumbo, VLAN ve MAC ayarı karşı uçla uyumsuzsa bağlantı kurulamaz (30 sn içinde onaylamazsanız geri alınır).</source>
+        <translation>如果速度/双工、Jumbo、VLAN 或 MAC 与对端不匹配，链路将无法建立（30 秒内未确认则回滚）。</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -2351,6 +2401,16 @@ paylaşan</source>
         <translation>已过期</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücü gelişmiş özellikleri yalnız Windows'ta değiştirilebilir.</source>
+        <translation>驱动程序高级属性只能在 Windows 上更改。</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücüde {keyword} özelliği yok (yenileyip tekrar deneyin).</source>
+        <translation>驱动程序没有 {keyword} 属性（请刷新后重试）。</translation>
+    </message>
+    <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>
         <source>Tamamlanıyor…</source>
         <translation>正在完成…</translation>
@@ -2541,6 +2601,11 @@ paylaşan</source>
         <translation>新设备：{who} → {ip}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Yerel yönetilen bir adres önerilir (ikinci hane 2, 6, A veya E); ağda başka bir aygıtla çakışabilir.</source>
+        <translation>建议使用本地管理地址（第二位为 2、6、A 或 E）；否则可能与其他设备冲突。</translation>
+    </message>
+    <message>
         <location filename="platform\linux\apply.py"/>
         <source>Yetki aracı bulunamadı: {tool} (policykit-1 kurulu mu?)</source>
         <translation>未找到权限工具：{tool}（是否已安装 policykit-1？）</translation>
@@ -2599,6 +2664,11 @@ paylaşan</source>
         <location filename="ui\modules\inspector\inspector.py"/>
         <source>bit/sn</source>
         <translation>bit/s</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>boş = sürücü varsayılanı</source>
+        <translation>空 = 驱动程序默认值</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.py"/>
@@ -2692,6 +2762,11 @@ Devam edilsin mi?</source>
         <location filename="core\discovery.py"/>
         <source>tünel</source>
         <translation>隧道</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>varsayılan</source>
+        <translation>默认</translation>
     </message>
     <message>
         <location filename="core\discovery.py"/>
@@ -2939,6 +3014,11 @@ Devam edilsin mi?</source>
         <translation>{name}：静态 IPv4 {address}/{prefix}，网关 {gateway}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>{name}: sürücü ayarı {changes}</source>
+        <translation>{name}：驱动程序设置 {changes}</translation>
+    </message>
+    <message>
         <location filename="core\discovery.py"/>
         <source>{net} alt ağı hem {a} hem {b} üzerinde.</source>
         <translation>{net} 子网同时存在于 {a} 和 {b} 上。</translation>
@@ -2947,6 +3027,26 @@ Devam edilsin mi?</source>
         <location filename="core\changes.py"/>
         <source>{net} alt ağı {name} ({other}) ile çakışıyor; yönlendirme belirsizleşebilir.</source>
         <translation>{net} 子网与 {name}（{other}）重叠；路由可能变得不明确。</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: değer boş ya da çok uzun</source>
+        <translation>{prop}：值为空或过长</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: geçersiz seçenek {value}</source>
+        <translation>{prop}：无效选项 {value}</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: tam sayı olmalı</source>
+        <translation>{prop}：必须是整数</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: {low}–{high} arasında, {step} adımlarla olmalı</source>
+        <translation>{prop}：必须在 {low}–{high} 之间，步长 {step}</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>

@@ -491,6 +491,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Değer:</source>
+        <translation>Valeur :</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Değişiklikler önce kuyruğa girer; alttaki “Bekleyen değişiklikler” panelinden Uygula ile tek yönetici onayıyla uygulanır.</source>
         <translation>Les modifications sont d'abord mises en file d'attente ; elles sont appliquées avec Appliquer dans le panneau « Modifications en attente » ci-dessous, avec une seule autorisation administrateur.</translation>
     </message>
@@ -671,6 +676,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün varsayılan değerine döndür</source>
+        <translation>Rétablir la valeur par défaut du pilote</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>Réinitialiser</translation>
     </message>
@@ -683,6 +693,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Tür</source>
         <translation>Type</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Varsayılan</source>
+        <translation>Par défaut</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1151,6 +1166,11 @@ internet ici</translation>
         <translation>(aucun partage)</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>(varsayılan)</source>
+        <translation>(par défaut)</translation>
+    </message>
+    <message>
         <location filename="core\changes.py"/>
         <source>1500 üzeri MTU için sürücüde 'Jumbo Packet' da açık olmalı; aksi hâlde paketler parçalanır ya da düşer.</source>
         <translation>Un MTU supérieur à 1500 nécessite aussi d'activer « Jumbo Packet » dans le pilote ; sinon les paquets sont fragmentés ou perdus.</translation>
@@ -1276,6 +1296,16 @@ internet ici</translation>
         <translation>Thème clair</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi 12 onaltılık haneli olmalı (ör. 02AABBCCDDEE).</source>
+        <translation>L'adresse réseau doit comporter 12 chiffres hexadécimaux (ex. 02AABBCCDDEE).</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi çok noktaya yayın (multicast) olamaz: ikinci hane çift olmalı.</source>
+        <translation>L'adresse réseau ne peut pas être multicast : le deuxième chiffre doit être pair.</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Ağ bağdaştırıcılarını ve aralarındaki ilişkileri diyagram üzerinde gösterir.</source>
         <translation>Affiche les cartes réseau et leurs relations sur un diagramme.</translation>
@@ -1342,6 +1372,11 @@ internet ici</translation>
     </message>
     <message>
         <location filename="core\changes.py"/>
+        <source>Bağdaştırıcı ayarı uygulamak için birkaç saniye yeniden başlatılır; bağlantı kısa süre kesilir.</source>
+        <translation>La carte redémarre quelques secondes pour appliquer le réglage ; la connexion est brièvement coupée.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
         <source>Bağdaştırıcı bağlı değil; DHCP yenilenemez.</source>
         <translation>La carte n'est pas connectée ; impossible de renouveler le bail DHCP.</translation>
     </message>
@@ -1389,6 +1424,11 @@ internet ici</translation>
         <location filename="core\changes.py"/>
         <source>Bağlı {name} kapatılıyor.</source>
         <translation>La carte connectée {name} va être désactivée.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Bağlı {name} yeniden başlatılıyor (sürücü ayarı).</source>
+        <translation>La carte connectée {name} redémarre (réglage du pilote).</translation>
     </message>
     <message>
         <location filename="ui\modules\tray_popup\tray_popup.py"/>
@@ -1629,6 +1669,11 @@ internet ici</translation>
         <location filename="ui\tray.py"/>
         <source>Devre dışı bırak…</source>
         <translation>Désactiver…</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Değişen sürücü ayarı yok.</source>
+        <translation>Aucun réglage du pilote modifié.</translation>
     </message>
     <message>
         <location filename="ui\modules\changes_panel\changes_panel.py"/>
@@ -1884,6 +1929,11 @@ internet ici</translation>
         <location filename="core\discovery.py"/>
         <source>Hücresel</source>
         <translation>Cellulaire</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Hız/çift yönlü, Jumbo, VLAN ve MAC ayarı karşı uçla uyumsuzsa bağlantı kurulamaz (30 sn içinde onaylamazsanız geri alınır).</source>
+        <translation>Si vitesse/duplex, Jumbo, VLAN ou MAC ne correspondent pas à l'autre extrémité, la liaison ne s'établit pas (annulé sans confirmation sous 30 s).</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -2351,6 +2401,16 @@ internet ici</translation>
         <translation>Expiré</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücü gelişmiş özellikleri yalnız Windows'ta değiştirilebilir.</source>
+        <translation>Les propriétés avancées du pilote ne peuvent être modifiées que sous Windows.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücüde {keyword} özelliği yok (yenileyip tekrar deneyin).</source>
+        <translation>Le pilote n'a pas de propriété {keyword} (actualisez et réessayez).</translation>
+    </message>
+    <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>
         <source>Tamamlanıyor…</source>
         <translation>Finalisation…</translation>
@@ -2541,6 +2601,11 @@ internet ici</translation>
         <translation>Nouvel appareil : {who} → {ip}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Yerel yönetilen bir adres önerilir (ikinci hane 2, 6, A veya E); ağda başka bir aygıtla çakışabilir.</source>
+        <translation>Une adresse administrée localement est recommandée (deuxième chiffre 2, 6, A ou E) ; elle peut entrer en conflit avec un autre appareil.</translation>
+    </message>
+    <message>
         <location filename="platform\linux\apply.py"/>
         <source>Yetki aracı bulunamadı: {tool} (policykit-1 kurulu mu?)</source>
         <translation>Outil d'élévation introuvable : {tool} (policykit-1 est-il installé ?)</translation>
@@ -2599,6 +2664,11 @@ internet ici</translation>
         <location filename="ui\modules\inspector\inspector.py"/>
         <source>bit/sn</source>
         <translation>bit/s</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>boş = sürücü varsayılanı</source>
+        <translation>vide = valeur par défaut du pilote</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.py"/>
@@ -2692,6 +2762,11 @@ Continuer ?</translation>
         <location filename="core\discovery.py"/>
         <source>tünel</source>
         <translation>tunnel</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>varsayılan</source>
+        <translation>par défaut</translation>
     </message>
     <message>
         <location filename="core\discovery.py"/>
@@ -2939,6 +3014,11 @@ Continuer ?</translation>
         <translation>{name} : IPv4 statique {address}/{prefix}, passerelle {gateway}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>{name}: sürücü ayarı {changes}</source>
+        <translation>{name} : réglage du pilote {changes}</translation>
+    </message>
+    <message>
         <location filename="core\discovery.py"/>
         <source>{net} alt ağı hem {a} hem {b} üzerinde.</source>
         <translation>Le sous-réseau {net} est à la fois sur {a} et sur {b}.</translation>
@@ -2947,6 +3027,26 @@ Continuer ?</translation>
         <location filename="core\changes.py"/>
         <source>{net} alt ağı {name} ({other}) ile çakışıyor; yönlendirme belirsizleşebilir.</source>
         <translation>Le sous-réseau {net} chevauche {name} ({other}) ; le routage peut devenir ambigu.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: değer boş ya da çok uzun</source>
+        <translation>{prop} : valeur vide ou trop longue</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: geçersiz seçenek {value}</source>
+        <translation>{prop} : option non valide {value}</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: tam sayı olmalı</source>
+        <translation>{prop} : doit être un entier</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: {low}–{high} arasında, {step} adımlarla olmalı</source>
+        <translation>{prop} : doit être entre {low}–{high} par pas de {step}</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>

@@ -61,7 +61,7 @@ Senaryo bazında ayrıntı: `.claude/docs/senaryo-analizi.md`.
 | ICS | `HNetCfg.HNetShare`: public → `EnableSharing(0)`, private → `EnableSharing(1)`; kapatma `DisableSharing()` |
 | Köprü | **Win11 22H2 + 2023-09 güncellemesi sonrası** `netsh bridge create/add/remove/destroy`. Win10'da resmi CLI yok → Win10'da köprü **yalnız görüntülenir** (INetCfg COM zor, ertelendi) |
 | ICS kalıcılığı | `HKLM\Software\Microsoft\Windows\CurrentVersion\SharedAccess\EnableRebootPersistConnection = 1` + `SharedAccess` hizmeti Automatic |
-| Gelişmiş sürücü | `Set-NetAdapterAdvancedProperty` (Jumbo, VLAN ID, Speed/Duplex...) |
+| Gelişmiş sürücü | `Set-NetAdapterAdvancedProperty -Name <ad> -IncludeHidden -RegistryKeyword K -RegistryValue V -NoRestart`, hepsinden sonra **bir kez** `Restart-NetAdapter` (yalnız `AdminStatus` Up ise — devre dışı kartı açar). Varsayılana dönüş: `Get-NetAdapterAdvancedProperty … -RegistryKeyword K \| Reset-NetAdapterAdvancedProperty -NoRestart` (Reset'in kendi parametresi yalnız `-DisplayName`, o da sürücü dilinde). Kuyruk adımı `ADVANCED` (bağdaştırıcı başına bir tane, `values{keyword: kayıt değeri}`) |
 
 ## Linux (NetworkManager) — Mint VM'de ölçülenler (2026-09-30)
 

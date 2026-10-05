@@ -13,15 +13,17 @@ değiştirebilir ya da bir karttan diğerine çizgi çekerek interneti paylaşt�
 
 ## İndir
 
-Windows 10/11, tek dosya, kurulum yok:
-**[Sürümler → networkPlus-0.1.0-windows-x64.exe](https://github.com/mcansiz/NetworkPlus/releases)**
+[Sürümler](https://github.com/mcansiz/NetworkPlus/releases) sayfasından, kurulum yok:
 
-> Exe henüz imzalı değil; Windows SmartScreen ilk açılışta uyarabilir ("Ek bilgi → Yine de
-> çalıştır"). Linux'ta kaynaktan çalıştırın ya da tek dosyayı kendiniz derleyin (aşağıda).
+| Platform | Dosya |
+|---|---|
+| Windows 10/11 (64 bit) | `networkPlus-<sürüm>-windows-x64.exe` — tek dosya |
+| Linux (64 bit, NetworkManager) | `networkPlus-<sürüm>-x86_64.AppImage` — `chmod +x`, glibc 2.17+ |
+| macOS 11+ (Apple Silicon), deneysel | `networkPlus-<sürüm>-macos-arm64.zip` — yalnız kayıtlı anlık görüntüleri açar (macOS'ta canlı ağ okuma yok) |
 
-Bir sonraki sürümden itibaren her sürümde **Linux AppImage** (`networkPlus-<sürüm>-x86_64.AppImage`,
-glibc 2.17+) ve yalnız kayıtlı anlık görüntüleri açan **deneysel bir macOS uygulaması** da bulunur
-(macOS'ta canlı ağ okuma yok). Sürümler GitHub Actions'ta üç platformda derlenip sınanır.
+> Paketler henüz imzalı değil: Windows SmartScreen ilk açılışta uyarabilir ("Ek bilgi → Yine de
+> çalıştır"); macOS'ta uygulamaya sağ tık → Aç. Sürümler GitHub Actions'ta üç platformda derlenip
+> sınanır.
 
 ## Özellikler
 
@@ -90,7 +92,7 @@ yönetici olarak başlayabilir.
 
 ## Durum ve sınırlamalar
 
-networkPlus yeni (0.1.0, **ön sürüm**). Güvendiğiniz bir makinede ayar değiştirmeden önce okuyun:
+networkPlus yeni (0.2.0, **ön sürüm**). Güvendiğiniz bir makinede ayar değiştirmeden önce okuyun:
 
 - Değişiklik uygulama Linux'ta (sanal makinede otomatik testlerle) ve kısmen Windows'ta (geliştirici
   tarafından) denendi. Riskli değişiklikler yukarıdaki otomatik geri alma ile korunur; yine de uzaktan
@@ -99,7 +101,8 @@ networkPlus yeni (0.1.0, **ön sürüm**). Güvendiğiniz bir makinede ayar değ
   durumları yakalar, her durumu değil.
 - Türkçe ve İngilizce dışındaki çeviriler yapay zekâ yardımıyla yapıldı, anadil gözden geçirmesi
   gerekiyor — düzeltmeler memnuniyetle karşılanır.
-- Gelişmiş sürücü özellikleri (sürücünün "Gelişmiş" sekmesi) Windows'ta gösterilir, henüz değiştirilemez.
+- Gelişmiş sürücü özellikleri (sürücünün "Gelişmiş" sekmesi: hız/çift yönlü, Jumbo, yük boşaltma, MAC
+  adresi…) Windows'ta değiştirilebilir; bağdaştırıcı kısa süre yeniden başlar. Linux'ta yok.
 - Henüz yok: IPv6 düzenleme, Windows'ta köprü, Wi-Fi hotspot denetimi.
 
 ## Kaynaktan çalıştırma

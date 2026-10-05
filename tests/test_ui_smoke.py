@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from PyQt5.QtCore import QEvent, QEventLoop, Qt, QTimer   # noqa: E402
 from PyQt5.QtWidgets import QApplication                  # noqa: E402
 
+from networkplus.core.changes import ChangeKind
 from networkplus.platform.filesource import FileCollector  # noqa: E402
 
 FIXTURES = ROOT / "tests" / "fixtures"
@@ -189,6 +190,41 @@ class ChangeFlow(unittest.TestCase):
         insp.edAdvancedFilter.clear()
         w.diagram.select(self.id["Radmin VPN"])
         self.assertFalse(insp.tabs.isTabEnabled(tab))
+
+    def test_advanced_edit_queues_change(self):
+        """Gelismis: secenek secilince form ADVANCED adimi uretir; kuyruktan geri yuklenir; sifirla temizler."""
+        from PyQt5.QtCore import Qt
+        w = self.win
+        insp = w.inspector
+        w.diagram.select(self.id["ETH"])
+        insp.tabs.setCurrentWidget(insp.tabAdvanced)
+        tree = insp.treeAdvanced
+        item = next(tree.topLevelItem(i) for i in range(tree.topLevelItemCount())
+                    if tree.topLevelItem(i).data(0, Qt.UserRole) == "*SpeedDuplex")
+        tree.setCurrentItem(item)
+        self.assertTrue(insp.cmbAdvValue.isVisibleTo(insp))
+        self.assertEqual(insp.cmbAdvValue.currentData(), "0")
+        insp.cmbAdvValue.setCurrentIndex(insp.cmbAdvValue.findData("6"))
+        insp.cmbAdvValue.activated.emit(insp.cmbAdvValue.currentIndex())
+        self.assertTrue(item.text(1).startswith("● "))
+        add, _ = insp.form_changes()
+        self.assertEqual([(c.kind, c.params) for c in add],
+                         [(ChangeKind.ADVANCED, {"values": {"*SpeedDuplex": "6"}})])
+        insp.btnQueue.click()
+        self.assertIsNotNone(w.changes.get(ChangeKind.ADVANCED, self.id["ETH"]))
+        w.diagram.select(self.id["Wi-Fi"])
+        w.diagram.select(self.id["ETH"])                                   # kuyruktan geri gelir
+        insp.tabs.setCurrentWidget(insp.tabAdvanced)
+        self.assertEqual(insp.form_changes()[0][0].params, {"values": {"*SpeedDuplex": "6"}})
+        # Sayisal ozellik: sayi kutusu
+        num = next(tree.topLevelItem(i) for i in range(tree.topLevelItemCount())
+                   if tree.topLevelItem(i).data(0, Qt.UserRole) == "*ReceiveBuffers")
+        tree.setCurrentItem(num)
+        self.assertTrue(insp.spnAdvValue.isVisibleTo(insp))
+        self.assertEqual((insp.spnAdvValue.minimum(), insp.spnAdvValue.maximum(), insp.spnAdvValue.value()),
+                         (32, 512, 512))
+        insp.btnResetForm.click()
+        self.assertEqual(insp.form_changes()[0], [])
 
     def test_invalid_form_not_queued(self):
         w = self.win

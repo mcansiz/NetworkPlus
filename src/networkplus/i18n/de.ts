@@ -491,6 +491,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Değer:</source>
+        <translation>Wert:</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Değişiklikler önce kuyruğa girer; alttaki “Bekleyen değişiklikler” panelinden Uygula ile tek yönetici onayıyla uygulanır.</source>
         <translation>Änderungen werden zuerst in die Warteschlange gestellt; sie werden mit „Übernehmen“ im Bereich „Ausstehende Änderungen“ unten mit einer einzigen Administratorgenehmigung übernommen.</translation>
     </message>
@@ -671,6 +676,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün varsayılan değerine döndür</source>
+        <translation>Auf den Standardwert des Treibers zurücksetzen</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>Zurücksetzen</translation>
     </message>
@@ -683,6 +693,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Tür</source>
         <translation>Typ</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Varsayılan</source>
+        <translation>Standard</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1151,6 +1166,11 @@ hierher frei</translation>
         <translation>(keine Freigabe)</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>(varsayılan)</source>
+        <translation>(Standard)</translation>
+    </message>
+    <message>
         <location filename="core\changes.py"/>
         <source>1500 üzeri MTU için sürücüde 'Jumbo Packet' da açık olmalı; aksi hâlde paketler parçalanır ya da düşer.</source>
         <translation>Für eine MTU über 1500 muss im Treiber auch „Jumbo Packet“ aktiviert sein; andernfalls werden Pakete fragmentiert oder verworfen.</translation>
@@ -1276,6 +1296,16 @@ hierher frei</translation>
         <translation>Helles Design</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi 12 onaltılık haneli olmalı (ör. 02AABBCCDDEE).</source>
+        <translation>Die Netzwerkadresse muss aus 12 Hexadezimalziffern bestehen (z. B. 02AABBCCDDEE).</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi çok noktaya yayın (multicast) olamaz: ikinci hane çift olmalı.</source>
+        <translation>Die Netzwerkadresse darf keine Multicast-Adresse sein: Die zweite Ziffer muss gerade sein.</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Ağ bağdaştırıcılarını ve aralarındaki ilişkileri diyagram üzerinde gösterir.</source>
         <translation>Zeigt Netzwerkadapter und die Beziehungen zwischen ihnen in einem Diagramm.</translation>
@@ -1342,6 +1372,11 @@ hierher frei</translation>
     </message>
     <message>
         <location filename="core\changes.py"/>
+        <source>Bağdaştırıcı ayarı uygulamak için birkaç saniye yeniden başlatılır; bağlantı kısa süre kesilir.</source>
+        <translation>Der Adapter wird zum Übernehmen einige Sekunden neu gestartet; die Verbindung bricht kurz ab.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
         <source>Bağdaştırıcı bağlı değil; DHCP yenilenemez.</source>
         <translation>Der Adapter ist nicht verbunden; DHCP kann nicht erneuert werden.</translation>
     </message>
@@ -1389,6 +1424,11 @@ hierher frei</translation>
         <location filename="core\changes.py"/>
         <source>Bağlı {name} kapatılıyor.</source>
         <translation>Der verbundene Adapter {name} wird deaktiviert.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Bağlı {name} yeniden başlatılıyor (sürücü ayarı).</source>
+        <translation>Verbundener Adapter {name} wird neu gestartet (Treibereinstellung).</translation>
     </message>
     <message>
         <location filename="ui\modules\tray_popup\tray_popup.py"/>
@@ -1629,6 +1669,11 @@ hierher frei</translation>
         <location filename="ui\tray.py"/>
         <source>Devre dışı bırak…</source>
         <translation>Deaktivieren…</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Değişen sürücü ayarı yok.</source>
+        <translation>Keine Treibereinstellung geändert.</translation>
     </message>
     <message>
         <location filename="ui\modules\changes_panel\changes_panel.py"/>
@@ -1884,6 +1929,11 @@ hierher frei</translation>
         <location filename="core\discovery.py"/>
         <source>Hücresel</source>
         <translation>Mobilfunk</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Hız/çift yönlü, Jumbo, VLAN ve MAC ayarı karşı uçla uyumsuzsa bağlantı kurulamaz (30 sn içinde onaylamazsanız geri alınır).</source>
+        <translation>Passen Geschwindigkeit/Duplex, Jumbo, VLAN oder MAC nicht zur Gegenstelle, kommt keine Verbindung zustande (ohne Bestätigung binnen 30 s wird zurückgesetzt).</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -2351,6 +2401,16 @@ hierher frei</translation>
         <translation>Abgelaufen</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücü gelişmiş özellikleri yalnız Windows'ta değiştirilebilir.</source>
+        <translation>Erweiterte Treibereigenschaften können nur unter Windows geändert werden.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücüde {keyword} özelliği yok (yenileyip tekrar deneyin).</source>
+        <translation>Der Treiber hat keine Eigenschaft {keyword} (aktualisieren und erneut versuchen).</translation>
+    </message>
+    <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>
         <source>Tamamlanıyor…</source>
         <translation>Wird abgeschlossen…</translation>
@@ -2541,6 +2601,11 @@ hierher frei</translation>
         <translation>Neues Gerät: {who} → {ip}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Yerel yönetilen bir adres önerilir (ikinci hane 2, 6, A veya E); ağda başka bir aygıtla çakışabilir.</source>
+        <translation>Eine lokal verwaltete Adresse wird empfohlen (zweite Ziffer 2, 6, A oder E); sonst kann sie mit einem anderen Gerät kollidieren.</translation>
+    </message>
+    <message>
         <location filename="platform\linux\apply.py"/>
         <source>Yetki aracı bulunamadı: {tool} (policykit-1 kurulu mu?)</source>
         <translation>Berechtigungswerkzeug nicht gefunden: {tool} (ist policykit-1 installiert?)</translation>
@@ -2599,6 +2664,11 @@ hierher frei</translation>
         <location filename="ui\modules\inspector\inspector.py"/>
         <source>bit/sn</source>
         <translation>bit/s</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>boş = sürücü varsayılanı</source>
+        <translation>leer = Treiberstandard</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.py"/>
@@ -2692,6 +2762,11 @@ Fortfahren?</translation>
         <location filename="core\discovery.py"/>
         <source>tünel</source>
         <translation>Tunnel</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>varsayılan</source>
+        <translation>Standard</translation>
     </message>
     <message>
         <location filename="core\discovery.py"/>
@@ -2939,6 +3014,11 @@ Fortfahren?</translation>
         <translation>{name}: statische IPv4 {address}/{prefix}, Gateway {gateway}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>{name}: sürücü ayarı {changes}</source>
+        <translation>{name}: Treibereinstellung {changes}</translation>
+    </message>
+    <message>
         <location filename="core\discovery.py"/>
         <source>{net} alt ağı hem {a} hem {b} üzerinde.</source>
         <translation>Das Subnetz {net} liegt sowohl auf {a} als auch auf {b}.</translation>
@@ -2947,6 +3027,26 @@ Fortfahren?</translation>
         <location filename="core\changes.py"/>
         <source>{net} alt ağı {name} ({other}) ile çakışıyor; yönlendirme belirsizleşebilir.</source>
         <translation>Das Subnetz {net} überschneidet sich mit {name} ({other}); das Routing kann mehrdeutig werden.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: değer boş ya da çok uzun</source>
+        <translation>{prop}: Wert leer oder zu lang</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: geçersiz seçenek {value}</source>
+        <translation>{prop}: ungültige Option {value}</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: tam sayı olmalı</source>
+        <translation>{prop}: muss eine ganze Zahl sein</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: {low}–{high} arasında, {step} adımlarla olmalı</source>
+        <translation>{prop}: muss zwischen {low}–{high} in Schritten von {step} liegen</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>

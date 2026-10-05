@@ -13,16 +13,17 @@ adapter to another to share the internet between them.
 
 ## Download
 
-Windows 10/11, single file, no installation:
-**[Releases → networkPlus-0.1.0-windows-x64.exe](https://github.com/mcansiz/NetworkPlus/releases)**
+From [Releases](https://github.com/mcansiz/NetworkPlus/releases), no installation:
 
-> The executable is not code-signed yet, so Windows SmartScreen may warn on first start
-> ("More info → Run anyway"). On Linux, run from source or build a single file yourself (see below).
+| Platform | File |
+|---|---|
+| Windows 10/11 (64-bit) | `networkPlus-<version>-windows-x64.exe` — single file |
+| Linux (64-bit, NetworkManager) | `networkPlus-<version>-x86_64.AppImage` — `chmod +x`, glibc 2.17+ |
+| macOS 11+ (Apple Silicon), experimental | `networkPlus-<version>-macos-arm64.zip` — opens saved snapshots only (no live network reading on macOS) |
 
-From the next release on, every release also carries a **Linux AppImage**
-(`networkPlus-<version>-x86_64.AppImage`, glibc 2.17+) and an **experimental macOS app** that only
-opens saved snapshots (there is no live network reading on macOS). Releases are built and tested
-by GitHub Actions on all three platforms.
+> The packages are not code-signed yet: Windows SmartScreen may warn on first start ("More info →
+> Run anyway"); on macOS right-click the app → Open. Releases are built and tested by GitHub Actions
+> on all three platforms.
 
 ## Features
 
@@ -90,7 +91,7 @@ can start elevated.
 
 ## Status and limitations
 
-networkPlus is young (0.1.0, **pre-release**). Please read before changing settings on a machine
+networkPlus is young (0.2.0, **pre-release**). Please read before changing settings on a machine
 you depend on:
 
 - Applying changes has been tested on Linux (automated tests in a VM) and partially on Windows
@@ -100,7 +101,8 @@ you depend on:
   common cases, not every one.
 - Translations other than Turkish and English were machine-assisted and need native review —
   corrections are very welcome.
-- Advanced driver properties (the driver's “Advanced” tab) are shown on Windows but cannot be changed yet.
+- Advanced driver properties (the driver's “Advanced” tab: speed/duplex, Jumbo, offloads, MAC address…)
+  can be changed on Windows; the adapter restarts briefly. Not available on Linux.
 - Not supported yet: IPv6 editing, Windows bridges, Wi-Fi hotspot control.
 
 ## Run from source

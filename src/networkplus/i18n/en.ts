@@ -495,6 +495,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Değer:</source>
+        <translation>Value:</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Değişiklikler önce kuyruğa girer; alttaki “Bekleyen değişiklikler” panelinden Uygula ile tek yönetici onayıyla uygulanır.</source>
         <translation>Changes go to the queue first; they are applied with Apply in the “Pending changes” panel below, with a single administrator approval.</translation>
     </message>
@@ -675,6 +680,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün varsayılan değerine döndür</source>
+        <translation>Restore the driver's default value</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>Reset</translation>
     </message>
@@ -687,6 +697,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Tür</source>
         <translation>Type</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Varsayılan</source>
+        <translation>Default</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1183,6 +1198,11 @@ internet here</translation>
         <translation>(no sharing)</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>(varsayılan)</source>
+        <translation>(default)</translation>
+    </message>
+    <message>
         <location filename="core\changes.py"/>
         <source>1500 üzeri MTU için sürücüde 'Jumbo Packet' da açık olmalı; aksi hâlde paketler parçalanır ya da düşer.</source>
         <translation>An MTU above 1500 also requires 'Jumbo Packet' to be enabled in the driver; otherwise packets are fragmented or dropped.</translation>
@@ -1308,6 +1328,16 @@ internet here</translation>
         <translation>Light theme</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi 12 onaltılık haneli olmalı (ör. 02AABBCCDDEE).</source>
+        <translation>The network address must be 12 hexadecimal digits (e.g. 02AABBCCDDEE).</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Ağ adresi çok noktaya yayın (multicast) olamaz: ikinci hane çift olmalı.</source>
+        <translation>The network address cannot be multicast: the second digit must be even.</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Ağ bağdaştırıcılarını ve aralarındaki ilişkileri diyagram üzerinde gösterir.</source>
         <translation>Shows network adapters and the relationships between them on a diagram.</translation>
@@ -1374,6 +1404,11 @@ internet here</translation>
     </message>
     <message>
         <location filename="core\changes.py"/>
+        <source>Bağdaştırıcı ayarı uygulamak için birkaç saniye yeniden başlatılır; bağlantı kısa süre kesilir.</source>
+        <translation>The adapter is restarted for a few seconds to apply the setting; the connection drops briefly.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
         <source>Bağdaştırıcı bağlı değil; DHCP yenilenemez.</source>
         <translation>The adapter is not connected; DHCP cannot be renewed.</translation>
     </message>
@@ -1421,6 +1456,11 @@ internet here</translation>
         <location filename="core\changes.py"/>
         <source>Bağlı {name} kapatılıyor.</source>
         <translation>The connected adapter {name} is being disabled.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Bağlı {name} yeniden başlatılıyor (sürücü ayarı).</source>
+        <translation>Connected {name} is restarted (driver setting).</translation>
     </message>
     <message>
         <location filename="ui\modules\tray_popup\tray_popup.py"/>
@@ -1661,6 +1701,11 @@ internet here</translation>
         <location filename="ui\tray.py"/>
         <source>Devre dışı bırak…</source>
         <translation>Disable…</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Değişen sürücü ayarı yok.</source>
+        <translation>No driver setting changed.</translation>
     </message>
     <message>
         <location filename="ui\modules\changes_panel\changes_panel.py"/>
@@ -1916,6 +1961,11 @@ internet here</translation>
         <location filename="core\discovery.py"/>
         <source>Hücresel</source>
         <translation>Cellular</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Hız/çift yönlü, Jumbo, VLAN ve MAC ayarı karşı uçla uyumsuzsa bağlantı kurulamaz (30 sn içinde onaylamazsanız geri alınır).</source>
+        <translation>If speed/duplex, Jumbo, VLAN or MAC settings don't match the other end, the link won't come up (rolled back unless you confirm within 30 s).</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -2383,6 +2433,16 @@ internet here</translation>
         <translation>Expired</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücü gelişmiş özellikleri yalnız Windows'ta değiştirilebilir.</source>
+        <translation>Advanced driver properties can only be changed on Windows.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>Sürücüde {keyword} özelliği yok (yenileyip tekrar deneyin).</source>
+        <translation>The driver has no {keyword} property (refresh and try again).</translation>
+    </message>
+    <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>
         <source>Tamamlanıyor…</source>
         <translation>Finishing…</translation>
@@ -2573,6 +2633,11 @@ internet here</translation>
         <translation>New device: {who} → {ip}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>Yerel yönetilen bir adres önerilir (ikinci hane 2, 6, A veya E); ağda başka bir aygıtla çakışabilir.</source>
+        <translation>A locally administered address is recommended (second digit 2, 6, A or E); it may clash with another device.</translation>
+    </message>
+    <message>
         <location filename="platform\linux\apply.py"/>
         <source>Yetki aracı bulunamadı: {tool} (policykit-1 kurulu mu?)</source>
         <translation>Privilege tool not found: {tool} (is policykit-1 installed?)</translation>
@@ -2631,6 +2696,11 @@ internet here</translation>
         <location filename="ui\modules\inspector\inspector.py"/>
         <source>bit/sn</source>
         <translation>bit/s</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>boş = sürücü varsayılanı</source>
+        <translation>empty = driver default</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.py"/>
@@ -2724,6 +2794,11 @@ Continue?</translation>
         <location filename="core\discovery.py"/>
         <source>tünel</source>
         <translation>tunnel</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>varsayılan</source>
+        <translation>default</translation>
     </message>
     <message>
         <location filename="core\discovery.py"/>
@@ -2971,6 +3046,11 @@ Continue?</translation>
         <translation>{name}: static IPv4 {address}/{prefix}, gateway {gateway}</translation>
     </message>
     <message>
+        <location filename="core\changes.py"/>
+        <source>{name}: sürücü ayarı {changes}</source>
+        <translation>{name}: driver setting {changes}</translation>
+    </message>
+    <message>
         <location filename="core\discovery.py"/>
         <source>{net} alt ağı hem {a} hem {b} üzerinde.</source>
         <translation>The {net} subnet is on both {a} and {b}.</translation>
@@ -2979,6 +3059,26 @@ Continue?</translation>
         <location filename="core\changes.py"/>
         <source>{net} alt ağı {name} ({other}) ile çakışıyor; yönlendirme belirsizleşebilir.</source>
         <translation>The {net} subnet overlaps {name} ({other}); routing may become ambiguous.</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: değer boş ya da çok uzun</source>
+        <translation>{prop}: value is empty or too long</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: geçersiz seçenek {value}</source>
+        <translation>{prop}: invalid option {value}</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: tam sayı olmalı</source>
+        <translation>{prop}: must be an integer</translation>
+    </message>
+    <message>
+        <location filename="core\changes.py"/>
+        <source>{prop}: {low}–{high} arasında, {step} adımlarla olmalı</source>
+        <translation>{prop}: must be between {low}–{high} in steps of {step}</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>

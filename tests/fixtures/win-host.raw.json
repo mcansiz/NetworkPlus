@@ -1336,6 +1336,10 @@
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1353,6 +1357,10 @@
     "Devre Dışı Bırakıldı",
     "Rx & Tx Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "3"
+   ],
    "default": "Rx & Tx Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1369,6 +1377,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkinleştirildi",
    "min": null,
@@ -1389,6 +1401,12 @@
     "Rx Etkinleştirildi",
     "Rx & Tx Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "Rx & Tx Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1407,6 +1425,11 @@
     "4088 Bytes",
     "9014 Bytes"
    ],
+   "options_registry": [
+    "1514",
+    "4088",
+    "9014"
+   ],
    "default": "Devre Dışı Bırakıldı",
    "min": null,
    "max": null,
@@ -1423,6 +1446,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkinleştirildi",
    "min": null,
@@ -1441,6 +1468,10 @@
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1457,6 +1488,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Devre Dışı Bırakıldı",
    "min": null,
@@ -1476,6 +1511,11 @@
     "2 Sıra",
     "4 Sıra"
    ],
+   "options_registry": [
+    "1",
+    "2",
+    "4"
+   ],
    "default": "4 Sıra",
    "min": null,
    "max": null,
@@ -1493,6 +1533,10 @@
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1509,6 +1553,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkinleştirildi",
    "min": null,
@@ -1529,6 +1577,12 @@
     "VLAN Etkinleştirildi",
     "Öncelik & VLAN Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "Öncelik & VLAN Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1543,6 +1597,9 @@
     "512"
    ],
    "options": [
+    null
+   ],
+   "options_registry": [
     null
    ],
    "default": "512",
@@ -1561,6 +1618,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkinleştirildi",
    "min": null,
@@ -1583,6 +1644,14 @@
     "100 Mbps Tam İkili",
     "1.0 Gbps Tam İkili"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
    "default": "Otomatik Görüşme",
    "min": null,
    "max": null,
@@ -1601,6 +1670,12 @@
     "Tx Etkinleştirildi",
     "Rx Etkinleştirildi",
     "Rx & Tx Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
    ],
    "default": "Rx & Tx Etkinleştirildi",
    "min": null,
@@ -1621,6 +1696,12 @@
     "Rx Etkinleştirildi",
     "Rx & Tx Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "Rx & Tx Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1635,6 +1716,9 @@
     "128"
    ],
    "options": [
+    null
+   ],
+   "options_registry": [
     null
    ],
    "default": "128",
@@ -1656,6 +1740,12 @@
     "Rx Etkinleştirildi",
     "Rx & Tx Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "Rx & Tx Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1675,6 +1765,12 @@
     "Rx Etkinleştirildi",
     "Rx & Tx Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "Rx & Tx Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1691,6 +1787,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkinleştirildi",
    "min": null,
@@ -1709,6 +1809,10 @@
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1725,6 +1829,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Devre Dışı Bırakıldı",
    "min": null,
@@ -1744,6 +1852,11 @@
     "Yeniden Bağla, Pil",
     "Yeniden Bağla, Pil veya AC"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2"
+   ],
    "default": "Devre Dışı Bırakıldı",
    "min": null,
    "max": null,
@@ -1760,6 +1873,10 @@
    "options": [
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkinleştirildi",
    "min": null,
@@ -1778,6 +1895,10 @@
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1792,6 +1913,9 @@
     null
    ],
    "options": [
+    null
+   ],
+   "options_registry": [
     null
    ],
    "default": "",
@@ -1811,6 +1935,10 @@
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1825,6 +1953,9 @@
     "0"
    ],
    "options": [
+    null
+   ],
+   "options_registry": [
     null
    ],
    "default": "0",
@@ -1844,6 +1975,10 @@
     "Devre Dışı Bırakıldı",
     "Etkinleştirildi"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkinleştirildi",
    "min": null,
    "max": null,
@@ -1862,6 +1997,11 @@
     "100 Mbps Önce",
     "Yavaşlatma Değil"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2"
+   ],
    "default": "10 Mbps Önce",
    "min": null,
    "max": null,
@@ -1878,6 +2018,10 @@
    "options": [
     "Devre dışı",
     "Etkin"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Devre dışı",
    "min": null,
@@ -1896,6 +2040,10 @@
     "Devre dışı",
     "Etkin"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkin",
    "min": null,
    "max": null,
@@ -1912,6 +2060,10 @@
    "options": [
     "Devre dışı",
     "Etkin"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkin",
    "min": null,
@@ -1930,6 +2082,10 @@
     "Devre dışı",
     "Etkin"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkin",
    "min": null,
    "max": null,
@@ -1946,6 +2102,10 @@
    "options": [
     "Devre dışı",
     "Etkin"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkin",
    "min": null,
@@ -1964,6 +2124,10 @@
     "Devre dışı",
     "Etkin"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkin",
    "min": null,
    "max": null,
@@ -1980,6 +2144,10 @@
    "options": [
     "Devre dışı",
     "Etkin"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Etkin",
    "min": null,
@@ -1998,6 +2166,10 @@
     "20 MHz",
     "Otomatik"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Otomatik",
    "min": null,
    "max": null,
@@ -2014,6 +2186,10 @@
    "options": [
     "20 MHz",
     "Otomatik"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Otomatik",
    "min": null,
@@ -2032,6 +2208,10 @@
     "RTS/CTS etkin",
     "CTS-to-self etkin"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "RTS/CTS etkin",
    "min": null,
    "max": null,
@@ -2049,6 +2229,10 @@
     "Devre dışı",
     "Etkin"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Etkin",
    "min": null,
    "max": null,
@@ -2065,6 +2249,10 @@
    "options": [
     "Devre dışı",
     "Etkin"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Devre dışı",
    "min": null,
@@ -2086,6 +2274,13 @@
     "4. Yüksek",
     "5. En yüksek"
    ],
+   "options_registry": [
+    "0",
+    "25",
+    "50",
+    "75",
+    "100"
+   ],
    "default": "5. En yüksek",
    "min": null,
    "max": null,
@@ -2105,6 +2300,12 @@
     "3. 802.11ac",
     "4. 802.11ax"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "4. 802.11ax",
    "min": null,
    "max": null,
@@ -2123,6 +2324,12 @@
     "Statik SMPS",
     "Dinamik SMPS",
     "SMPS Yok"
+   ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
    ],
    "default": "Otomatik SMPS",
    "min": null,
@@ -2144,6 +2351,13 @@
     "4. Yüksek",
     "5. En yüksek"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
    "default": "3. Orta",
    "min": null,
    "max": null,
@@ -2162,6 +2376,11 @@
     "2. 2,4 GHz bant Tercih Et",
     "3. 5 GHz bant Tercih Et"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2"
+   ],
    "default": "1. Tercih yok",
    "min": null,
    "max": null,
@@ -2179,6 +2398,10 @@
     "Devre dışı",
     "Etkin"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Devre dışı",
    "min": null,
    "max": null,
@@ -2195,6 +2418,10 @@
    "options": [
     "Devre dışı",
     "Etkin"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Devre dışı",
    "min": null,
@@ -2217,6 +2444,14 @@
     "5. Çift Bant 802.11a/g",
     "6. Çift Bant 802.11a/b/g"
    ],
+   "options_registry": [
+    "17",
+    "0",
+    "16",
+    "32",
+    "18",
+    "34"
+   ],
    "default": "6. Çift Bant 802.11a/b/g",
    "min": null,
    "max": null,
@@ -2233,6 +2468,10 @@
    "options": [
     "Disabled (1514)",
     "Enabled (9014)"
+   ],
+   "options_registry": [
+    "1514",
+    "9014"
    ],
    "default": "Disabled (1514)",
    "min": null,
@@ -2253,6 +2492,12 @@
     "VLAN Enabled",
     "Priority & VLAN Enabled"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "Priority & VLAN Enabled",
    "min": null,
    "max": null,
@@ -2269,6 +2514,10 @@
    "options": [
     "Disabled",
     "Enabled"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Enabled",
    "min": null,
@@ -2287,6 +2536,10 @@
     "Disabled",
     "Enabled"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Enabled",
    "min": null,
    "max": null,
@@ -2304,6 +2557,10 @@
     "Disabled",
     "Enabled"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Enabled",
    "min": null,
    "max": null,
@@ -2318,6 +2575,9 @@
     null
    ],
    "options": [
+    null
+   ],
+   "options_registry": [
     null
    ],
    "default": "0",
@@ -2337,6 +2597,10 @@
     "Disabled (1514)",
     "Enabled (9014)"
    ],
+   "options_registry": [
+    "1514",
+    "9014"
+   ],
    "default": "Disabled (1514)",
    "min": null,
    "max": null,
@@ -2356,6 +2620,12 @@
     "VLAN Enabled",
     "Priority & VLAN Enabled"
    ],
+   "options_registry": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
    "default": "Priority & VLAN Enabled",
    "min": null,
    "max": null,
@@ -2372,6 +2642,10 @@
    "options": [
     "Disabled",
     "Enabled"
+   ],
+   "options_registry": [
+    "0",
+    "1"
    ],
    "default": "Enabled",
    "min": null,
@@ -2390,6 +2664,10 @@
     "Disabled",
     "Enabled"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Enabled",
    "min": null,
    "max": null,
@@ -2407,6 +2685,10 @@
     "Disabled",
     "Enabled"
    ],
+   "options_registry": [
+    "0",
+    "1"
+   ],
    "default": "Enabled",
    "min": null,
    "max": null,
@@ -2421,6 +2703,9 @@
     null
    ],
    "options": [
+    null
+   ],
+   "options_registry": [
     null
    ],
    "default": "0",

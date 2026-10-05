@@ -214,5 +214,52 @@ class Script(Base):
             step_body(Change(ChangeKind.MTU, "notaguid; Stop-Computer", {"mtu": 1500}))
 
 
+
+class AdvancedDriverProperties(Base):
+    """Surucu Gelismis ozellikleri (Set-NetAdapterAdvancedProperty): kayit anahtari + kayit degeri."""
+
+    def adv(self, name, **values):
+        return Change(ChangeKind.ADVANCED, self.id[name], {"values": values})
+
+    def test_describe_validate_rollback(self):
+        p = self.plan(self.adv("ETH", **{"*SpeedDuplex": "6", "*ReceiveBuffers": "256"}))
+        self.assertEqual(p.items[0].title, "ETH: sürücü ayarı Hız & İkili = 1.0 Gbps Tam İkili; Arabellekleri Al = 256")
+        self.assertEqual(self.errors(p), [])
+        self.assertTrue(any("karşı uçla uyumsuz" in w for w in self.warnings(p)))
+        self.assertEqual(p.rollback[0].params, {"values": {"*SpeedDuplex": "0", "*ReceiveBuffers": "512"}})
+
+    def test_invalid_values(self):
+        cases = {"*SpeedDuplex": "5",            # secenek degil
+                 "*ReceiveBuffers": "250",       # adim 8 degil
+                 "NetworkAddress": "01AABBCCDDEE"}   # multicast
+        for keyword, value in cases.items():
+            with self.subTest(keyword=keyword):
+                self.assertTrue(self.errors(self.plan(self.adv("ETH", **{keyword: value}))))
+        self.assertTrue(self.errors(self.plan(self.adv("ETH", Yok="1"))))
+        self.assertTrue(self.errors(self.plan(self.adv("ETH"))))                 # bos
+
+    def test_network_address_default_is_reset(self):
+        p = self.plan(self.adv("ETH", NetworkAddress="02AABBCCDDEE"))
+        self.assertEqual(self.errors(p), [])
+        self.assertEqual(p.rollback[0].params, {"values": {"NetworkAddress": None}})
+        s = render_apply_script(p, self.topo)
+        self.assertIn("-RegistryKeyword 'NetworkAddress' -RegistryValue '02AABBCCDDEE' -NoRestart", s)
+        self.assertIn("-RegistryKeyword 'NetworkAddress' | Reset-NetAdapterAdvancedProperty -NoRestart", s)
+        self.assertEqual(s.count("Restart-NetAdapter -Name $a.Name"), 2)       # uygula + geri al, birer kez
+
+    def test_up_adapter_needs_confirmation(self):
+        from networkplus.core.changes import needs_confirmation
+        p = self.plan(self.adv("Wi-Fi", RoamAggressiveness="3"))
+        self.assertTrue(needs_confirmation(p, self.topo)[0])
+        self.assertTrue(any("yeniden başlatılır" in w for w in self.warnings(p)))
+
+    def test_linux_unsupported_and_injection(self):
+        with self.assertRaises(ScriptError):
+            step_body(Change(ChangeKind.ADVANCED, self.id["ETH"], {"values": {"*EEE'; Stop-Computer": "1"}}))
+        s = step_body(Change(ChangeKind.ADVANCED, self.id["ETH"], {"values": {"*EEE": "0'; x"}}))
+        self.assertIn("-RegistryValue '0''; x'", s)                             # tirnak ikilenir
+
+
+
 if __name__ == "__main__":
     unittest.main()

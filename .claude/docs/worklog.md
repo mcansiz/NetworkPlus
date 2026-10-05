@@ -325,3 +325,23 @@ için 3 platformda exe appimage ve macos binary üret — DiskUltimate projemde 
   tek kopya kilidiyle ona yönlendi. Ayrıca yönetici görevi `dist\` exe'sini açıyor. Kullanıcı eski
   uygulamayı kapattı; yeni exe derlenip (duman 2/2) `dist\`'e kondu (eskisi `.tmp/build/old-dist/`).
   Sekme dar panelde ▸ okunun arkasında kalıyordu → Windows'taki gibi "Genel"in yanına taşındı.
+
+### Aynı gün — Gelişmiş özellikleri değiştirme + v0.2.0 (kullanıcı: "1 evet 2 evet 3 evet")
+- `9f5ddb9` (salt okunur Gelişmiş sekmesi) push edildi.
+- Değiştirme: kuyruk adımı `ChangeKind.ADVANCED` (bağdaştırıcı başına bir; `values{keyword: kayıt
+  değeri | None}`), açıklama sürücü dilindeki adla, doğrulama (seçenek → `options_registry`,
+  aralık + adım, `NetworkAddress` 12 hex / multicast değil / yerel yönetilen önerisi), geri alma eski
+  kayıt değerleri (tanımsızsa `Reset`), bağlı kartta 30 sn onay. Betik: `Set-…-NoRestart` ×n +
+  tek `Restart-NetAdapter` (yalnız AdminStatus Up). Linux: desteklenmez (`UNSUPPORTED_REASON`).
+- Snapshot'a `options_registry` (`ValidRegistryValues`) eklendi; fixture yenilendi.
+- Arayüz: Gelişmiş sekmesinin altına Windows'taki gibi "Değer:" düzenleyici (seçenek → açılır liste,
+  aralık → sayı kutusu, diğer → metin) + Varsayılan düğmesi; düzenlenen satır `●` kalın italik.
+  Form akışına bağlı: Uygula / Kuyruğa ekle / Sıfırla / kuyruktan geri yükleme.
+- Testler 134/134 (yeni: `test_changes.AdvancedDriverProperties` ×5, `test_ui_smoke` ×1). Betik
+  yalnız `[Parser]::ParseFile` ile sözdizimi denetlendi (0 hata), **çalıştırılmadı**.
+- Sürüm 0.2.0; README indirme tablosu üç platform.
+
+**Doğrulanmamış (Windows test ortamı yok)**
+- Gerçek `Set-NetAdapterAdvancedProperty` + `Restart-NetAdapter` + geri alma. Kullanıcı önce
+  bağlı olmayan/kritik olmayan bir kartta (ör. ETH, Gelişmiş › Advanced EEE gibi zararsız bir
+  ayar) denemeli.

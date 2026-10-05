@@ -30,6 +30,7 @@ Her alan **eksik olabilir**; tüketici varsayılan değer kullanır.
     // display/value/options surucu dilinde -> yalniz gosterim; kimlik keyword. Linux'ta [].
     "advanced": [{"keyword": "*JumboPacket", "display": "Jumbo Çerçeve", "value": "Devre Dışı Bırakıldı",
                   "registry": ["1514"], "options": ["Devre Dışı Bırakıldı", "4088 Bytes", "9014 Bytes"],
+                  "options_registry": ["1514", "4088", "9014"],   // options ile aynı sırada; yazma bunlarla
                   "default": "Devre Dışı Bırakıldı", "range": null}]
   }],
   "default_routes": [{"adapter": "{GUID}", "family": 4, "dest": "0.0.0.0/0",

@@ -175,6 +175,7 @@ Section 'advanced' {
                 keyword  = $_.RegistryKeyword
                 registry = @($_.RegistryValue)
                 options  = @($_.ValidDisplayValues)
+                options_registry = @($_.ValidRegistryValues)
                 default  = $_.DefaultDisplayValue
                 min      = $_.NumericParameterMinValue
                 max      = $_.NumericParameterMaxValue

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import ipaddress
 
-from PyQt5.QtCore import QCollator, QLocale, QRegularExpression, pyqtSignal
+from PyQt5.QtCore import QCollator, QLocale, QRegularExpression, QSignalBlocker, Qt, pyqtSignal
 from PyQt5.QtGui import QRegularExpressionValidator, QTextCursor
 from PyQt5.QtWidgets import QHeaderView, QLineEdit, QTreeWidgetItem, QWidget
 
@@ -17,8 +17,8 @@ from ...icons import make_icon
 from ...theme import RED, connectivity_text, edge_title, status_color, status_text
 from ...uiloader import load_ui, require
 from ....core.changes import (
-    MTU_RANGE, Change, ChangeKind, ChangeSet, HOST_TARGET, current_dns4, current_ipv4, parse_prefix,
-    prefix_to_mask, validate,
+    MTU_RANGE, Change, ChangeKind, ChangeSet, HOST_TARGET, advanced_display, advanced_props, advanced_registry,
+    current_dns4, current_ipv4, parse_prefix, prefix_to_mask, validate, validate_advanced_value,
 )
 from ....core.discovery import kind_label
 from ....core.i18n import N_, tr
@@ -102,6 +102,7 @@ class InspectorPanel(QWidget):
                 "txtIpv6", "edDns6", "cmbShareFrom", "edIcsRole", "edIcsScope", "edIcsService", "edBridge",
                 "edSsid", "edBssid", "barSignal", "treeBindings", "listIssues",
                 "tabAdvanced", "treeAdvanced", "edAdvancedFilter",
+                "cmbAdvValue", "spnAdvValue", "edAdvValue", "btnAdvDefault", "lblAdvValue",
                 "lblPending", "btnQueue", "btnResetForm", "btnApplyNow", "lblReadOnly")
         f = self.lblTitle.font()
         f.setBold(True)
@@ -131,6 +132,14 @@ class InspectorPanel(QWidget):
         head.setStretchLastSection(False)
         head.setSectionResizeMode(0, QHeaderView.Stretch)
         head.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        # Deger duzenleyici (Windows'taki gibi: listeden sec, alttan degistir). Duzenlemeler
+        # _adv_edits'te birikir ve formun geri kalaniyla ayni Uygula / Kuyruga ekle ile gider.
+        self._adv_edits: dict[str, str | None] = {}
+        self.treeAdvanced.currentItemChanged.connect(self._load_adv_editor)
+        self.cmbAdvValue.activated.connect(self._adv_combo_chosen)
+        self.spnAdvValue.editingFinished.connect(self._adv_spin_done)
+        self.edAdvValue.editingFinished.connect(self._adv_text_done)
+        self.btnAdvDefault.clicked.connect(self._adv_default)
 
         self.topology: Topology | None = None
         self.changes: ChangeSet | None = None
@@ -237,11 +246,8 @@ class InspectorPanel(QWidget):
             value = prop.get("value") or ""
             item = QTreeWidgetItem(self.treeAdvanced, [str(prop.get("display") or prop.get("keyword")),
                                                        value or _dash(None)])
+            item.setData(0, Qt.UserRole, prop.get("keyword"))
             default = prop.get("default")
-            if default is not None and value and value != default:
-                f = item.font(1)
-                f.setBold(True)
-                item.setFont(1, f)
             lines = [str(prop.get("display") or ""), tr("Anahtar: {keyword}").format(keyword=prop.get("keyword"))]
             if prop.get("registry"):
                 lines.append(tr("Kayıt değeri: {value}").format(value=", ".join(prop["registry"])))
@@ -258,6 +264,109 @@ class InspectorPanel(QWidget):
             item.setToolTip(1, tip)
         self.tabs.setTabEnabled(self.tabs.indexOf(self.tabAdvanced), bool(props))
         self._filter_advanced(self.edAdvancedFilter.text())
+        self._load_adv_editor(None)
+
+    # ---- gelismis: deger duzenleme
+    def _adv_prop(self, item) -> dict | None:
+        if item is None or self._node is None:
+            return None
+        return advanced_props(self._node).get(item.data(0, Qt.UserRole))
+
+    def _adv_value(self, prop: dict) -> str | None:
+        """Formdaki (duzenlenmis ya da su anki) kayit degeri."""
+        keyword = prop["keyword"]
+        return self._adv_edits[keyword] if keyword in self._adv_edits else advanced_registry(prop)
+
+    def _render_adv_values(self):
+        """Deger sutunu: duzenlenmis deger + isaret; varsayilandan farkli deger kalin."""
+        for i in range(self.treeAdvanced.topLevelItemCount()):
+            item = self.treeAdvanced.topLevelItem(i)
+            prop = self._adv_prop(item)
+            if prop is None:
+                continue
+            edited = prop["keyword"] in self._adv_edits
+            value = self._adv_value(prop)
+            text = advanced_display(prop, value) if edited else (prop.get("value") or "")
+            if edited and value is None:
+                text = tr("(varsayılan)")
+            item.setText(1, ("● " if edited else "") + (text or _dash(None)))
+            f = item.font(1)
+            default = prop.get("default")
+            f.setBold(edited or (default is not None and bool(text) and text != default))
+            f.setItalic(edited)
+            item.setFont(1, f)
+
+    def _load_adv_editor(self, item, _previous=None):
+        prop = self._adv_prop(item)
+        options, regs = (prop or {}).get("options") or [], (prop or {}).get("options_registry") or []
+        rng = (prop or {}).get("range")
+        use_combo = bool(prop) and bool(options) and len(options) == len(regs)
+        use_spin = bool(prop) and not use_combo and bool(rng)
+        use_text = bool(prop) and not use_combo and not use_spin
+        self.cmbAdvValue.setVisible(use_combo or not prop)
+        self.spnAdvValue.setVisible(use_spin)
+        self.edAdvValue.setVisible(use_text)
+        for w in (self.cmbAdvValue, self.spnAdvValue, self.edAdvValue, self.btnAdvDefault, self.lblAdvValue):
+            w.setEnabled(bool(prop))
+        blockers = [QSignalBlocker(w) for w in (self.cmbAdvValue, self.spnAdvValue, self.edAdvValue)]
+        self.cmbAdvValue.clear()
+        if not prop:
+            return
+        value = self._adv_value(prop)
+        if use_combo:
+            for text, reg in zip(options, regs):
+                self.cmbAdvValue.addItem(text, reg)
+            self.cmbAdvValue.setCurrentIndex(max(0, self.cmbAdvValue.findData(value)))
+        elif use_spin:
+            self.spnAdvValue.setRange(int(rng["min"]), int(rng["max"]))
+            self.spnAdvValue.setSingleStep(int(rng.get("step") or 1))
+            try:
+                self.spnAdvValue.setValue(int(value))
+            except (TypeError, ValueError):
+                self.spnAdvValue.setValue(int(rng["min"]))
+        else:
+            self.edAdvValue.setText(value or "")
+            self.edAdvValue.setPlaceholderText(tr("boş = sürücü varsayılanı"))
+        del blockers
+
+    def _set_adv(self, value: str | None):
+        prop = self._adv_prop(self.treeAdvanced.currentItem())
+        if prop is None:
+            return
+        if value == advanced_registry(prop):
+            self._adv_edits.pop(prop["keyword"], None)        # su anki degere donuldu
+        else:
+            self._adv_edits[prop["keyword"]] = value
+        problem = validate_advanced_value(prop, value)
+        if problem:
+            self._set_pending_label(0, tr("Düzeltin: {error}").format(error=problem))
+        self._render_adv_values()
+
+    def _adv_combo_chosen(self, index: int):
+        self._set_adv(self.cmbAdvValue.itemData(index))
+
+    def _adv_spin_done(self):
+        if self.spnAdvValue.isVisible():
+            self._set_adv(str(self.spnAdvValue.value()))
+
+    def _adv_text_done(self):
+        if self.edAdvValue.isVisible():
+            self._set_adv(self.edAdvValue.text().strip() or None)
+
+    def _adv_default(self):
+        prop = self._adv_prop(self.treeAdvanced.currentItem())
+        if prop is None:
+            return
+        default = prop.get("default")
+        options, regs = prop.get("options") or [], prop.get("options_registry") or []
+        if default in options and len(options) == len(regs):
+            value = regs[options.index(default)]
+        elif prop.get("range") and str(default or "").strip().lstrip("-").isdigit():
+            value = str(int(default))
+        else:
+            value = None                                        # surucu varsayilani (kayit silinir)
+        self._set_adv(value)
+        self._load_adv_editor(self.treeAdvanced.currentItem())
 
     def _filter_advanced(self, text: str):
         needle = text.strip().casefold()
@@ -281,6 +390,7 @@ class InspectorPanel(QWidget):
             # Loopback 4294967295 gibi degerler kutunun sinirina kirpilir; kirpilmis
             # deger karsilastirilir ki form kendiliginden "degisti" sanmasin.
             ChangeKind.MTU: {"mtu": min(max(int(p.get("mtu") or 1500), MTU_RANGE[0]), MTU_RANGE[1])},
+            ChangeKind.ADVANCED: {"values": {}},           # su anki = hic degisiklik yok
         }
         pub = None
         if p.get("sharing") == "private":
@@ -346,6 +456,10 @@ class InspectorPanel(QWidget):
         idx = self.cmbShareFrom.findData(ics.get("public")) if ics.get("private") == node.id else 0
         self.cmbShareFrom.setCurrentIndex(max(0, idx))
 
+        self._adv_edits = dict(state[ChangeKind.ADVANCED].get("values") or {})
+        self._render_adv_values()
+        self._load_adv_editor(self.treeAdvanced.currentItem())
+
         self._set_pending_label(pending)
         self._sync_enabled()
 
@@ -392,6 +506,9 @@ class InspectorPanel(QWidget):
         wanted[ChangeKind.MTU] = {"mtu": self.spnMtu.value()}
         pub = self.cmbShareFrom.currentData()
         wanted[ChangeKind.ICS] = {"public": pub, "private": node.id if pub else None}
+        props = advanced_props(node)
+        wanted[ChangeKind.ADVANCED] = {"values": {k: v for k, v in self._adv_edits.items()
+                                                  if k in props and v != advanced_registry(props[k])}}
 
         add, remove = [], []
         for kind, params in wanted.items():
