@@ -241,8 +241,10 @@ class InspectorPanel(QWidget):
     def _fill_advanced(self, props: list[dict]):
         """Surucu gelismis ozellikleri (salt okunur). Varsayilandan farkli deger kalin yazilir."""
         self.treeAdvanced.clear()
-        collator = QCollator(QLocale())            # Turkce: "Ag Adresi" "Akis"tan once (Windows gibi)
-        for prop in sorted(props, key=lambda x: collator.sortKey(str(x.get("display") or ""))):
+        # Yerel sira (Turkce: "Ag Adresi" "Akis"tan once, Windows gibi). Harf buyuklugu once
+        # katlanir: C/POSIX yerelinde (CI) QCollator buyuk harfi one alir ("ARP" < "Advanced").
+        collator = QCollator(QLocale())
+        for prop in sorted(props, key=lambda x: collator.sortKey(str(x.get("display") or "").casefold())):
             value = prop.get("value") or ""
             item = QTreeWidgetItem(self.treeAdvanced, [str(prop.get("display") or prop.get("keyword")),
                                                        value or _dash(None)])
