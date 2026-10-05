@@ -353,3 +353,4 @@ için 3 platformda exe appimage ve macos binary üret — DiskUltimate projemde 
 - Yerel `dist
 etworkPlus-0.2.0-windows-x64.exe` derlendi (duman 2/2). Yönetici görevi hâlâ 0.1.0
   exe'sini gösteriyor; kullanıcı yeni exe'den "Sistemle başlat › yönetici"yi yeniden seçerse güncellenir.
+- Kullanıcı "sen yayınla": `v0.2.0` taslaktan çıkarıldı, ön sürüm olarak yayında (2026-10-05 11:42 UTC).
