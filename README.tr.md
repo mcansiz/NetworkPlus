@@ -99,7 +99,8 @@ networkPlus yeni (0.1.0, **ön sürüm**). Güvendiğiniz bir makinede ayar değ
   durumları yakalar, her durumu değil.
 - Türkçe ve İngilizce dışındaki çeviriler yapay zekâ yardımıyla yapıldı, anadil gözden geçirmesi
   gerekiyor — düzeltmeler memnuniyetle karşılanır.
-- Henüz yok: IPv6 düzenleme, Windows'ta köprü, Wi-Fi hotspot denetimi, gelişmiş sürücü özellikleri.
+- Gelişmiş sürücü özellikleri (sürücünün "Gelişmiş" sekmesi) Windows'ta gösterilir, henüz değiştirilemez.
+- Henüz yok: IPv6 düzenleme, Windows'ta köprü, Wi-Fi hotspot denetimi.
 
 ## Kaynaktan çalıştırma
 

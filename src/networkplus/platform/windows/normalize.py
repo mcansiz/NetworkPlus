@@ -60,6 +60,10 @@ def normalize(raw: dict) -> dict:
     for b in _list(raw.get("bindings")):
         bindings.setdefault(b.get("name"), {})[b.get("component")] = bool(b.get("enabled"))
 
+    advanced: dict[str, list[dict]] = {}
+    for x in _list(raw.get("advanced")):
+        advanced.setdefault(x.get("name"), []).append(_advanced_property(x))
+
     adapters = []
     for a in adapters_raw:
         idx = a.get("index")
@@ -130,6 +134,7 @@ def normalize(raw: dict) -> dict:
             "bridge_member": bool(binds.get("ms_bridge")),
             "bridge_master": None,
             "bindings": binds,
+            "advanced": sorted(advanced.get(a.get("name"), []), key=lambda x: str(x["display"]).casefold()),
         })
 
     default_routes = []
@@ -183,4 +188,23 @@ def normalize(raw: dict) -> dict:
         "vpn_profiles": _list(raw.get("vpn")),
         "errors": _list(raw.get("errors")),
         "timings_ms": raw.get("timings_ms") or {},
+    }
+
+
+def _advanced_property(x: dict) -> dict:
+    """Surucu gelismis ozelligi (Get-NetAdapterAdvancedProperty). Ad/deger surucu dilinde."""
+    def num(v):
+        try:
+            return int(v)
+        except (TypeError, ValueError):
+            return None
+    lo, hi, step = num(x.get("min")), num(x.get("max")), num(x.get("step"))
+    return {
+        "keyword": x.get("keyword"),
+        "display": x.get("display"),
+        "value": x.get("value") or "",
+        "registry": [str(r) for r in _list(x.get("registry")) if r is not None],
+        "options": [str(o) for o in _list(x.get("options")) if o is not None],
+        "default": x.get("default"),
+        "range": {"min": lo, "max": hi, "step": step} if lo is not None and hi is not None else None,
     }

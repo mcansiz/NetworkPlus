@@ -171,6 +171,25 @@ class ChangeFlow(unittest.TestCase):
         insp.btnQueue.click()
         self.assertEqual(len(w.changes), 0)
 
+    def test_advanced_tab(self):
+        """Gelismis sekmesi: surucu ozellikleri, arama; ozelligi olmayanda sekme kapali."""
+        w = self.win
+        insp = w.inspector
+        w.diagram.select(self.id["ETH"])
+        tab = insp.tabs.indexOf(insp.tabAdvanced)
+        self.assertTrue(insp.tabs.isTabEnabled(tab))
+        self.assertEqual(insp.treeAdvanced.topLevelItemCount(), 31)
+        names = [insp.treeAdvanced.topLevelItem(i).text(0) for i in range(31)]
+        self.assertEqual(names[0], "Advanced EEE")
+        row = names.index("Arabellekleri Al")
+        self.assertIn("32–512", insp.treeAdvanced.topLevelItem(row).toolTip(1))
+        insp.edAdvancedFilter.setText("jumbo")
+        visible = [i for i in range(31) if not insp.treeAdvanced.topLevelItem(i).isHidden()]
+        self.assertEqual([names[i] for i in visible], ["Jumbo Çerçeve"])
+        insp.edAdvancedFilter.clear()
+        w.diagram.select(self.id["Radmin VPN"])
+        self.assertFalse(insp.tabs.isTabEnabled(tab))
+
     def test_invalid_form_not_queued(self):
         w = self.win
         w.diagram.select(self.id["ETH"])

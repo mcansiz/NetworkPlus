@@ -100,7 +100,8 @@ you depend on:
   common cases, not every one.
 - Translations other than Turkish and English were machine-assisted and need native review —
   corrections are very welcome.
-- Not supported yet: IPv6 editing, Windows bridges, Wi-Fi hotspot control, advanced driver properties.
+- Advanced driver properties (the driver's “Advanced” tab) are shown on Windows but cannot be changed yet.
+- Not supported yet: IPv6 editing, Windows bridges, Wi-Fi hotspot control.
 
 ## Run from source
 

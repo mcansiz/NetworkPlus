@@ -546,6 +546,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Gelişmiş</source>
+        <translation>高级</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Genel</source>
         <translation>常规</translation>
     </message>
@@ -661,6 +666,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün gelişmiş özellikleri (Aygıt Yöneticisi › Gelişmiş). Ad ve değerler sürücünün dilindedir.</source>
+        <translation>驱动程序高级属性（设备管理器 › 高级）。名称和值使用驱动程序的语言。</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>重置</translation>
     </message>
@@ -693,6 +703,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Özellik</source>
         <translation>属性</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Özellik ara…</source>
+        <translation>搜索属性…</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1206,6 +1221,11 @@ paylaşan</source>
         <translation>子网掩码无效。</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Anahtar: {keyword}</source>
+        <translation>关键字：{keyword}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü aç</source>
         <translation>打开快照</translation>
@@ -1214,6 +1234,11 @@ paylaşan</source>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü kaydet</source>
         <translation>保存快照</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Aralık: {min}–{max} (adım {step})</source>
+        <translation>范围：{min}–{max}（步长 {step}）</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -1971,6 +1996,11 @@ paylaşan</source>
         <translation>数据源：{name}</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Kayıt değeri: {value}</source>
+        <translation>注册表值：{value}</translation>
+    </message>
+    <message>
         <location filename="platform\__init__.py"/>
         <source>Kayıtlı bir anlık görüntü görüntüleniyor; değişiklikler yalnız canlı sisteme uygulanabilir (Dosya › Canlı sisteme dön).</source>
         <translation>正在查看已保存的快照；更改只能应用到实时系统（文件 › 返回实时系统）。</translation>
@@ -2236,6 +2266,11 @@ paylaşan</source>
         <translation>虚拟机软件（VMware、VirtualBox、libvirt）可能在此网络上运行自己的 DHCP 服务器；如未关闭，两个服务器会发生冲突。</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Seçenekler: {values}</source>
+        <translation>选项：{values}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\adapter_list\adapter_list.py"/>
         <source>Sistem</source>
         <translation>系统</translation>
@@ -2454,6 +2489,11 @@ paylaşan</source>
         <location filename="core\discovery.py"/>
         <source>Varsayılan rota {dest}, ağ geçidi {hop}, rota metriği {route}, toplam {total}</source>
         <translation>默认路由 {dest}，网关 {hop}，路由跃点数 {route}，总计 {total}</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Varsayılan: {value}</source>
+        <translation>默认值：{value}</translation>
     </message>
     <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>

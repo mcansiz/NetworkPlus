@@ -1323,6 +1323,1112 @@
    "enabled": true
   }
  ],
+ "advanced": [
+  {
+   "name": "ETH",
+   "display": "Enerji Tasarruflu Ethernet",
+   "value": "Etkinleştirildi",
+   "keyword": "*EEE",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Akış Denetimi",
+   "value": "Rx & Tx Etkinleştirildi",
+   "keyword": "*FlowControl",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Rx & Tx Etkinleştirildi"
+   ],
+   "default": "Rx & Tx Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Hafifletmeyi Kes",
+   "value": "Etkinleştirildi",
+   "keyword": "*InterruptModeration",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "IPv4 Boşaltmayı Sağla",
+   "value": "Rx & Tx Etkinleştirildi",
+   "keyword": "*IPChecksumOffloadIPv4",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Tx Etkinleştirildi",
+    "Rx Etkinleştirildi",
+    "Rx & Tx Etkinleştirildi"
+   ],
+   "default": "Rx & Tx Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Jumbo Çerçeve",
+   "value": "Devre Dışı Bırakıldı",
+   "keyword": "*JumboPacket",
+   "registry": [
+    "1514"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "4088 Bytes",
+    "9014 Bytes"
+   ],
+   "default": "Devre Dışı Bırakıldı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Boşaltmayı Geniş Gönder v2 (IPv4)",
+   "value": "Etkinleştirildi",
+   "keyword": "*LsoV2IPv4",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Boşaltmayı Geniş Gönder v2 (IPv6)",
+   "value": "Etkinleştirildi",
+   "keyword": "*LsoV2IPv6",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Wake on magic packet when system is in the S0ix power state",
+   "value": "Devre Dışı Bırakıldı",
+   "keyword": "*ModernStandbyWoLMagicPacket",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Devre Dışı Bırakıldı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "En Fazla RSS Sırası Sayısı",
+   "value": "4 Sıra",
+   "keyword": "*NumRssQueues",
+   "registry": [
+    "4"
+   ],
+   "options": [
+    "1 Sıra",
+    "2 Sıra",
+    "4 Sıra"
+   ],
+   "default": "4 Sıra",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "ARP Yük Boşaltma",
+   "value": "Etkinleştirildi",
+   "keyword": "*PMARPOffload",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "NS Yük Boşaltma",
+   "value": "Etkinleştirildi",
+   "keyword": "*PMNSOffload",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Öncelik & VLAN",
+   "value": "Öncelik & VLAN Etkinleştirildi",
+   "keyword": "*PriorityVLANTag",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Öncelik & VLAN Devre Dışı Bırakıldı",
+    "Öncelik Etkinleştirildi",
+    "VLAN Etkinleştirildi",
+    "Öncelik & VLAN Etkinleştirildi"
+   ],
+   "default": "Öncelik & VLAN Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Arabellekleri Al",
+   "value": "512",
+   "keyword": "*ReceiveBuffers",
+   "registry": [
+    "512"
+   ],
+   "options": [
+    null
+   ],
+   "default": "512",
+   "min": "32",
+   "max": "512",
+   "step": "8"
+  },
+  {
+   "name": "ETH",
+   "display": "Yan Ölçüyü Al",
+   "value": "Etkinleştirildi",
+   "keyword": "*RSS",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Hız & İkili",
+   "value": "Otomatik Görüşme",
+   "keyword": "*SpeedDuplex",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Otomatik Görüşme",
+    "10 Mbps Yarım İkili",
+    "10 Mbps Tam İkili",
+    "100 Mbps Yarım İkili",
+    "100 Mbps Tam İkili",
+    "1.0 Gbps Tam İkili"
+   ],
+   "default": "Otomatik Görüşme",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "TCP Boşaltmayı Sağla (IPv4)",
+   "value": "Rx & Tx Etkinleştirildi",
+   "keyword": "*TCPChecksumOffloadIPv4",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Tx Etkinleştirildi",
+    "Rx Etkinleştirildi",
+    "Rx & Tx Etkinleştirildi"
+   ],
+   "default": "Rx & Tx Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "TCP Boşaltmayı Sağla (IPv6)",
+   "value": "Rx & Tx Etkinleştirildi",
+   "keyword": "*TCPChecksumOffloadIPv6",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Tx Etkinleştirildi",
+    "Rx Etkinleştirildi",
+    "Rx & Tx Etkinleştirildi"
+   ],
+   "default": "Rx & Tx Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Arabellekleri İlet",
+   "value": "128",
+   "keyword": "*TransmitBuffers",
+   "registry": [
+    "128"
+   ],
+   "options": [
+    null
+   ],
+   "default": "128",
+   "min": "32",
+   "max": "128",
+   "step": "8"
+  },
+  {
+   "name": "ETH",
+   "display": "UDP Boşaltmayı Sağla (IPv4)",
+   "value": "Rx & Tx Etkinleştirildi",
+   "keyword": "*UDPChecksumOffloadIPv4",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Tx Etkinleştirildi",
+    "Rx Etkinleştirildi",
+    "Rx & Tx Etkinleştirildi"
+   ],
+   "default": "Rx & Tx Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "UDP Boşaltmayı Sağla (IPv6)",
+   "value": "Rx & Tx Etkinleştirildi",
+   "keyword": "*UDPChecksumOffloadIPv6",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Tx Etkinleştirildi",
+    "Rx Etkinleştirildi",
+    "Rx & Tx Etkinleştirildi"
+   ],
+   "default": "Rx & Tx Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Sihirli Paket Eşleştirme Uyanması",
+   "value": "Etkinleştirildi",
+   "keyword": "*WakeOnMagicPacket",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Desen eşleştirme uyanması",
+   "value": "Etkinleştirildi",
+   "keyword": "*WakeOnPattern",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Advanced EEE",
+   "value": "Devre Dışı Bırakıldı",
+   "keyword": "AdvancedEEE",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Devre Dışı Bırakıldı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Gigabit’i (PowerSaving) Otomatik Olarak Devredışı Bırak",
+   "value": "Devre Dışı Bırakıldı",
+   "keyword": "AutoDisableGigabit",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Yeniden Bağla, Pil",
+    "Yeniden Bağla, Pil veya AC"
+   ],
+   "default": "Devre Dışı Bırakıldı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Yeşil Ethernet",
+   "value": "Etkinleştirildi",
+   "keyword": "EnableGreenEthernet",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Gigabit Lite",
+   "value": "Etkinleştirildi",
+   "keyword": "GigaLite",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Ağ Adresi",
+   "value": null,
+   "keyword": "NetworkAddress",
+   "registry": [
+    null
+   ],
+   "options": [
+    null
+   ],
+   "default": "",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "Power Saving Mode",
+   "value": "Etkinleştirildi",
+   "keyword": "PowerSavingMode",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "VLAN ID",
+   "value": "0",
+   "keyword": "RegVlanid",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    null
+   ],
+   "default": "0",
+   "min": "0",
+   "max": "4094",
+   "step": "1"
+  },
+  {
+   "name": "ETH",
+   "display": "Yerel Ağ Üzerinden Kapat",
+   "value": "Etkinleştirildi",
+   "keyword": "S5WakeOnLan",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre Dışı Bırakıldı",
+    "Etkinleştirildi"
+   ],
+   "default": "Etkinleştirildi",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "ETH",
+   "display": "WOL & Kapatma Bağlantı Hızı",
+   "value": "10 Mbps Önce",
+   "keyword": "WolShutdownLinkSpeed",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "10 Mbps Önce",
+    "100 Mbps Önce",
+    "Yavaşlatma Değil"
+   ],
+   "default": "10 Mbps Önce",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "WoWLAN Bağlantı Kesintisinde uyku durumuna geç",
+   "value": "Devre dışı",
+   "keyword": "*DeviceSleepOnDisconnect",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Devre dışı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Paket Birleştirme",
+   "value": "Etkin",
+   "keyword": "*PacketCoalescing",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "WoWLAN için ARP yük boşaltma",
+   "value": "Etkin",
+   "keyword": "*PMARPOffload",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "WoWLAN için NS yük boşaltma",
+   "value": "Etkin",
+   "keyword": "*PMNSOffload",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "WoWLAN için GTK yeniden anahtarlama",
+   "value": "Etkin",
+   "keyword": "*PMWiFiRekeyOffload",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Sihirli Paket Uyanması",
+   "value": "Etkin",
+   "keyword": "*WakeOnMagicPacket",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Desen eşleştirme uyanması",
+   "value": "Etkin",
+   "keyword": "*WakeOnPattern",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "2,4 GHz İçin Kanal Genişliği",
+   "value": "Otomatik",
+   "keyword": "ChannelWidth24",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "20 MHz",
+    "Otomatik"
+   ],
+   "default": "Otomatik",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "5 GHz İçin Kanal Genişliği",
+   "value": "Otomatik",
+   "keyword": "ChannelWidth52",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "20 MHz",
+    "Otomatik"
+   ],
+   "default": "Otomatik",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Karışık mod koruması",
+   "value": "RTS/CTS etkin",
+   "keyword": "CtsToItself",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "RTS/CTS etkin",
+    "CTS-to-self etkin"
+   ],
+   "default": "RTS/CTS etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "AP Seçimi için Kanal Yükü kullanımı",
+   "value": "Etkin",
+   "keyword": "EnableChLoad4ApSelection",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Etkin",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Geniş Kanal için Uyumsuz",
+   "value": "Devre dışı",
+   "keyword": "FatChannelIntolerant",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Devre dışı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Yayın gücü",
+   "value": "5. En yüksek",
+   "keyword": "IbssTxPower",
+   "registry": [
+    "100"
+   ],
+   "options": [
+    "1. En düşük",
+    "2. Düşük",
+    "3. Orta",
+    "4. Yüksek",
+    "5. En yüksek"
+   ],
+   "default": "5. En yüksek",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "802.11n/ac/ax Kablosuz Ağ Modu",
+   "value": "4. 802.11ax",
+   "keyword": "IEEE11nMode",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "1. Devre dışı",
+    "2. 802.11n",
+    "3. 802.11ac",
+    "4. 802.11ax"
+   ],
+   "default": "4. 802.11ax",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "MIMO Güç Tasarrufu Modu",
+   "value": "Otomatik SMPS",
+   "keyword": "MIMOPowerSaveMode",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Otomatik SMPS",
+    "Statik SMPS",
+    "Dinamik SMPS",
+    "SMPS Yok"
+   ],
+   "default": "Otomatik SMPS",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Gezinme Zorlaması",
+   "value": "3. Orta",
+   "keyword": "RoamAggressiveness",
+   "registry": [
+    "2"
+   ],
+   "options": [
+    "1. En düşük",
+    "2. Düşük",
+    "3. Orta",
+    "4. Yüksek",
+    "5. En yüksek"
+   ],
+   "default": "3. Orta",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Yeğlenen Bant",
+   "value": "1. Tercih yok",
+   "keyword": "RoamingPreferredBandType",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "1. Tercih yok",
+    "2. 2,4 GHz bant Tercih Et",
+    "3. 5 GHz bant Tercih Et"
+   ],
+   "default": "1. Tercih yok",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "Verimlilik Arttırıcı",
+   "value": "Devre dışı",
+   "keyword": "ThroughputBoosterEnabled",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Devre dışı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "U-APSD Desteği",
+   "value": "Devre dışı",
+   "keyword": "uAPSDSupport",
+   "registry": [
+    "0"
+   ],
+   "options": [
+    "Devre dışı",
+    "Etkin"
+   ],
+   "default": "Devre dışı",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "Wi-Fi",
+   "display": "802.11a/b/g Kablosuz Ağ Modu",
+   "value": "6. Çift Bant 802.11a/b/g",
+   "keyword": "WirelessMode",
+   "registry": [
+    "34"
+   ],
+   "options": [
+    "1. 5 GHz 802.11a",
+    "2. 2,4 GHz 802.11b",
+    "3. 2,4 GHz 802.11g",
+    "4. 2,4 GHz 802.11b/g",
+    "5. Çift Bant 802.11a/g",
+    "6. Çift Bant 802.11a/b/g"
+   ],
+   "default": "6. Çift Bant 802.11a/b/g",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "display": "Jumbo Packet",
+   "value": "Disabled (1514)",
+   "keyword": "*JumboPacket",
+   "registry": [
+    "1514"
+   ],
+   "options": [
+    "Disabled (1514)",
+    "Enabled (9014)"
+   ],
+   "default": "Disabled (1514)",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "display": "Priority / VLAN tag",
+   "value": "Priority & VLAN Enabled",
+   "keyword": "*PriorityVLANTag",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Priority & VLAN Disabled",
+    "Priority Enabled",
+    "VLAN Enabled",
+    "Priority & VLAN Enabled"
+   ],
+   "default": "Priority & VLAN Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "display": "Wake on magic packet",
+   "value": "Enabled",
+   "keyword": "*WakeOnMagicPacket",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Disabled",
+    "Enabled"
+   ],
+   "default": "Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "display": "Wake on pattern match",
+   "value": "Enabled",
+   "keyword": "*WakeOnPattern",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Disabled",
+    "Enabled"
+   ],
+   "default": "Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "display": "Wake on LAN",
+   "value": "Enabled",
+   "keyword": "EnableWakeOnLan",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Disabled",
+    "Enabled"
+   ],
+   "default": "Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet8",
+   "display": "VLAN ID",
+   "value": null,
+   "keyword": "VlanId",
+   "registry": [
+    null
+   ],
+   "options": [
+    null
+   ],
+   "default": "0",
+   "min": "0",
+   "max": "4095",
+   "step": "1"
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "display": "Jumbo Packet",
+   "value": "Disabled (1514)",
+   "keyword": "*JumboPacket",
+   "registry": [
+    "1514"
+   ],
+   "options": [
+    "Disabled (1514)",
+    "Enabled (9014)"
+   ],
+   "default": "Disabled (1514)",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "display": "Priority / VLAN tag",
+   "value": "Priority & VLAN Enabled",
+   "keyword": "*PriorityVLANTag",
+   "registry": [
+    "3"
+   ],
+   "options": [
+    "Priority & VLAN Disabled",
+    "Priority Enabled",
+    "VLAN Enabled",
+    "Priority & VLAN Enabled"
+   ],
+   "default": "Priority & VLAN Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "display": "Wake on magic packet",
+   "value": "Enabled",
+   "keyword": "*WakeOnMagicPacket",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Disabled",
+    "Enabled"
+   ],
+   "default": "Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "display": "Wake on pattern match",
+   "value": "Enabled",
+   "keyword": "*WakeOnPattern",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Disabled",
+    "Enabled"
+   ],
+   "default": "Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "display": "Wake on LAN",
+   "value": "Enabled",
+   "keyword": "EnableWakeOnLan",
+   "registry": [
+    "1"
+   ],
+   "options": [
+    "Disabled",
+    "Enabled"
+   ],
+   "default": "Enabled",
+   "min": null,
+   "max": null,
+   "step": null
+  },
+  {
+   "name": "VMware Network Adapter VMnet1",
+   "display": "VLAN ID",
+   "value": null,
+   "keyword": "VlanId",
+   "registry": [
+    null
+   ],
+   "options": [
+    null
+   ],
+   "default": "0",
+   "min": "0",
+   "max": "4095",
+   "step": "1"
+  }
+ ],
  "ics": [
   {
    "name": "Bluetooth Ağ Bağlantısı",

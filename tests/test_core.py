@@ -49,6 +49,19 @@ class WindowsHostFixture(unittest.TestCase):
         self.assertEqual(wifi["metric4"], 35)
         self.assertEqual(self.snap["sharing"]["scope"], "192.168.1.1")
 
+    def test_advanced_driver_properties(self):
+        """Surucu Gelismis sekmesi (Get-NetAdapterAdvancedProperty) bagdastiriciya baglanir."""
+        eth = next(a for a in self.snap["adapters"] if a["name"] == "ETH")
+        self.assertEqual(len(eth["advanced"]), 31)
+        by_key = {x["keyword"]: x for x in eth["advanced"]}
+        eee = by_key["AdvancedEEE"]
+        self.assertEqual((eee["display"], eee["registry"]), ("Advanced EEE", ["0"]))
+        self.assertIn("Etkinleştirildi", eee["options"])
+        self.assertEqual(by_key["*ReceiveBuffers"]["range"], {"min": 32, "max": 512, "step": 8})
+        self.assertEqual(by_key["NetworkAddress"]["registry"], [])        # bos deger -> bos liste
+        radmin = next(a for a in self.snap["adapters"] if a["name"] == "Radmin VPN")
+        self.assertEqual(radmin["advanced"], [])
+
     def test_turkish_names_survive(self):
         names = [a["name"] for a in self.snap["adapters"]]
         self.assertIn("Bluetooth Ağ Bağlantısı", names)

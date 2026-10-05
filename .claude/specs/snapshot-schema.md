@@ -21,11 +21,16 @@ Her alan **eksik olabilir**; tüketici varsayılan değer kullanır.
     "dhcp4": true, "dns4": ["10.20.30.100"], "dns6": [],
     "metric4": 35, "auto_metric4": true, "mtu": 1500, "forwarding4": false,
     "connectivity": "internet|local|none|unknown",
-    "network_name": "barko.local", "network_category": "DomainAuthenticated",
+    "network_name": "corp.example", "network_category": "DomainAuthenticated",
     "wifi": {"ssid": "…", "bssid": "…", "signal": 65} | null,
     "sharing": "public" | "private" | null,      // ICS / NM shared
     "bridge_member": false, "bridge_master": null,
-    "bindings": {"ms_tcpip": true, "ms_bridge": false, "vms_pp": false}
+    "bindings": {"ms_tcpip": true, "ms_bridge": false, "vms_pp": false},
+    // Surucunun "Gelismis" sekmesi (Windows: Get-NetAdapterAdvancedProperty, yalniz DisplayName'li).
+    // display/value/options surucu dilinde -> yalniz gosterim; kimlik keyword. Linux'ta [].
+    "advanced": [{"keyword": "*JumboPacket", "display": "Jumbo Çerçeve", "value": "Devre Dışı Bırakıldı",
+                  "registry": ["1514"], "options": ["Devre Dışı Bırakıldı", "4088 Bytes", "9014 Bytes"],
+                  "default": "Devre Dışı Bırakıldı", "range": null}]
   }],
   "default_routes": [{"adapter": "{GUID}", "family": 4, "dest": "0.0.0.0/0",
                       "next_hop": "10.20.30.253", "metric": 0, "effective_metric": 35}],

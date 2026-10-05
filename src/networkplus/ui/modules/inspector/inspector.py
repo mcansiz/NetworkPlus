@@ -9,9 +9,9 @@ from __future__ import annotations
 
 import ipaddress
 
-from PyQt5.QtCore import QRegularExpression, pyqtSignal
+from PyQt5.QtCore import QCollator, QLocale, QRegularExpression, pyqtSignal
 from PyQt5.QtGui import QRegularExpressionValidator, QTextCursor
-from PyQt5.QtWidgets import QLineEdit, QTreeWidgetItem, QWidget
+from PyQt5.QtWidgets import QHeaderView, QLineEdit, QTreeWidgetItem, QWidget
 
 from ...icons import make_icon
 from ...theme import RED, connectivity_text, edge_title, status_color, status_text
@@ -101,6 +101,7 @@ class InspectorPanel(QWidget):
                 "cmbDnsMode", "edDns1", "edDns2", "chkAutoMetric", "spnMetric", "spnMtu", "edForwarding",
                 "txtIpv6", "edDns6", "cmbShareFrom", "edIcsRole", "edIcsScope", "edIcsService", "edBridge",
                 "edSsid", "edBssid", "barSignal", "treeBindings", "listIssues",
+                "tabAdvanced", "treeAdvanced", "edAdvancedFilter",
                 "lblPending", "btnQueue", "btnResetForm", "btnApplyNow", "lblReadOnly")
         f = self.lblTitle.font()
         f.setBold(True)
@@ -124,6 +125,12 @@ class InspectorPanel(QWidget):
         self.btnQueue.clicked.connect(self._submit)
         self.btnApplyNow.clicked.connect(self._submit_and_apply)
         self.btnResetForm.clicked.connect(lambda: self._fill_form(self._node, with_pending=False))
+        self.edAdvancedFilter.textChanged.connect(self._filter_advanced)
+        # Deger sutunu hep tam gorunsun; uzun ozellik adi kisaltilir (ipucunda tamami).
+        head = self.treeAdvanced.header()
+        head.setStretchLastSection(False)
+        head.setSectionResizeMode(0, QHeaderView.Stretch)
+        head.setSectionResizeMode(1, QHeaderView.ResizeToContents)
 
         self.topology: Topology | None = None
         self.changes: ChangeSet | None = None
@@ -206,6 +213,7 @@ class InspectorPanel(QWidget):
         for comp, enabled in sorted((p.get("bindings") or {}).items()):
             QTreeWidgetItem(self.treeBindings, [tr(BINDING_NAMES[comp]) if comp in BINDING_NAMES else comp, tr("Evet") if enabled else tr("Hayır")])
         self.tabs.setTabEnabled(self.tabs.indexOf(self.tabBindings), bool(p.get("bindings")))
+        self._fill_advanced(p.get("advanced") or [])
 
         self.listIssues.clear()
         for b in node.badges:
@@ -220,6 +228,43 @@ class InspectorPanel(QWidget):
         if not self.tabs.isTabEnabled(self.tabs.currentIndex()):
             self.tabs.setCurrentIndex(0)
         self.stack.setCurrentIndex(PAGE_ADAPTER)
+
+    def _fill_advanced(self, props: list[dict]):
+        """Surucu gelismis ozellikleri (salt okunur). Varsayilandan farkli deger kalin yazilir."""
+        self.treeAdvanced.clear()
+        collator = QCollator(QLocale())            # Turkce: "Ag Adresi" "Akis"tan once (Windows gibi)
+        for prop in sorted(props, key=lambda x: collator.sortKey(str(x.get("display") or ""))):
+            value = prop.get("value") or ""
+            item = QTreeWidgetItem(self.treeAdvanced, [str(prop.get("display") or prop.get("keyword")),
+                                                       value or _dash(None)])
+            default = prop.get("default")
+            if default is not None and value and value != default:
+                f = item.font(1)
+                f.setBold(True)
+                item.setFont(1, f)
+            lines = [str(prop.get("display") or ""), tr("Anahtar: {keyword}").format(keyword=prop.get("keyword"))]
+            if prop.get("registry"):
+                lines.append(tr("Kayıt değeri: {value}").format(value=", ".join(prop["registry"])))
+            if default is not None:
+                lines.append(tr("Varsayılan: {value}").format(value=default))
+            rng = prop.get("range")
+            if prop.get("options"):
+                lines.append(tr("Seçenekler: {values}").format(values=" · ".join(prop["options"])))
+            elif rng:
+                lines.append(tr("Aralık: {min}–{max} (adım {step})").format(
+                    min=rng.get("min"), max=rng.get("max"), step=rng.get("step") or 1))
+            tip = "\n".join(lines)
+            item.setToolTip(0, tip)
+            item.setToolTip(1, tip)
+        self.tabs.setTabEnabled(self.tabs.indexOf(self.tabAdvanced), bool(props))
+        self._filter_advanced(self.edAdvancedFilter.text())
+
+    def _filter_advanced(self, text: str):
+        needle = text.strip().casefold()
+        for i in range(self.treeAdvanced.topLevelItemCount()):
+            item = self.treeAdvanced.topLevelItem(i)
+            hay = f"{item.text(0)} {item.text(1)} {item.toolTip(0)}".casefold()
+            item.setHidden(bool(needle) and needle not in hay)
 
     # ----------------------------------------------------------------- form
     def _current_state(self, node: Node) -> dict[ChangeKind, dict]:

@@ -162,6 +162,27 @@ Section 'bindings' {
         }
 }
 
+# Surucunun "Gelismis" sekmesi (aygit yoneticisindeki liste): yalniz gorunen (DisplayName'li)
+# ozellikler. Ad/deger surucunun dilindedir -> yalniz gosterim; kimlik RegistryKeyword.
+Section 'advanced' {
+    Get-NetAdapterAdvancedProperty -Name * -ErrorAction SilentlyContinue |
+        Where-Object { $_.DisplayName } |
+        ForEach-Object {
+            [ordered]@{
+                name     = $_.Name
+                display  = $_.DisplayName
+                value    = $_.DisplayValue
+                keyword  = $_.RegistryKeyword
+                registry = @($_.RegistryValue)
+                options  = @($_.ValidDisplayValues)
+                default  = $_.DefaultDisplayValue
+                min      = $_.NumericParameterMinValue
+                max      = $_.NumericParameterMaxValue
+                step     = $_.NumericParameterStepValue
+            }
+        }
+}
+
 # ICS: HNetCfg okuma (yetki gerektirmez). SharingConnectionType 0 = public, 1 = private.
 Section 'ics' {
     $m = New-Object -ComObject HNetCfg.HNetShare

@@ -546,6 +546,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Gelişmiş</source>
+        <translation>Avancé</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Genel</source>
         <translation>Général</translation>
     </message>
@@ -661,6 +666,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün gelişmiş özellikleri (Aygıt Yöneticisi › Gelişmiş). Ad ve değerler sürücünün dilindedir.</source>
+        <translation>Propriétés avancées du pilote (Gestionnaire de périphériques › Avancé). Les noms et valeurs sont dans la langue du pilote.</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>Réinitialiser</translation>
     </message>
@@ -693,6 +703,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Özellik</source>
         <translation>Propriété</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Özellik ara…</source>
+        <translation>Rechercher une propriété…</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1206,6 +1221,11 @@ internet ici</translation>
         <translation>Masque de sous-réseau non valide.</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Anahtar: {keyword}</source>
+        <translation>Mot-clé : {keyword}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü aç</source>
         <translation>Ouvrir un instantané</translation>
@@ -1214,6 +1234,11 @@ internet ici</translation>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü kaydet</source>
         <translation>Enregistrer l'instantané</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Aralık: {min}–{max} (adım {step})</source>
+        <translation>Plage : {min}–{max} (pas {step})</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -1971,6 +1996,11 @@ internet ici</translation>
         <translation>Source : {name}</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Kayıt değeri: {value}</source>
+        <translation>Valeur du registre : {value}</translation>
+    </message>
+    <message>
         <location filename="platform\__init__.py"/>
         <source>Kayıtlı bir anlık görüntü görüntüleniyor; değişiklikler yalnız canlı sisteme uygulanabilir (Dosya › Canlı sisteme dön).</source>
         <translation>Un instantané enregistré est affiché ; les modifications ne peuvent être appliquées qu'au système actif (Fichier › Revenir au système actif).</translation>
@@ -2236,6 +2266,11 @@ internet ici</translation>
         <translation>Le logiciel de virtualisation (VMware, VirtualBox, libvirt) peut exécuter son propre serveur DHCP sur ce réseau ; s'il n'est pas désactivé, les deux serveurs entreront en conflit.</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Seçenekler: {values}</source>
+        <translation>Options : {values}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\adapter_list\adapter_list.py"/>
         <source>Sistem</source>
         <translation>Système</translation>
@@ -2454,6 +2489,11 @@ internet ici</translation>
         <location filename="core\discovery.py"/>
         <source>Varsayılan rota {dest}, ağ geçidi {hop}, rota metriği {route}, toplam {total}</source>
         <translation>Route par défaut {dest}, passerelle {hop}, métrique de route {route}, total {total}</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Varsayılan: {value}</source>
+        <translation>Par défaut : {value}</translation>
     </message>
     <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>

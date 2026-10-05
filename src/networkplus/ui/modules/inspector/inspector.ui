@@ -281,6 +281,53 @@
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="tabAdvanced">
+          <attribute name="title">
+           <string>Gelişmiş</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="lay_tabAdvanced">
+           <item>
+            <widget class="QLabel" name="lblAdvancedNote">
+             <property name="text">
+              <string>Sürücünün gelişmiş özellikleri (Aygıt Yöneticisi › Gelişmiş). Ad ve değerler sürücünün dilindedir.</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="edAdvancedFilter">
+             <property name="placeholderText">
+              <string>Özellik ara…</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTreeWidget" name="treeAdvanced">
+             <property name="rootIsDecorated">
+              <bool>false</bool>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <column>
+              <property name="text">
+               <string>Özellik</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Değer</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="tabIpv4">
           <attribute name="title">
            <string>IPv4</string>

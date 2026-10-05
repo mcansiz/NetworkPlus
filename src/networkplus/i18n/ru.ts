@@ -546,6 +546,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Gelişmiş</source>
+        <translation>Дополнительно</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Genel</source>
         <translation>Общие</translation>
     </message>
@@ -661,6 +666,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün gelişmiş özellikleri (Aygıt Yöneticisi › Gelişmiş). Ad ve değerler sürücünün dilindedir.</source>
+        <translation>Дополнительные свойства драйвера (Диспетчер устройств › Дополнительно). Названия и значения — на языке драйвера.</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>Сбросить</translation>
     </message>
@@ -693,6 +703,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Özellik</source>
         <translation>Свойство</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Özellik ara…</source>
+        <translation>Поиск свойства…</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1206,6 +1221,11 @@ paylaşan</source>
         <translation>Недопустимая маска подсети.</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Anahtar: {keyword}</source>
+        <translation>Ключ: {keyword}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü aç</source>
         <translation>Открыть снимок</translation>
@@ -1214,6 +1234,11 @@ paylaşan</source>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü kaydet</source>
         <translation>Сохранить снимок</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Aralık: {min}–{max} (adım {step})</source>
+        <translation>Диапазон: {min}–{max} (шаг {step})</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -1971,6 +1996,11 @@ paylaşan</source>
         <translation>Источник: {name}</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Kayıt değeri: {value}</source>
+        <translation>Значение в реестре: {value}</translation>
+    </message>
+    <message>
         <location filename="platform\__init__.py"/>
         <source>Kayıtlı bir anlık görüntü görüntüleniyor; değişiklikler yalnız canlı sisteme uygulanabilir (Dosya › Canlı sisteme dön).</source>
         <translation>Просматривается сохранённый снимок; изменения можно применить только к работающей системе (Файл › Вернуться к работающей системе).</translation>
@@ -2236,6 +2266,11 @@ paylaşan</source>
         <translation>У ПО виртуализации (VMware, VirtualBox, libvirt) в этой сети может быть собственный DHCP-сервер; если его не отключить, два сервера будут конфликтовать.</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Seçenekler: {values}</source>
+        <translation>Варианты: {values}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\adapter_list\adapter_list.py"/>
         <source>Sistem</source>
         <translation>Система</translation>
@@ -2454,6 +2489,11 @@ paylaşan</source>
         <location filename="core\discovery.py"/>
         <source>Varsayılan rota {dest}, ağ geçidi {hop}, rota metriği {route}, toplam {total}</source>
         <translation>Маршрут по умолчанию {dest}, шлюз {hop}, метрика маршрута {route}, итого {total}</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Varsayılan: {value}</source>
+        <translation>По умолчанию: {value}</translation>
     </message>
     <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>

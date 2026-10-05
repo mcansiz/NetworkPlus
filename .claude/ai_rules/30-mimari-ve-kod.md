@@ -41,6 +41,10 @@ python tools/capture_snapshot.py tests/fixtures/<ad>.raw.json # anonim fixture a
   `command_for()` kullanır: AppImage'da `sys.executable` bağlama noktasındadır, kök erişemez. Yeni veri dosyası
   türü eklenirse spec'teki `DATA_PATTERNS`'e; ayrı süreç olarak çalışan yeni betik eklenirse
   `platform/selfexec.py`'ye bayrak eklenir (tek dosyada `python betik.py` yoktur).
+- **Kaynaktan deneme tuzağı (2026-10-05):** tek kopya kilidi var — tepside paketli exe çalışıyorsa
+  `python main.py` ona "göster" deyip kapanır (eski sürüm görünür). Ayrıca kurulu "networkPlus"
+  yönetici görevi `dist\` içindeki exe'yi açar → kaynaktan denerken önce tepsideki uygulama kapatılır
+  ve `python main.py --no-elevate` kullanılır. Yeni özellikten sonra `dist\` exe'si yeniden derlenir.
 - Alt süreçle borudan konuşan Python betikleri stdout/stdin'i **UTF-8**'e çevirir (Windows'ta
   boru varsayılanı cp1254 — Türkçe metin bozulur).
 - `offscreen` Qt platformu Windows'ta yazı tipi bulamaz → `QT_QPA_FONTDIR=C:/Windows/Fonts`

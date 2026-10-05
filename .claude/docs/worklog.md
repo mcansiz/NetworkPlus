@@ -299,3 +299,29 @@ için 3 platformda exe appimage ve macos binary üret — DiskUltimate projemde 
 **Doğrulanmamış**
 - AppImage'da pkexec ile kök uygulayıcı + DHCP sunucusu (Mint VM'de, kullanıcı onayıyla).
 - macOS paketini gerçek Mac'te açma (yalnız Actions duman testi).
+
+### Aynı gün — Actions sonucu ve sürücü "Gelişmiş" sekmesi
+- Actions (commit `b5e5db8`): CI üç platformda yeşil; Release deneme çalıştırması (workflow_dispatch)
+  yeşil — testler 3/3, AppImage 39,8 MB (en yüksek glibc **2.17**, duman 3/3), macOS `.app`
+  duman 2/2, Windows exe 41,4 MB duman 2/2. Taslak release adımı (etiket olmadığı için) atlandı.
+- Kullanıcı (resimle): "bağdaştırıcıların resimdeki ayarlarını da gösteren bir yapı kurabilir miyiz"
+  (Realtek → Özellikler → Gelişmiş). Yapıldı, **salt okunur**:
+  `snapshot.ps1` `advanced` bölümü (`Get-NetAdapterAdvancedProperty -Name *`, betikte 65 ms),
+  normalize → bağdaştırıcı `advanced[]` (keyword, display, value, registry, options, default,
+  range), Özellikler'de **Gelişmiş** sekmesi (QCollator ile yerel sıralama — Windows ile aynı
+  sıra, arama, varsayılandan farklı değer kalın, ipucunda anahtar/kayıt değeri/seçenek/aralık).
+  Özelliği olmayan bağdaştırıcıda (ve Linux'ta) sekme kapalı. Fixture'a ana makinenin 63
+  özelliği eklendi (kişisel veri yok; anonimleştirici `NetworkAddress`'i de değiştiriyor).
+  Testler 128/128. Çeviri 6 dil.
+- `specs/snapshot-schema.md`'de şirket alan adı örnek olarak duruyordu → `corp.example`
+  (depo herkese açık; eski hâli git geçmişinde kalır).
+
+**Açık**
+- Değer değiştirme (kuyruk adımı `SetAdvancedProperty` → `Set-NetAdapterAdvancedProperty
+  -RegistryKeyword -RegistryValue`; bağdaştırıcı kısa süre kopar → riskli + geri alma) kullanıcıya
+  soruldu.
+- Linux karşılığı (`ethtool -k/-g`) yok.
+- Kullanıcı "Gelişmiş sekmesini göremedim": tepside 1 Ekim'deki eski exe çalışıyordu; `python main.py`
+  tek kopya kilidiyle ona yönlendi. Ayrıca yönetici görevi `dist\` exe'sini açıyor. Kullanıcı eski
+  uygulamayı kapattı; yeni exe derlenip (duman 2/2) `dist\`'e kondu (eskisi `.tmp/build/old-dist/`).
+  Sekme dar panelde ▸ okunun arkasında kalıyordu → Windows'taki gibi "Genel"in yanına taşındı.

@@ -546,6 +546,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Gelişmiş</source>
+        <translation>Erweitert</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Genel</source>
         <translation>Allgemein</translation>
     </message>
@@ -661,6 +666,11 @@
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Sürücünün gelişmiş özellikleri (Aygıt Yöneticisi › Gelişmiş). Ad ve değerler sürücünün dilindedir.</source>
+        <translation>Erweiterte Treibereigenschaften (Geräte-Manager › Erweitert). Namen und Werte sind in der Sprache des Treibers.</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Sıfırla</source>
         <translation>Zurücksetzen</translation>
     </message>
@@ -693,6 +703,11 @@
         <location filename="ui\modules\inspector\inspector.ui"/>
         <source>Özellik</source>
         <translation>Eigenschaft</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.ui"/>
+        <source>Özellik ara…</source>
+        <translation>Eigenschaft suchen…</translation>
     </message>
     <message>
         <location filename="ui\modules\inspector\inspector.ui"/>
@@ -1206,6 +1221,11 @@ hierher frei</translation>
         <translation>Ungültige Subnetzmaske.</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Anahtar: {keyword}</source>
+        <translation>Schlüssel: {keyword}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü aç</source>
         <translation>Snapshot öffnen</translation>
@@ -1214,6 +1234,11 @@ hierher frei</translation>
         <location filename="ui\modules\main_window\main_window.py"/>
         <source>Anlık görüntü kaydet</source>
         <translation>Snapshot speichern</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Aralık: {min}–{max} (adım {step})</source>
+        <translation>Bereich: {min}–{max} (Schritt {step})</translation>
     </message>
     <message>
         <location filename="ui\modules\main_window\main_window.py"/>
@@ -1971,6 +1996,11 @@ hierher frei</translation>
         <translation>Quelle: {name}</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Kayıt değeri: {value}</source>
+        <translation>Registrierungswert: {value}</translation>
+    </message>
+    <message>
         <location filename="platform\__init__.py"/>
         <source>Kayıtlı bir anlık görüntü görüntüleniyor; değişiklikler yalnız canlı sisteme uygulanabilir (Dosya › Canlı sisteme dön).</source>
         <translation>Es wird ein gespeicherter Snapshot angezeigt; Änderungen können nur im Live-System übernommen werden (Datei › Zurück zum Live-System).</translation>
@@ -2236,6 +2266,11 @@ hierher frei</translation>
         <translation>Die Virtualisierungssoftware (VMware, VirtualBox, libvirt) betreibt in diesem Netzwerk möglicherweise einen eigenen DHCP-Server; wenn er nicht deaktiviert ist, geraten die beiden Server in Konflikt.</translation>
     </message>
     <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Seçenekler: {values}</source>
+        <translation>Optionen: {values}</translation>
+    </message>
+    <message>
         <location filename="ui\modules\adapter_list\adapter_list.py"/>
         <source>Sistem</source>
         <translation>System</translation>
@@ -2454,6 +2489,11 @@ hierher frei</translation>
         <location filename="core\discovery.py"/>
         <source>Varsayılan rota {dest}, ağ geçidi {hop}, rota metriği {route}, toplam {total}</source>
         <translation>Standardroute {dest}, Gateway {hop}, Routenmetrik {route}, gesamt {total}</translation>
+    </message>
+    <message>
+        <location filename="ui\modules\inspector\inspector.py"/>
+        <source>Varsayılan: {value}</source>
+        <translation>Standard: {value}</translation>
     </message>
     <message>
         <location filename="ui\modules\apply_dialog\apply_dialog.py"/>

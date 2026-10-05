@@ -67,6 +67,12 @@ def anonymize(raw: dict) -> dict:
     for p in data.get("profiles") or []:
         if isinstance(p, dict) and p.get("name"):
             p["name"] = anon.alias("Ag_", p["name"])
+    # Surucu "Ag Adresi" (NetworkAddress): elle verilen MAC, ayracsiz 12 hane -> _MAC_RE yakalamaz.
+    for a in data.get("advanced") or []:
+        if isinstance(a, dict) and a.get("keyword") == "NetworkAddress":
+            if a.get("value"):
+                a["value"] = "020000000001"
+            a["registry"] = ["020000000001" if r else r for r in a.get("registry") or []]
     return data
 
 

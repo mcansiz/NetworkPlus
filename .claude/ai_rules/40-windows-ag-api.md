@@ -43,6 +43,7 @@ Senaryo bazında ayrıntı: `.claude/docs/senaryo-analizi.md`.
 | Hyper-V | `Get-VMSwitch`, `Get-NetNat` (yoksa hata — tolere et) |
 | VPN | `Get-VpnConnection` (+ `-AllUserConnection`) |
 | Takım / VLAN | `Get-NetLbfoTeam`, `Get-NetAdapterAdvancedProperty -RegistryKeyword VlanID` |
+| Sürücü "Gelişmiş" sekmesi | `Get-NetAdapterAdvancedProperty -Name *` (yalnız `DisplayName`'li olanlar = Aygıt Yöneticisi listesi; `-AllProperties` gizli kayıtları da verir). Betik içinde ~65 ms, bu makinede 63 özellik — ölçüldü 2026-10-05. `DisplayName`/`DisplayValue`/`ValidDisplayValues` **sürücü dilindedir** → karar girdisi değil; kimlik `RegistryKeyword`, değer `RegistryValue` |
 
 ## Değiştirme (yönetici gerekir — yalnızca VM'de dene, bkz. `20`)
 
