@@ -1503,6 +1503,11 @@ internet here</translation>
         <translation>This computer · {host}</translation>
     </message>
     <message>
+        <location filename="platform\__init__.py"/>
+        <source>Bu işletim sisteminde ({platform}) ağ okunamıyor; yalnız kayıtlı bir anlık görüntü açılabilir (Dosya › Anlık görüntü aç…).</source>
+        <translation>The network cannot be read on this operating system ({platform}); you can only open a saved snapshot (File › Open snapshot…).</translation>
+    </message>
+    <message>
         <location filename="core\dhcp\guard.py"/>
         <source>Bu kart adresini bir DHCP sunucusundan alıyor, yani bu ağda zaten bir sunucu var. İkinci sunucu adres çakışmasına yol açar; engellendi.</source>
         <translation>This adapter gets its address from a DHCP server, so this network already has one. A second server causes address conflicts; blocked.</translation>

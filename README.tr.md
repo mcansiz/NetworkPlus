@@ -19,6 +19,10 @@ Windows 10/11, tek dosya, kurulum yok:
 > Exe henüz imzalı değil; Windows SmartScreen ilk açılışta uyarabilir ("Ek bilgi → Yine de
 > çalıştır"). Linux'ta kaynaktan çalıştırın ya da tek dosyayı kendiniz derleyin (aşağıda).
 
+Bir sonraki sürümden itibaren her sürümde **Linux AppImage** (`networkPlus-<sürüm>-x86_64.AppImage`,
+glibc 2.17+) ve yalnız kayıtlı anlık görüntüleri açan **deneysel bir macOS uygulaması** da bulunur
+(macOS'ta canlı ağ okuma yok). Sürümler GitHub Actions'ta üç platformda derlenip sınanır.
+
 ## Özellikler
 
 **Diyagram**
@@ -113,9 +117,14 @@ PyInstaller, ortak spec (`packaging/networkplus.spec`). Her betik proje içinde 
 kurar, testleri çalıştırır, derler ve `dist/` altındaki sonucu sınar.
 
 ```bash
-./build_win.sh      # Windows (Git Bash)  → dist/networkPlus-<sürüm>-windows-x64.exe
-./build_linux.sh    # Linux               → dist/networkPlus-<sürüm>-linux-x64
+./build_win.sh       # Windows (Git Bash)  → dist/networkPlus-<sürüm>-windows-x64.exe
+./build_linux.sh     # Linux               → dist/networkPlus-<sürüm>-linux-x64 (bu glibc ya da yenisi gerekir)
+./build_appimage.sh  # Linux AppImage      → dist/networkPlus-<sürüm>-x86_64.AppImage (glibc 2.17+)
+./build_macos.sh     # macOS (deneysel)    → dist/networkPlus-<sürüm>-macos-<mimari>.zip
 ```
+
+GitHub Actions (`.github/workflows/`) her push'ta testleri Linux, Windows ve macOS'ta çalıştırır;
+`v*` etiketi push edilince üç paket derlenir ve taslak sürüm oluşturulur.
 
 Debian/Ubuntu/Mint'te önce `sudo apt install python3-venv` gerekebilir. Test adımını atlamak için
 `SKIP_TESTS=1`.

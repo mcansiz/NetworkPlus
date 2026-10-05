@@ -1471,6 +1471,11 @@ paylaşan</source>
         <translation>此电脑 · {host}</translation>
     </message>
     <message>
+        <location filename="platform\__init__.py"/>
+        <source>Bu işletim sisteminde ({platform}) ağ okunamıyor; yalnız kayıtlı bir anlık görüntü açılabilir (Dosya › Anlık görüntü aç…).</source>
+        <translation>无法在此操作系统（{platform}）上读取网络；只能打开已保存的快照（文件 › 打开快照…）。</translation>
+    </message>
+    <message>
         <location filename="core\dhcp\guard.py"/>
         <source>Bu kart adresini bir DHCP sunucusundan alıyor, yani bu ağda zaten bir sunucu var. İkinci sunucu adres çakışmasına yol açar; engellendi.</source>
         <translation>此适配器从 DHCP 服务器获取地址，说明该网络中已有 DHCP 服务器。第二个服务器会导致地址冲突；已阻止。</translation>

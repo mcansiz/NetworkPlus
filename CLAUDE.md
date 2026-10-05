@@ -33,6 +33,7 @@ Bu dosya her oturumda otomatik yüklenir. Ayrıntılı kurallar
 | Çeviriler | `src/networkplus/i18n/*.ts` (ADR 0008) |
 | qtDHCPserver analizi | `.claude/docs/qtdhcpserver-analizi.md` |
 | Paketleme (tek dosya) | `packaging/networkplus.spec`, `build_win.sh`, `build_linux.sh` (ADR 0012) |
+| CI / sürüm (3 platform) | `.github/workflows/` (ci, tests, release), `build_appimage.sh`, `build_macos.sh` (ADR 0013) |
 | İş günlüğü | `.claude/docs/worklog.md` |
 | Oturum geçmişi | `.claude/sessions/` |
 

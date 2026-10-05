@@ -27,7 +27,7 @@ from ....core.dhcp.guard import CLIENTS_PREFIX, apply_overlay, eligible_adapters
 from ....core.model import Edge, EdgeKind, NodeKind, Status, Topology
 from ....platform import (
     Collector, apply_support, autostart_mode, autostart_modes, elevation_state, get_collector,
-    prepare_apply, relaunch_as_admin, set_autostart_mode,
+    UnsupportedCollector, prepare_apply, relaunch_as_admin, set_autostart_mode,
 )
 from ....platform.filesource import FileCollector
 from ...tray import TrayController, diff_notifications
@@ -827,7 +827,8 @@ class MainWindow(QMainWindow):
             self._bg_timer.stop()
 
     def _background_refresh(self):
-        if not self.actAutoRefresh.isChecked() and not isinstance(self.collector, FileCollector):
+        # Canli kesfi olmayan sistemde (macOS) her dakika hata penceresi acilmasin.
+        if not self.actAutoRefresh.isChecked() and not isinstance(self.collector, (FileCollector, UnsupportedCollector)):
             self.refresh()
 
     def _setup_autostart_menu(self):
@@ -954,11 +955,10 @@ class MainWindow(QMainWindow):
         server = getattr(QApplication.instance(), "np_server", None)
         if server is not None:
             server.server.close()
+        from ....platform.selfexec import self_command
         args = [a for a in sys.argv[1:] if a != "--tray"]
-        if getattr(sys, "frozen", False):
-            QProcess.startDetached(sys.executable, args)
-        else:
-            QProcess.startDetached(sys.executable, [sys.argv[0], *args])
+        head = self_command()                  # exe | .AppImage | python main.py
+        QProcess.startDetached(head[0], [*head[1:], *args])
         self.quit_app()
 
     def _relaunch_admin(self):

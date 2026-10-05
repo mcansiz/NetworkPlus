@@ -53,6 +53,7 @@ silinir; testler `PYTHONDONTWRITEBYTECODE=1` ile koşar.
 | Arayüz duman testi | Ana makine — `QT_QPA_PLATFORM=offscreen` + fixture |
 | Keşif (snapshot) | Ana makine (Windows) — salt okunur olduğu için serbest; Linux keşfi VM'de |
 | Değişiklik (Linux) | **Mint VM** |
+| GitHub Actions (ADR 0013) | Her push'ta Linux/Windows/macOS sanal makinelerinde yalnız fixture testleri + paketli program duman testi; ağ **değiştirilmez** |
 | Değişiklik (Windows) | Test ortamı **yok**: betik üretimi birim testle doğrulanır; gerçek çalıştırma yalnız kullanıcının açık izniyle. "VM'de sınanmadı" diye yazılır |
 
 - Gerçek makineden alınan anlık görüntüler `tests/fixtures/*.json` olarak

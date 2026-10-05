@@ -1471,6 +1471,11 @@ paylaşan</source>
         <translation>Этот компьютер · {host}</translation>
     </message>
     <message>
+        <location filename="platform\__init__.py"/>
+        <source>Bu işletim sisteminde ({platform}) ağ okunamıyor; yalnız kayıtlı bir anlık görüntü açılabilir (Dosya › Anlık görüntü aç…).</source>
+        <translation>В этой операционной системе ({platform}) сеть прочитать нельзя; можно только открыть сохранённый снимок (Файл › Открыть снимок…).</translation>
+    </message>
+    <message>
         <location filename="core\dhcp\guard.py"/>
         <source>Bu kart adresini bir DHCP sunucusundan alıyor, yani bu ağda zaten bir sunucu var. İkinci sunucu adres çakışmasına yol açar; engellendi.</source>
         <translation>Этот адаптер получает адрес от DHCP-сервера, значит в этой сети сервер уже есть. Второй сервер вызовет конфликты адресов; заблокировано.</translation>

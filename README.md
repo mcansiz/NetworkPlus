@@ -19,6 +19,11 @@ Windows 10/11, single file, no installation:
 > The executable is not code-signed yet, so Windows SmartScreen may warn on first start
 > ("More info → Run anyway"). On Linux, run from source or build a single file yourself (see below).
 
+From the next release on, every release also carries a **Linux AppImage**
+(`networkPlus-<version>-x86_64.AppImage`, glibc 2.17+) and an **experimental macOS app** that only
+opens saved snapshots (there is no live network reading on macOS). Releases are built and tested
+by GitHub Actions on all three platforms.
+
 ## Features
 
 **Diagram**
@@ -113,9 +118,14 @@ PyInstaller, one shared spec (`packaging/networkplus.spec`). Each script creates
 environment inside the project, runs the tests, builds and smoke-tests the result in `dist/`.
 
 ```bash
-./build_win.sh      # Windows (Git Bash)  → dist/networkPlus-<version>-windows-x64.exe
-./build_linux.sh    # Linux               → dist/networkPlus-<version>-linux-x64
+./build_win.sh       # Windows (Git Bash)  → dist/networkPlus-<version>-windows-x64.exe
+./build_linux.sh     # Linux               → dist/networkPlus-<version>-linux-x64 (needs this glibc or newer)
+./build_appimage.sh  # Linux AppImage      → dist/networkPlus-<version>-x86_64.AppImage (glibc 2.17+)
+./build_macos.sh     # macOS (experimental) → dist/networkPlus-<version>-macos-<arch>.zip
 ```
+
+GitHub Actions (`.github/workflows/`) runs the tests on Linux, Windows and macOS for every push;
+pushing a `v*` tag builds all three packages and creates a draft release.
 
 On Debian/Ubuntu/Mint, `sudo apt install python3-venv` may be needed first. Set `SKIP_TESTS=1`
 to skip the test step.
@@ -127,7 +137,7 @@ to skip the test step.
 - **Architecture:** `core/` (pure Python: model, relationship analysis, change plans, DHCP logic) ·
   `platform/` (the only layer that touches the OS) · `ui/` (PyQt5).
 - **Tests:** `python -m unittest discover -s tests -v` — they use recorded, anonymised snapshots
-  and never change your network.
+  and never change your network. CI runs them on Linux, Windows and macOS.
 - **Translations:** `src/networkplus/i18n/*.ts` (Qt Linguist format).
   `python tools/i18n_update.py` collects new strings; `--check` reports missing ones.
 - **Themes:** `src/networkplus/ui/themes/*.qss`; the palette lives in the file header (`@palette`).

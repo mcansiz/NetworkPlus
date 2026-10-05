@@ -1,0 +1,29 @@
+# Her push'ta uc platformda testler (Linux, Windows, macOS): hatalar surum gunu degil hemen
+# yakalanir. Yalnizca belge / AI kurali degisen commit'ler testi tetiklemez.
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: [".claude/**", "**/*.md", "docs/**"]
+  pull_request:
+    paths-ignore: [".claude/**", "**/*.md", "docs/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    uses: ./.github/workflows/tests.yml
+    with: { os: ubuntu-24.04 }
+  windows:
+    uses: ./.github/workflows/tests.yml
+    with: { os: windows-2022 }
+  macos:
+    uses: ./.github/workflows/tests.yml
+    with: { os: macos-14 }

@@ -1471,6 +1471,11 @@ su Internet</translation>
         <translation>Este equipo · {host}</translation>
     </message>
     <message>
+        <location filename="platform\__init__.py"/>
+        <source>Bu işletim sisteminde ({platform}) ağ okunamıyor; yalnız kayıtlı bir anlık görüntü açılabilir (Dosya › Anlık görüntü aç…).</source>
+        <translation>En este sistema operativo ({platform}) no se puede leer la red; solo se puede abrir una instantánea guardada (Archivo › Abrir instantánea…).</translation>
+    </message>
+    <message>
         <location filename="core\dhcp\guard.py"/>
         <source>Bu kart adresini bir DHCP sunucusundan alıyor, yani bu ağda zaten bir sunucu var. İkinci sunucu adres çakışmasına yol açar; engellendi.</source>
         <translation>Este adaptador obtiene su dirección de un servidor DHCP, así que esta red ya tiene uno. Un segundo servidor provoca conflictos de direcciones; bloqueado.</translation>

@@ -33,7 +33,12 @@ python main.py --snapshot tests/fixtures/win-host.raw.json   # canli sisteme dok
 python tools/capture_snapshot.py tests/fixtures/<ad>.raw.json # anonim fixture al (salt okunur)
 ```
 
-- Paket (ADR 0012): `./build_win.sh` (Git Bash) / `./build_linux.sh` → `dist/`. Yeni veri dosyası
+- Paket (ADR 0012): `./build_win.sh` (Git Bash) / `./build_linux.sh` → `dist/`. Sürüm paketleri
+  (ADR 0013) GitHub Actions'ta: `v*` etiketi → Windows exe + Linux AppImage (`build_appimage.sh`)
+  + macOS `.app` (deneysel, yalnız görüntüleyici) → taslak release. Her push'ta üç platformda test.
+  Yeni bir Qt modülü (`PyQt5.QtXxx`) kullanılırsa `tools/appimage.py` `QT_LIBS_KEEP`/`PYQT_KEEP`'e
+  eklenir (yoksa AppImage'da yoktur). Kendini/yardımcıyı başlatan kod `selfexec.self_command()` /
+  `command_for()` kullanır: AppImage'da `sys.executable` bağlama noktasındadır, kök erişemez. Yeni veri dosyası
   türü eklenirse spec'teki `DATA_PATTERNS`'e; ayrı süreç olarak çalışan yeni betik eklenirse
   `platform/selfexec.py`'ye bayrak eklenir (tek dosyada `python betik.py` yoktur).
 - Alt süreçle borudan konuşan Python betikleri stdout/stdin'i **UTF-8**'e çevirir (Windows'ta

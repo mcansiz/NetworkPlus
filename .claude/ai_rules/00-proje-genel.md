@@ -23,7 +23,8 @@ gösteren ve tüm bağdaştırıcı ayarlarını bu diyagram üzerinden yapan uy
 
 - Hedef platformlar: **Windows 10 / 11** (geliştirme makinesi Win10 Pro 19045)
   ve **Linux / NetworkManager** (test VM'i Mint 22.3). ADR 0005.
-  macOS kapsam dışı.
+  macOS canlı keşif/uygulama için kapsam dışı; yalnız **deneysel görüntüleyici** paketi
+  üretilir (kayıtlı anlık görüntü açar, ADR 0013).
 - Lisans: **GPLv3, açık kaynak** (ADR 0001). Her yeni bağımlılık GPLv3 uyumlu olmalı.
 - Kaynak dil **Türkçe** arayüz; kod adları İngilizce.
 - Uzak cihaz yönetimi (router'a SSH/SNMP) **kapsam dışı**; router yalnızca

@@ -1471,6 +1471,11 @@ hierher frei</translation>
         <translation>Dieser Computer · {host}</translation>
     </message>
     <message>
+        <location filename="platform\__init__.py"/>
+        <source>Bu işletim sisteminde ({platform}) ağ okunamıyor; yalnız kayıtlı bir anlık görüntü açılabilir (Dosya › Anlık görüntü aç…).</source>
+        <translation>Auf diesem Betriebssystem ({platform}) kann das Netzwerk nicht gelesen werden; nur ein gespeicherter Snapshot kann geöffnet werden (Datei › Snapshot öffnen…).</translation>
+    </message>
+    <message>
         <location filename="core\dhcp\guard.py"/>
         <source>Bu kart adresini bir DHCP sunucusundan alıyor, yani bu ağda zaten bir sunucu var. İkinci sunucu adres çakışmasına yol açar; engellendi.</source>
         <translation>Dieser Adapter bezieht seine Adresse von einem DHCP-Server, in diesem Netzwerk gibt es also bereits einen. Ein zweiter Server führt zu Adresskonflikten; blockiert.</translation>

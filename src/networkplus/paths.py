@@ -5,7 +5,8 @@ Kaynaktan calisirken her sey proje icindeki `.tmp/` altindadir (git'e girmez):
   .tmp/test/      test ciktilari (PNG vb.)
   .tmp/shots/     gelistirici ekran goruntuleri
 Paketlenmis (PyInstaller) uygulamada proje klasoru yoktur: %LOCALAPPDATA%\\networkPlus
-(Linux: ~/.cache/networkplus). NETWORKPLUS_WORKDIR ile degistirilebilir.
+(Linux/macOS: ~/.cache/networkplus). AppImage'da kaynak agaci salt okunur baglama
+noktasindadir; o da ~/.cache/networkplus kullanir. NETWORKPLUS_WORKDIR ile degistirilebilir.
 """
 
 from __future__ import annotations
@@ -22,7 +23,8 @@ def work_root() -> Path:
     override = os.environ.get("NETWORKPLUS_WORKDIR")
     if override:
         root = Path(override)
-    elif not getattr(sys, "frozen", False) and (PROJECT_ROOT / "main.py").exists():
+    elif (not getattr(sys, "frozen", False) and not os.environ.get("APPIMAGE")
+          and (PROJECT_ROOT / "main.py").exists()):
         root = PROJECT_ROOT / ".tmp"
     elif sys.platform == "win32":
         root = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "networkPlus"

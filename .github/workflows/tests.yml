@@ -1,0 +1,54 @@
+# Ortak test isi: CI (her push) ve release (etiket) bunu cagirir.
+# Yalniz fixture JSON'larla calisan testler: GitHub'in sanal makinesinde ag DEGISTIRILMEZ
+# (ai_rules/20). Arayuz testleri offscreen Qt ile kosar.
+name: Testler
+
+on:
+  workflow_call:
+    inputs:
+      os:
+        description: Runner (ubuntu-24.04, windows-2022, macos-14)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Testler (${{ inputs.os }})
+    runs-on: ${{ inputs.os }}
+    timeout-minutes: 30
+    env:
+      PYTHONIOENCODING: utf-8
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Qt calisma kutuphaneleri ve yazi tipleri (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends \
+            libegl1 libgl1 libxkbcommon0 libfontconfig1 libdbus-1-3 fonts-dejavu-core
+
+      - name: PyQt5
+        run: python -m pip install --disable-pip-version-check -r .github/requirements-ci.txt
+
+      - name: Ceviri denetimi
+        run: python tools/i18n_update.py --check
+      - name: Cekirdek + arayuz testleri
+        run: python -m unittest discover -s tests -v
+
+      - name: Hata durumunda test ciktilari
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: test-ciktilari-${{ inputs.os }}
+          path: .tmp/
+          if-no-files-found: ignore
+          retention-days: 14

@@ -13,6 +13,7 @@ build/
 dist/
 .venv-build-win/
 .venv-build-linux/
+.venv-build-macos/
 
 # Isletim sistemi artiklari
 .DS_Store

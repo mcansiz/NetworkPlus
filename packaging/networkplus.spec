@@ -1,10 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
-"""networkPlus — ORTAK PyInstaller spec (Windows + Linux), TEK DOSYA cikti.
+"""networkPlus — ORTAK PyInstaller spec (Windows + Linux + macOS).
 
-Dogrudan degil, build_win.sh / build_linux.sh ile calistirilir:
+Dogrudan degil, build_win.sh / build_linux.sh / build_macos.sh ile calistirilir:
     python -m PyInstaller --noconfirm --clean packaging/networkplus.spec
 
-Cikti: dist/networkPlus-<surum>-<windows|linux>-<mimari>[.exe]
+Cikti: dist/networkPlus-<surum>-<windows|linux>-<mimari>[.exe] (TEK DOSYA)
+       dist/networkPlus.app (macOS, deneysel — ADR 0013; build_macos.sh zip'ler)
 
 Notlar (ADR 0012):
 - Veri dosyalari (.ui, .ts, .qss, .ps1, simge) KAYNAK AGACINDAKI yerleriyle eklenir; kod
@@ -29,7 +30,8 @@ sys.path.insert(0, str(SRC))
 from networkplus import __version__             # noqa: E402
 
 IS_WIN = sys.platform == "win32"
-OS_NAME = "windows" if IS_WIN else "linux"
+IS_MAC = sys.platform == "darwin"
+OS_NAME = "windows" if IS_WIN else "macos" if IS_MAC else "linux"
 ARCH = {"amd64": "x64", "x86_64": "x64", "arm64": "arm64", "aarch64": "arm64"}.get(
     platform.machine().lower(), platform.machine().lower())
 NAME = f"networkPlus-{__version__}-{OS_NAME}-{ARCH}"
@@ -68,8 +70,9 @@ a = Analysis(                                   # noqa: F821
 )
 pyz = PYZ(a.pure)                               # noqa: F821
 
-# ---- Windows: exe simgesi + dosya ozellikleri (surum bilgisi)
-icon = str(PKG / "resources" / "networkplus.ico") if IS_WIN else None
+# ---- Windows: exe simgesi + dosya ozellikleri (surum bilgisi); macOS: .icns
+icon = (str(PKG / "resources" / "networkplus.ico") if IS_WIN
+        else str(PKG / "resources" / "networkplus.icns") if IS_MAC else None)
 version = None
 if IS_WIN:
     from PyInstaller.utils.win32.versioninfo import (
@@ -91,18 +94,51 @@ if IS_WIN:
         ],
     )
 
-exe = EXE(                                      # noqa: F821
-    pyz,
-    a.scripts,
-    a.binaries,
-    a.datas,
-    [],
-    name=NAME,
-    debug=False,
-    strip=False,
-    upx=False,
-    runtime_tmpdir=None,
-    console=False,              # pencereli uygulama; yardimci surecler yine stdin/stdout borusu kullanir
-    icon=icon,
-    version=version,
-)
+if IS_MAC:
+    # macOS kullanicisi cift tiklanan .app bekler; PyInstaller tek dosya + .app birlesimini
+    # onermez (her acilista /tmp'ye acar) -> klasor cikti (COLLECT) + BUNDLE. Yardimci roller
+    # (--np-dhcp-daemon) .app icindeki ayni ikiliyle calisir (platform/selfexec.py).
+    exe = EXE(                                  # noqa: F821
+        pyz,
+        a.scripts,
+        [],
+        exclude_binaries=True,
+        name="networkPlus",
+        debug=False,
+        strip=False,
+        upx=False,
+        console=False,
+        argv_emulation=False,
+        icon=icon,
+    )
+    coll = COLLECT(exe, a.binaries, a.datas, strip=False, upx=False, name="networkPlus")  # noqa: F821
+    app = BUNDLE(                               # noqa: F821
+        coll,
+        name="networkPlus.app",
+        icon=icon,
+        bundle_identifier="io.github.mcansiz.networkplus",
+        version=__version__,
+        info_plist={
+            "CFBundleName": "networkPlus",
+            "CFBundleDisplayName": "networkPlus",
+            "CFBundleShortVersionString": __version__,
+            "NSHighResolutionCapable": True,
+            "LSMinimumSystemVersion": "11.0",
+        },
+    )
+else:
+    exe = EXE(                                      # noqa: F821
+        pyz,
+        a.scripts,
+        a.binaries,
+        a.datas,
+        [],
+        name=NAME,
+        debug=False,
+        strip=False,
+        upx=False,
+        runtime_tmpdir=None,
+        console=False,              # pencereli uygulama; yardimci surecler yine stdin/stdout borusu kullanir
+        icon=icon,
+        version=version,
+    )

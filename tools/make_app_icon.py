@@ -1,10 +1,10 @@
-"""Uygulama simgesini .ico (ve .png) olarak yaz — paketleme (PyInstaller), kisayol, masaustu.
+"""Uygulama simgesini .ico, .icns (ve .png) olarak yaz — paketleme (PyInstaller), kisayol, masaustu.
 
     python tools/make_app_icon.py                          # secili bicem -> src/networkplus/resources/
     python tools/make_app_icon.py --all --out .tmp/icons   # tum bicemler + karsilastirma sayfasi
 
 Cizim `ui/app_icon.py`'dedir (tek kaynak). ICO: 16..256 px, her boyut PNG olarak gomulu
-(Windows Vista+). Qt'nin ICO yazicisi tek boyut yazdigi icin dosya burada elle kurulur;
+(Windows Vista+). ICNS (macOS .app, ADR 0013): 32..1024 px PNG girdileri; iconutil gerekmez. Qt'nin ICO yazicisi tek boyut yazdigi icin dosya burada elle kurulur;
 ek bagimlilik yok (yalniz PyQt5 + struct).
 """
 
@@ -49,6 +49,21 @@ def write_ico(path: Path, style: str) -> None:
         entries += struct.pack("<BBBBHHII", dim, dim, 0, 0, 1, 32, len(blob), offset + len(blobs))
         blobs += blob
     path.write_bytes(header + entries + blobs)
+
+
+# ICNS girdi turleri: PNG verisi tasiyan turler (macOS 10.7+)
+ICNS_TYPES = ((b"ic11", 32), (b"ic12", 64), (b"ic07", 128), (b"ic08", 256), (b"ic13", 512),
+              (b"ic09", 512), (b"ic14", 1024), (b"ic10", 1024))
+
+
+def write_icns(path: Path, style: str) -> None:
+    from networkplus.ui.app_icon import icon_pixmap
+    cache: dict[int, bytes] = {}
+    body = b""
+    for kind, size in ICNS_TYPES:
+        blob = cache.setdefault(size, png_bytes(icon_pixmap(size, style=style)))
+        body += kind + struct.pack(">I", 8 + len(blob)) + blob
+    path.write_bytes(b"icns" + struct.pack(">I", 8 + len(body)) + body)
 
 
 def comparison_sheet(path: Path, styles: list[str]) -> None:
@@ -103,6 +118,8 @@ def main() -> int:
     for i, style in enumerate(styles):
         name = f"{chr(65 + i)}-{style}" if args.all else "networkplus"
         write_ico(out / f"{name}.ico", style)
+        if not args.all:
+            write_icns(out / f"{name}.icns", style)
         icon_pixmap(256, style=style).save(str(out / f"{name}.png"))
         print(f"{out / name}.ico")
     if args.all:

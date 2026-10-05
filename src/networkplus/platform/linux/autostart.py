@@ -8,12 +8,11 @@ from __future__ import annotations
 
 import os
 import shlex
-import sys
 from pathlib import Path
 
 from ...core.i18n import tr
+from ..selfexec import is_packaged, self_command
 
-MAIN = Path(__file__).resolve().parents[4] / "main.py"
 ICON = Path(__file__).resolve().parents[2] / "resources" / "networkplus.png"   # tools/make_app_icon.py
 
 
@@ -24,10 +23,10 @@ def desktop_path() -> Path:
 
 def icon_path() -> Path | None:
     """Masaustu dosyasinin gosterecegi simge. Tek dosya pakette kaynak simge gecici acilma
-    klasorundedir (cikista silinir) -> kalici bir yere kopyalanir."""
+    klasorundedir (cikista silinir), AppImage'da baglama noktasindadir -> kalici bir yere kopyalanir."""
     if not ICON.exists():
         return None
-    if not getattr(sys, "frozen", False):
+    if not is_packaged():
         return ICON
     base = os.environ.get("XDG_DATA_HOME") or str(Path.home() / ".local" / "share")
     target = Path(base) / "icons" / "networkplus.png"
@@ -40,7 +39,7 @@ def icon_path() -> Path | None:
 
 
 def desktop_entry() -> str:
-    argv = [sys.executable] if getattr(sys, "frozen", False) else [sys.executable, str(MAIN)]
+    argv = self_command()
     return "\n".join([
         "[Desktop Entry]",
         "Type=Application",

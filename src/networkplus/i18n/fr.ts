@@ -1471,6 +1471,11 @@ internet ici</translation>
         <translation>Cet ordinateur · {host}</translation>
     </message>
     <message>
+        <location filename="platform\__init__.py"/>
+        <source>Bu işletim sisteminde ({platform}) ağ okunamıyor; yalnız kayıtlı bir anlık görüntü açılabilir (Dosya › Anlık görüntü aç…).</source>
+        <translation>Le réseau ne peut pas être lu sur ce système d'exploitation ({platform}) ; seul un instantané enregistré peut être ouvert (Fichier › Ouvrir un instantané…).</translation>
+    </message>
+    <message>
         <location filename="core\dhcp\guard.py"/>
         <source>Bu kart adresini bir DHCP sunucusundan alıyor, yani bu ağda zaten bir sunucu var. İkinci sunucu adres çakışmasına yol açar; engellendi.</source>
         <translation>Cette carte obtient son adresse d'un serveur DHCP ; ce réseau en a donc déjà un. Un second serveur provoque des conflits d'adresses ; bloqué.</translation>

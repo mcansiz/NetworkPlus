@@ -276,3 +276,26 @@ win exe olarak release yayımla". Depo: https://github.com/mcansiz/NetworkPlus (
 - Mint VM: kapalı (ping yok). Açmak + Linux toplayıcıyı çalıştırmak için kullanıcı onayı.
   ICS/köprü testleri için ikinci NIC (VM yapılandırma değişikliği) sorulacak.
 - M2: değişiklik kuyruğu + Uygula + diyagramda yol çizerek ICS.
+
+## 2026-10-05 — GitHub Actions: üç platformda test ve sürüm paketleri (ADR 0013)
+Kullanıcı: "projeyi github ile actions bölümünde 3 platformda sanal makinelerde test et; release
+için 3 platformda exe appimage ve macos binary üret — DiskUltimate projemde yaptığım gibi".
+- DiskUltimate'in `ci.yml` / `tests.yml` / `release.yml` yapısı uyarlandı: her push'ta
+  ubuntu-24.04, windows-2022, macos-14 testleri; `v*` etiketi → test + Windows exe + Linux AppImage
+  + macOS `.app` (zip) + duman testi + taslak release (`SHA256SUMS`). Sabit sürümler
+  `.github/requirements-ci.txt` / `requirements-build.txt`; release notu `.github/release-notes.md`.
+- Linux AppImage: `build_appimage.sh` → `tools/appimage.py` (taşınabilir Python 3.12, glibc 2.17).
+  `uic` ve `QtNetwork` tutulur.
+- AppImage düzeltmeleri: yardımcı roller/yeniden başlatma/oturumla başlatma `.AppImage` dosyasını
+  çağırır (`selfexec.self_command`), çalışma klasörü `~/.cache/networkplus`.
+- macOS: `get_collector()` artık çökmez → `UnsupportedCollector` (çevrilmiş hata; 6 dil
+  dolduruldu), arka plan yenilemesi orada çalışmaz. Spec'e `.app` dalı, `make_app_icon.py`
+  `.icns` yazar (`resources/networkplus.icns`). `build_macos.sh`.
+- `tests/test_packaging.py` (7 test). Yerel: 126/126 test; Windows exe derlendi (42,4 MB), duman
+  2/2. `dist/` içindeki eski exe açık olduğu için deneme derlemesi `.tmp/build/dist-check`'e yapıldı.
+- Bash aracında iç içe heredoc (`<<'EOF'` içinde `<<'PY'`) ve tek tırnaklı Türkçe metin
+  "unexpected EOF" verdi → uzun betikler `.tmp/work/` altına dosya olarak yazılıp çalıştırılır.
+
+**Doğrulanmamış**
+- AppImage'da pkexec ile kök uygulayıcı + DHCP sunucusu (Mint VM'de, kullanıcı onayıyla).
+- macOS paketini gerçek Mac'te açma (yalnız Actions duman testi).

@@ -19,7 +19,18 @@ def get_collector(snapshot_file: str | None = None) -> Collector:
     if sys.platform.startswith("linux"):
         from .linux.collector import LinuxCollector
         return LinuxCollector()
-    raise CollectError(f"Desteklenmeyen platform: {sys.platform}")
+    return UnsupportedCollector()
+
+
+class UnsupportedCollector(Collector):
+    """Canli kesfi olmayan sistem (macOS, deneysel paket — ADR 0013). Uygulama yine acilir;
+    yenileme hata olarak gosterilir, kayitli anlik goruntu acilabilir."""
+
+    name = "unsupported"
+
+    def collect_raw(self) -> dict:
+        raise CollectError(tr("Bu işletim sisteminde ({platform}) ağ okunamıyor; yalnız kayıtlı bir anlık "
+                              "görüntü açılabilir (Dosya › Anlık görüntü aç…).").format(platform=sys.platform))
 
 
 def apply_support(topo, collector: Collector) -> tuple[bool, str]:
@@ -129,7 +140,7 @@ def render_apply_script(plan, topo) -> str:
                          plan.rollback, [describe(c, topo) for c in plan.rollback])
 
 
-__all__ = ["Collector", "CollectError", "get_collector", "apply_support",
+__all__ = ["Collector", "CollectError", "UnsupportedCollector", "get_collector", "apply_support",
            "prepare_apply", "render_apply_script", "ApplyBundle", "elevation_state",
            "relaunch_as_admin", "autostart_modes", "autostart_mode", "set_autostart_mode",
            "try_elevate_via_task"]
