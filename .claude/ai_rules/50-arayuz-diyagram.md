@@ -68,6 +68,9 @@ yazıldı; artık **elle/Designer'da** düzenlenir, yeniden üretilmez.
 - Varsayılan dil: işletim sistemi dili destekleniyorsa o, yoksa İngilizce.
 - Diller (2026-10-01): tr (kaynak), en, de, ru, es, fr, zh_CN. Yeni metin eklenince **her
   `.ts`** doldurulur (`tools/i18n_fill.py <kod> <json>`); `--check` hepsini denetler.
+- Yerel sıralama `QCollator(QLocale())` ile, ama anahtar önce `casefold()`: CI'daki Linux makinesi
+  C/POSIX yerelinde çalışır, orada QCollator büyük harfi öne alır ("ARP" < "Advanced") — CI'da
+  yakalandı (2026-10-05). Testler sistem diline bağlı sıra varsaymaz.
 - Arayüzde kutu çizim karakteri (━ ╍ ┅) kullanma: Çince yazı tipinde yok, kare çıkıyor.
 
 ## Yerleşim

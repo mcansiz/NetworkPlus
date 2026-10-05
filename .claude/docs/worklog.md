@@ -345,3 +345,11 @@ için 3 platformda exe appimage ve macos binary üret — DiskUltimate projemde 
 - Gerçek `Set-NetAdapterAdvancedProperty` + `Restart-NetAdapter` + geri alma. Kullanıcı önce
   bağlı olmayan/kritik olmayan bir kartta (ör. ETH, Gelişmiş › Advanced EEE gibi zararsız bir
   ayar) denemeli.
+- CI (Linux, C yereli) `test_advanced_tab`'ı düşürdü: QCollator C yerelinde büyük/küçük harfe duyarlı.
+  Anahtar `casefold()` edildi (`55c6c9c`). `v0.2.0` etiketi (5 dk önce atılmış, çalışması iptal, release
+  yok) düzeltilmiş commit'e taşındı.
+- `v0.2.0` Release çalışması yeşil: 3 platform testi, Windows exe 41,5 MB, AppImage 39,9 MB, macOS zip
+  27,9 MB + SHA256SUMS → **taslak** pre-release. Yayınlama (taslaktan çıkarma) kullanıcıda.
+- Yerel `dist
+etworkPlus-0.2.0-windows-x64.exe` derlendi (duman 2/2). Yönetici görevi hâlâ 0.1.0
+  exe'sini gösteriyor; kullanıcı yeni exe'den "Sistemle başlat › yönetici"yi yeniden seçerse güncellenir.
